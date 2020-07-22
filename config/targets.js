@@ -3,7 +3,9 @@
 const browsers = [
   'last 1 Chrome versions',
   'last 1 Firefox versions',
-  'last 1 Safari versions'
+  'last 1 Safari versions',
+  'last 1 edge versions',
+  // 'ie 11' // Enable for local IE testing
 ];
 
 const isCI = !!process.env.CI;
