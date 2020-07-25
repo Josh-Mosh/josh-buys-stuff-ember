@@ -1,2 +1,26 @@
 <h1>ADMIN MANAGE TEMPLATE</h1>
 <h3>Set Count: {{model.length}}</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Set Id</th>
+      <th>Name</th>
+      {{!-- <th>Description</th> --}}
+      <th>Pieces</th>
+      <th>Age</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |set|}}
+      <tr>
+        <td>{{set.setId}}</td>
+        <td>{{set.name}}</td>
+        <td>{{set.pieces}}</td>
+        <td>{{set.age}}</td>
+        <td>{{set.price}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
