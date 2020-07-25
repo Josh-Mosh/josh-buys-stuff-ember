@@ -11,8 +11,8 @@ export default Base.extend({
   ajax: service(),
 
   restore: function(data) {
-    return new RSVP.Promise(function(resolve, reject) {
-      if (!isEmpty(data.access_token)) {
+    return new RSVP.Promise((resolve, reject) => {
+      if (!isEmpty(data.token)) {
         resolve(data);
       } else {
         reject();
@@ -33,18 +33,12 @@ export default Base.extend({
         }),
         contentType: 'application/json',
         // headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-        // transformRequest: function(obj) {
-        //   var str = [];
-        //   for(var p in obj)
-        //   str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
-        //   return str.join("&");
-        // },
         // data: credentials
       })
       .then(response => {
-        console.log('then', 'response:', response);
         run(() => {
-          resolve({ access_token: response.login.access_token });
+          console.log('resolve', 'response.token:', response);
+          resolve({ token: response.token });
         });
       })
       .catch(error => {

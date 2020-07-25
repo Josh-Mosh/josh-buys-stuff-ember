@@ -1,14 +1,4 @@
-<div>
-  <label for="identification">Email</label>
-  {{input placeholder="Email Address" value=identification}}
-  <label for="password">Password</label>
-  {{input placeholder="Enter Password" value=password}}
-  <button type="submit" {{action "authenticate"}}>Login</button>
-  {{#if errorMessage}}
-    <p>{{errorMessage}}</p>
-  {{/if}}
-</div>
-
-<p>identification: {{identification}}</p>
-<p>password: {{password}}</p>
-<h2>{{something}}</h2>
+<h2>admin.hbs</h2>
+{{#if session.isAuthenticated}}
+  <button {{action "invalidateSession"}}>Logout</button>
+{{/if}}

@@ -25,7 +25,6 @@ export default Controller.extend({
 
       try {
         this.get('session').authenticate('authenticator:custom', { identification, password });
-        // this.get('session').authenticate('authenticator:oauth2', identification, password );
       } catch(error) {
         this.set('errorMessage', error.error || error);
       }

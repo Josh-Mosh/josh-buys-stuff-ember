@@ -7,5 +7,11 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function() {
-  this.route('admin');
+  this.route('home', { path: '' });
+
+  this.route('login');
+
+  this.route('authenticated', { path: 'admin' }, function() {
+    this.route('manage', { resetNamespace: true });
+  });
 });
