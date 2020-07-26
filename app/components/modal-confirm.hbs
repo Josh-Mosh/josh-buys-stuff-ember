@@ -1,0 +1,23 @@
+<div class="card card-borderless card-modal {{animation}} {{size}}" data-test-confirm-modal id={{id}}>
+  <div class="card-header pt-0 pr-0">
+    <div class="modal-title left">
+      <h5>{{title}}</h5>
+    </div>
+    <div class="modal-exit right">
+      <a {{action "cancel"}}><i class="fa fa-times"></i></a>
+    </div>
+  </div>
+  <div class="card-block">
+    <p class="m-0">{{yield}}</p>
+  </div>
+  <div class="card-footer d-flex justify-content-end">
+    {{#unless cancelHidden}}
+      <button class="btn btn-secondary mr-2" {{action "cancel"}} data-test-cancel>{{or cancelText "Cancel"}}</button>
+    {{/unless}}
+    {{#unless confirmHidden}}
+      <button class="btn btn-primary" {{action "submit"}} disabled={{disableButton}} data-test-submit>
+        <i class="{{if progress "fal fa-spinner"}}"></i>&nbsp;{{confirmText}}&nbsp;
+      </button>
+    {{/unless}}
+  </div>
+</div>
