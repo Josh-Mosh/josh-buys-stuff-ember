@@ -1,0 +1,293 @@
+// COMMON CLASSES
+// --------------
+
+.cursor-default:hover {
+  cursor: default;
+}
+
+.round{
+  border-radius: 5px;
+}
+
+.round-top {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.round-bottom {
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.round-opposite-right {
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.autocomplete {
+  background: url(../images/ajax-loader.gif) no-repeat 95%;
+}
+
+.noBullets {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+
+  li {padding-left: 0;}
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.inline {
+  display: inline !important;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.block {
+  display: block;
+}
+
+.textLeft {
+  text-align: left;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.textRight {
+  text-align: right;
+}
+
+.noOverflow {
+  overflow: hidden;
+}
+
+.full {
+  width: 100%;
+  padding: 40px 0;
+  height: auto;
+}
+
+.autoWidth {
+  width: fit-content !important;
+  margin: auto !important;
+}
+
+.clear {
+  clear: both;
+}
+
+img.left {
+  float: left;
+  width: 37.5%;
+  margin-right: 2.5%;
+}
+
+img.right {
+  float: right;
+  width: 37.5%;
+  margin-left: 2.5%;
+}
+
+img.full {
+  float: none;
+  width: 100%;
+  margin: 2.5% 0;
+}
+
+.noBG {
+  background: none;
+}
+
+.bg-white {
+  background: white;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.bottom-right {
+  bottom: 8px;
+  position: absolute;
+  right: 0;
+}
+
+.inactive:not(body) {
+  color: $mdGray;
+}
+
+.active {
+  color: #7f7f7f;
+}
+
+// A list with icons
+.icons {
+  li {
+    float: left;
+    margin: 10px;
+    text-align: center;
+  }
+}
+
+.icon {
+  font-size: 2em;
+}
+
+.small {
+  font-size: .95em;
+}
+
+.medium {
+  font-size: 1.25em;
+}
+
+.med-large {
+  font-size: 1.375em;
+}
+
+.large {
+  font-size: 1.5em;
+}
+
+.xlarge {
+  font-size: 1.75em;
+}
+
+.strong, .bold {
+  font-weight: $bold !important;
+}
+
+.subtle, .subtle td {
+  color: #666;
+}
+
+.scrollable {
+  overflow: auto;
+}
+
+// MIXINS
+// ------
+
+@mixin border-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+// BREAKPOINTS
+// -----------
+
+@mixin breakpoint($point) {
+  @if $point == ocean {
+    @media (min-width: 1200px) { @content; }
+  }
+  @else if $point == lake {
+    @media (min-width: 992px) { @content; }
+  }
+  @else if $point == pond {
+    @media (min-width: 768px)  { @content; }
+  }
+  @else if $point == puddle {
+    @media (min-width: 500px) { @content; }
+  }
+}
+
+// ICONS
+// -------------
+.check {
+  &:before {
+    font-family: FontAwesome;
+    content: '\f00c'; // fa-check
+  }
+}
+
+//placeholder classses
+%clearfix {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+}
+
+.img-bottom-left {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+
+.text-spaced {
+  letter-spacing: 1px;
+}
+
+.block {
+  display: block;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.disappear {
+  opacity: 0;
+  transition: opacity 0.1s linear;
+}
+.appear {
+  opacity: 1;
+  transition: opacity 0.1s linear;
+}
+
+.benefits {
+  color: var(--main-brand-color);
+}
+.benefits-underline {
+  border-bottom: 2px solid var(--main-brand-color) !important;
+}
+.benefits-overline {
+  border-top: 2px solid var(--main-brand-color) !important;
+}
+
+.costs {
+  color: var(--secondary-brand-color);
+}
+.costs-underline {
+  border-bottom: 2px solid var(--secondary-brand-color) !important;
+}
+.costs-overline {
+  border-top: 2px solid var(--secondary-brand-color) !important;
+}
+
+.net {
+  color: var(--tertiary-brand-color);
+}
+.net-underline {
+  border-bottom: 2px solid var(--tertiary-brand-color) !important;
+}
+.net-overline {
+  border-top: 2px solid var(--tertiary-brand-color) !important;
+}
+
+.incentives-underline {
+  border-bottom: 2px solid $nonTaxIncentive !important;
+}
+.incentives-overline {
+  border-top: 2px solid $nonTaxIncentive !important;
+}

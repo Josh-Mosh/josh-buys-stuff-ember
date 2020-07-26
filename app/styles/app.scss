@@ -1,2 +1,54 @@
 
 @import "ember-cli-bootstrap-4/bootstrap";
+// @import "ember-bootstrap/bootstrap";
+// @import "ember-basic-dropdown";
+
+@import "pages/scss/themes/corporate/corporate";
+
+@import "partials/_variables";
+@import "partials/_lib-extend";
+@import "partials/_mixins";
+@import "partials/_reuse";
+@import "partials/_type";
+@import "partials/_base";
+@import "partials/_forms";
+@import "partials/_icons";
+@import "partials/_buttons";
+@import "partials/_layout";
+@import "partials/_tables";
+@import "partials/_advanced-inputs";
+@import "partials/_graphs";
+@import "partials/_navs";
+@import "partials/_design";
+@import "partials/_tiles";
+@import "partials/_responsive";
+@import "partials/_modules";
+@import "partials/_modals";
+@import "partials/_login";
+@import "partials/_report";
+@import "partials/_spacing";
+@import "partials/_print";
+@import "partials/_tooltips";
+// @import "ember-power-select";
+// @import "ember-burger-menu";
+
+// body, @page weren't here before rebase, check necessity
+body {
+  counter-reset: section; //
+}
+
+@page {
+  size: A4;
+  margin: 5%;
+  padding: 0 0 10%;
+}
+
+:root {
+  --main-brand-color: #5c6670; //logo-gray (default)
+  --main-brand-color-hover: #004768; // logo-blue darkened by 8%
+  --main-brand-color-light: #66c1e2; // logo-blue lightened by 40%
+  --secondary-brand-color: #9cccda; // $barCost
+  --secondary-brand-color-hover: #88b8c6; // $barCost darkened by 8%
+  --tertiary-brand-color: #d2702f; // orange
+  --tertiary-brand-color-hover: #b95716; //orange darkened by 10%
+}

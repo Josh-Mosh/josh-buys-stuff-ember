@@ -1,0 +1,519 @@
+/* pikadate styles fixies */
+.pika-button {
+  padding: 5px !important;
+  border-radius: 0;
+  font-size: 12px !important;
+}
+
+.pika-next, .pika-prev {
+  padding: 0 !important;
+}
+.pika-next:hover, .pika-next:active {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAU0lEQVR42u3VOwoAMAgE0dwfAnNjU26bYkBCFGwfiL9VVWoO+BJ4Gf3gtsEKKoFBNTCoCAYVwaAiGNQGMUHMkjGbgjk2mIONuXo0nC8XnCf1JXgArVIZAQh5TKYAAAAASUVORK5CYII=');
+}
+
+.pika-prev:hover, .pika-prev:active {
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAUklEQVR42u3VMQoAIBADQf8Pgj+OD9hG2CtONJB2ymQkKe0HbwAP0xucDiQWARITIDEBEnMgMQ8S8+AqBIl6kKgHiXqQqAeJepBo/z38J/U0uAHlaBkBl9I4GwAAAABJRU5ErkJggg==');
+}
+
+.pika-lender button {
+  box-shadow: none;
+}
+
+// /* Foundation 5 row */
+// .row {
+//   position: relative;
+//   margin: 0 auto;
+//   max-width: 62.5rem;
+//   width: 100%;
+// }
+
+/* Foundation dropdown */
+// .button.dropdown {
+//   padding-right: 3.5625rem !important;
+// }
+// .f-dropdown {
+//   background: #fff;
+//   border: 1px solid #ccc;
+
+//   li {
+//     :hover {
+//       background: #EEE;
+//     }
+//     a {
+//       color: #555;
+//       display: block;
+//       padding: .5rem;
+//       text-decoration: none;
+//       :hover {
+//         cursor: pointer;
+//       }
+//     }
+//   }
+// }
+// .dropdown-wide .f-dropdown {
+//   max-width: 230px;
+// }
+
+
+/* jscrollpane */
+
+.jspContainer
+{
+  overflow: hidden;
+  position: relative;
+}
+
+.jspPane
+{
+  position: absolute;
+}
+
+.jspVerticalBar
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 14px;
+  height: 100%;
+  background:transparent;
+}
+
+.jspHorizontalBar
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: transparent;
+}
+
+.jspVerticalBar *,
+.jspHorizontalBar *
+{
+  margin: 0;
+  padding: 0;
+}
+
+.jspCap
+{
+  display: none;
+}
+
+.jspHorizontalBar .jspCap
+{
+  float: left;
+}
+
+.jspTrack
+{
+  background: transparent;
+  position: relative;
+}
+
+.jspDrag
+{
+  background: #065167;
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag
+{
+  float: left;
+  height: 100%;
+}
+
+.jspArrow
+{
+  background: #50506d;
+  text-indent: -20000px;
+  display: block;
+  cursor: pointer;
+}
+
+.jspArrow.jspDisabled
+{
+  cursor: default;
+  background: #80808d;
+}
+
+.jspVerticalBar .jspArrow
+{
+  height: 16px;
+}
+
+.jspHorizontalBar .jspArrow
+{
+  width: 16px;
+  float: left;
+  height: 100%;
+}
+
+.jspVerticalBar .jspArrow:focus
+{
+  outline: none;
+}
+
+.jspCorner
+{
+  background: #eeeef4;
+  float: left;
+  height: 100%;
+}
+.jspTrack {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.2s linear;
+}
+.jspContainer:hover .jspTrack {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}
+
+
+/* Tipsy tooltip */
+.tipsy {
+  font-size: 12px;
+  font-weight: bold;
+  position: absolute;
+  padding: 4px 8px;
+  z-index: 100000;
+}
+
+.tipsy-inner {
+  background: rgba($slate, .92);
+  color: #FFF;
+  max-width: 200px;
+  padding: 4px 8px;
+  text-align: center;
+}
+
+/* Rounded corners */
+.tipsy-inner {
+  border-radius: 0px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+}
+
+.tipsy-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  border: 5px solid $slate;
+}
+
+.tipsy-arrow-s {
+  border-top-color: $slate;
+}
+
+.tipsy-s .tipsy-arrow {
+  bottom: 1px;
+  left: 50%;
+  border-top-style: solid;
+  border-bottom: none;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+/* Select2 */
+
+.select2-container {
+  font-size: 16px;
+}
+.select2-container .select2-choice {
+  background:  $bgPrimaryDark;
+  color: $blackActive;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  height: 28px;
+}
+.select2-container .select2-choice .select2-arrow {
+  background:  $bgPrimaryDark;
+  border-left: 0;
+}
+.select2-container .select2-choice > .select2-chosen {
+  font-weight: bold;
+}
+
+.select2-container.select2-container-disabled {
+  .select2-choice, .select2-choice .select2-arrow {
+    background: inherit;
+    color: inherit;
+    border: none;
+  }
+  .select2-arrow {
+    opacity: 0;
+  }
+}
+
+/* Alertify */
+.alertify-logs {
+  z-index: 110;
+}
+
+.alertify-logs .default {
+  background: #d2e4ea;
+  opacity: .9;
+  padding: 15px;
+  border-radius: 4px;
+  color: $black;
+  text-shadow: none;
+}
+
+/* Ember-Power-Select */
+// Variables
+
+// Backgrounds
+$ember-power-select-background-color: $white !default;
+$ember-power-select-disabled-background-color: inherit !default;
+$ember-power-select-multiple-selection-background-color: $secondaryGray !default;
+$ember-power-select-highlighted-background: $linkBlue !default;
+$ember-power-select-selected-background: $secondaryGray !default;
+
+// Texts
+$ember-power-select-text-color: $black !default;
+$ember-power-select-placeholder-color: $textDisabled !default;
+$ember-power-select-highlighted-color: $black !default;
+$ember-power-select-disabled-option-color: #blackInactive !default;
+$ember-power-select-multiple-selection-color: #333333 !default;
+
+// Borders
+$ember-power-select-border-color: $borderGray !default;
+$ember-power-select-focus-border-color: $ember-power-select-border-color !default;
+$ember-power-select-default-border: 1px solid !default;
+$ember-power-select-default-focus-border: 1px solid $ember-power-select-focus-border-color !default;
+
+$ember-power-select-trigger-border: 1px solid $borderGray;
+$ember-power-select-trigger-border-top: $ember-power-select-trigger-border !default;
+$ember-power-select-trigger-border-bottom: $ember-power-select-trigger-border !default;
+$ember-power-select-trigger-border-right: $ember-power-select-trigger-border !default;
+$ember-power-select-trigger-border-left: $ember-power-select-trigger-border !default;
+$ember-power-select-active-trigger-border: $ember-power-select-default-focus-border !default;
+$ember-power-select-active-trigger-border-top: $borderGray !default;
+$ember-power-select-active-trigger-border-bottom: $ember-power-select-active-trigger-border !default;
+$ember-power-select-active-trigger-border-top: 1px solid $borderGray;
+$ember-power-select-dropdown-border: $ember-power-select-default-focus-border !default;
+$ember-power-select-search-field-border: $ember-power-select-default-border !default;
+$ember-power-select-search-field-focus-border: $ember-power-select-default-focus-border !default;
+
+$ember-power-select-dropdown-border: 1px solid $borderGray;
+
+$ember-power-select-dropdown-contiguous-border: none !default;
+
+// Borders radius
+$ember-power-select-default-border-radius: 1px !default; // General border radius
+
+$ember-power-select-opened-border-radius: 0 !default; // Border radius of the side of the dropdown and the trigger where they touch
+
+$ember-power-select-search-input-border-radius: 0 !default;
+
+// Other
+// $ember-power-select-focus-box-shadow: none !default;
+// $ember-power-select-dropdown-margin: 0 !default; // Margin between the dropdown and the trigger
+// $ember-power-select-dropdown-box-shadow: none !default;
+$ember-power-select-line-height: 28px !default;
+$ember-power-select-trigger-icon-color: $black !default;
+// $ember-power-select-clear-btn-margin: 2  !default;
+// $ember-power-select-option-padding: 8px !default;
+// $ember-power-select-number-of-visible-options: 7 !default;
+// $ember-power-select-focus-outline: null !default;
+$ember-power-select-trigger-ltr-padding: 2px 16px 0 0 !default;
+// $ember-power-select-trigger-rtl-padding: 0 0 0 16px !default;
+// $ember-power-select-multiple-option-padding: 0 4px !default;
+// $ember-power-select-multiple-option-line-height: 1.45 !default;
+
+.ember-power-select-status-icon {
+  border-width: 5px 5px 0 5px !important;
+  // right: 10px !important;
+}
+
+.ember-power-select-trigger:focus {
+  outline: none;
+}
+
+// consistent disabled coloring for text input and dropdown arrow
+.ember-power-select-trigger[aria-disabled=true] {
+  color: $color-master-light !important;
+  span.ember-power-select-status-icon {
+    border-top-color: $color-master-light;
+  }
+  span {
+    color: $color-master-light !important;
+  }
+  ul {
+    input::placeholder {
+      color: $color-master-light;
+    }
+  }
+}
+
+.ember-power-select-search-input {
+  background: $secondaryGray !important;
+  border: none !important;
+  height: 28px !important;
+}
+
+/* Override (very) old input styles from /vendor/ede */
+
+// Breakpoints
+@mixin breakpoint($point) {
+  @if $point == ocean {
+    @media (min-width: 960px) { @content; }
+  }
+  @else if $point == lake {
+    @media (min-width: 720px) { @content; }
+  }
+  @else if $point == pond {
+    @media (min-width: 560px)  { @content; }
+  }
+}
+
+// Labels
+// ------
+// Short Label
+.label-sm {
+  > label {
+    // @include border-box;
+    // padding-top: 15px;
+    // float: left;
+    // width: 100%;
+    // @include breakpoint(pond) {
+    //   width: 47.5%;
+    // }
+  }
+
+  // Short label fills full line when above long input
+  &.input-lg label {
+    width: 100%;
+  }
+}
+
+// Medium Label
+.label-med {
+  > label {
+    // float: left;
+    // width: 100%;
+    // @include border-box;
+    // padding-top: 15px;
+    // @include breakpoint(pond) {
+    //   width: 47.5%;
+    // }
+  }
+
+  // Medium label fills full line when above long input
+  &.input-lg label {
+    width: 100%;
+    padding-bottom: 0;
+  }
+}
+
+// Long Label
+.label-lg {
+  label {
+    // float: none;
+    // clear: both;
+    width: 100%;
+    // @include border-box;
+    padding-top: 10px;
+  }
+
+  &.input-sm .input-box {
+    width: auto;
+    float: none;
+  }
+
+  &.input-med .input-box {
+    // float: none;
+    width: auto;
+    // clear: both;
+    input {
+      width: auto;
+      @include breakpoint(pond) {
+        width: 50%;
+      }
+    }
+  }
+}
+
+// Input Boxes
+// -----------
+.input-box {
+  // padding: 10px;
+  // float: right;
+  // width: 100%;
+}
+
+// Short Input Box
+.input-sm > .input-box {
+  // width: auto;
+  // clear: both;
+  // float: none;
+  // @include breakpoint(pond) {
+  //   width: 47.5%;
+  //   clear: none;
+  //   float: right;
+  // }
+
+  // input[type="text"],
+  // input[type="percent"]
+  //  {
+  //   width: 75px;
+  // }
+}
+
+
+// Medium Input Box
+.input-med > .input-box {
+  // width: auto;
+  // float: none;
+  // clear: both;
+  // @include breakpoint(pond) {
+  //   float: right;
+  //   clear: none;
+  //   width: 47.5%;
+  // }
+
+  // input[type="text"],
+  // input[type="percent"]{
+  //   width: 100%;
+  // }
+}
+
+
+// Long Input Box
+.input-lg > .input-box {
+  // clear: both;
+  // float: left;
+  // margin-left: 0;
+  // margin-right: 0;
+  // width: 100%;
+
+  // input[type="text"],
+  // input[type="percent"]{
+  //   width: 100%;
+  // }
+}
+
+// Force the smaller width in nested input components
+.input-lg .label-sm label {
+  // width: auto;
+  // padding-bottom: 3px;
+  // @include breakpoint(pond) {
+  //   width: 47.5%;
+  // }
+}
+
+.advanced .input-box {
+  // float: none;
+  // @include border-box;
+}

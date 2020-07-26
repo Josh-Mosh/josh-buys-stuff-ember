@@ -1,0 +1,1100 @@
+// Tables
+// ------
+
+$tblTitle: rgba(49, 134, 155, 1);
+$tblLabels: rgba(243, 243, 243, 1);
+$tblBorders: rgba(242, 242, 242, 1);
+$tblSubTotal: rgba(166, 166, 166, 1);
+// $tblFinalTotal: rgba(33,89,103,1);
+$tblFinalTotal: #5c6670;
+
+// Pretty sure this code appears multiple times in different partials
+// Override Foundation's Defaults
+// table thead,
+// table thead tr th,
+// table tr td,
+// table tr th {
+//   background: none;
+//   border: none;
+//   font-size: 16px;
+//   font-weight: 400;
+//   color: $black;
+//   line-height: 16px;
+//   text-transform: none;
+// }
+
+// table thead tr th {
+//   font-size: 16px;
+//   font-weight: 400;
+//   color: $black;
+//   line-height: 16px;
+//   text-transform: none;
+// }
+
+// table tr td.nopadding {
+//   padding: 0 10px;
+//   vertical-align: middle;
+//   color: $black;
+// }
+
+// *REDESIGN CUSTOM
+
+// table {
+//   & th, tr {
+//     border-bottom: 1px solid $borderGray;
+//   }
+//
+//   & tr {
+//     height: 80px;
+//   }
+//
+// }
+
+// Markdown help template tables
+
+table.markdown-table {
+  thead {
+    th {
+      border-bottom: 3px solid #cccccc;
+      text-align: left;
+      text-transform: uppercase;
+    }
+  }
+
+  tbody {
+    td {
+      vertical-align: top;
+      border-bottom: 1px solid #cccccc;
+      border-right: 1px solid #cccccc;
+      min-width: 100px;
+      padding: 16px;
+      &:first-child + td {
+        .highlighter-rouge {
+          color: $logo-blue;
+          white-space: nowrap;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+code.highlighter-rouge {
+  background-color: #f8f8f8;
+  border-radius: 2px;
+  border: solid 1px #ddd;
+  color: #444;
+  overflow-wrap: normal;
+  padding: 0 4px;
+  word-break: keep-all;
+  word-wrap: normal;
+}
+
+pre.highlight {
+  background-color: #f8f8f8;
+  border-radius: 2px;
+  border: solid 1px #ddd;
+  color: #444;
+  overflow: auto;
+  code {
+    background: none;
+  }
+}
+
+table.data-table {
+  tbody {
+    tr {
+      td {
+        padding: 8px;
+      }
+    }
+  }
+  thead tr.custom-labels {
+    background: $dashboard-background;
+    border-bottom-color: $dashboard-background !important;
+    th {
+      border-bottom: 0;
+      border-left: 10px solid $dashboard-background; // fakes margin within th
+      border-right: 10px solid $dashboard-background;
+      padding-bottom: 5px;
+      &.text-right {
+        padding-right: 2px;
+      }
+      &:last-child {
+        border-right: 0;
+        padding-right: 4px;
+      }
+      &:first-child {
+        border-left: 0;
+      }
+      // &:last-child:not(.net-underline) {padding-right: 0;}
+      span {
+        padding: 0 0 4px 10px;
+        &:last-child {
+          padding-right: 8px;
+        }
+      }
+    }
+    th.benefits {
+      color: $logo-blue;
+    }
+
+    th.costs {
+      color: $barCost;
+    }
+
+    th.net {
+      color: $graphLine;
+    }
+  }
+
+  tbody tr.total-row td {
+    background: $borderGray;
+  }
+}
+
+tr.labels th {
+  color: rgba(22, 22, 22, 0.75) !important;
+  font-size: 10.5px !important;
+  font-family: "Montserrat";
+  font-weight: 600 !important;
+  letter-spacing: 0.06em;
+  padding: 10px 12px;
+  text-transform: uppercase;
+}
+
+tr.subtotal {
+  background: $slate !important;
+}
+
+.admin-table {
+  td {
+    line-height: 1.5em;
+  }
+
+  .labels,
+  .labels th {
+    background-color: $tblLabels;
+    font-weight: $normal;
+  }
+
+  tr {
+    border-bottom: solid 1px $tblBorders;
+  }
+
+  tbody a {
+    display: block;
+    text-decoration: none;
+  }
+
+  &.alt-table {
+    th {
+      text-align: left;
+    }
+  }
+}
+
+// .simple-table {
+
+//   margin-top:  30px;
+
+//   .labels th {
+//     color: #888;
+//     padding-bottom: 5px;
+//   }
+
+//   tr {
+//     border-bottom: 1px solid #D4D4D4;
+//   }
+
+//   tbody {
+
+//     td {
+//       text-align: right;
+//     }
+//   }
+// }
+
+.final-total td {
+  font-weight: bold;
+}
+
+.money,
+.number {
+  text-align: right;
+}
+
+.net-benefits-table {
+  tbody td {
+    text-indent: 2em;
+  }
+
+  tbody tr.subtotal {
+    font-weight: bold;
+  }
+
+  .final-total td {
+    text-indent: 0;
+  }
+}
+
+table tbody tr.final-total td {
+  background: $tblFinalTotal;
+  color: white;
+}
+
+table tr.labels th,
+table tbody tr.labels th {
+  background: $borderGray !important;
+}
+
+.total,
+.total td {
+  font-weight: bold;
+}
+
+.total-row {
+  border-top: #bbb solid 1px;
+}
+
+.total-column {
+  border-left: #bbb solid 1px;
+}
+
+.table-cell.money.benefit {
+  background: #c6e8a8;
+  background: rgba(198, 232, 168, 0.75);
+}
+
+.table-cell.money.cost {
+  background: #e1a4a3;
+  background: rgba(255, 164, 163, 0.75);
+}
+
+.table-cell.money.net {
+  background: #c6c6c6;
+  background: rgba(198, 198, 198, 0.75);
+}
+
+.table-cell.money.presentValue {
+  background: #dfdfdf;
+  background: rgba(223, 223, 223, 0.75);
+}
+
+.table-extra-padding {
+  padding-bottom: 21px;
+}
+
+.table-row-group {
+  display: table-row-group;
+}
+
+.table-report {
+  margin: 0 auto 20px auto;
+  width: 400px;
+  .trailing-spaces-dots::before {
+    width: 300px;
+  }
+  .table-section-background {
+    padding: 0 20px;
+  }
+}
+
+.table-report-sidebar {
+  tr {
+    background-color: #dadada;
+  }
+
+  .trailing-spaces-dots::before {
+    width: 150px;
+  }
+}
+
+table td.shrink {
+  white-space: nowrap;
+}
+
+table td.expand {
+  width: 99%;
+}
+
+table .input-box {
+  // background: inherit;
+  // border-radius: 0;
+  padding: 6px 0 6px 0;
+  // margin-top: 10px;
+}
+
+.table-compact td,
+.table-compact th {
+  padding: 0;
+}
+
+.table-compact tr.spacer td {
+  padding: 3px;
+}
+
+/* Table sections component */
+.table-section {
+  overflow: hidden;
+  border: none;
+  font-weight: bold;
+}
+
+.table-section-row {
+  font-size: 15px;
+  font-family: "Montserrat";
+  font-weight: normal;
+  line-height: 25px;
+  td {
+    vertical-align: bottom;
+  }
+  &.footnote {
+    td {
+      font-size: 15px;
+      line-height: 18px;
+    }
+  }
+}
+
+.table-section-row .subtotal {
+  border-top: 2px solid $black;
+  &.orange {
+    border-color: var(--tertiary-brand-color);
+  }
+  &.benefit-blue {
+    border-color: var(--main-brand-color);
+  }
+  &.cost-blue {
+    border-color: var(--secondary-brand-color);
+  }
+  &.incentive-blue {
+    border-color: var(--secondary-brand-color-lighter);
+  }
+  &.incentive-gray {
+    border-color: #666;
+  }
+}
+
+.table-section-row .big {
+  text-transform: uppercase;
+  font-weight: $bold;
+  font-size: 16px;
+  border-bottom: 2px solid $black;
+  &.benefit {
+    border-color: var(--tertiary-brand-color);
+  }
+  &.less-incentives {
+    border-color: var(--tertiary-brand-color-light);
+  }
+  &.benefit-blue {
+    border-color: var(--main-brand-color);
+  }
+  &.cost-blue {
+    border-color: var(--secondary-brand-color);
+  }
+  &.incentive-blue {
+    border-color: var(--secondary-brand-color-lighter);
+  }
+  &.incentive-gray {
+    border-color: #666;
+  }
+}
+
+.table-section-row-border-top td {
+  border-top: 2px solid $black;
+}
+
+.table-section-row-blue {
+  &.table-section-row-border-top {
+    td {
+      border-color: $black;
+    }
+    td.table-section-background {
+      border-color: white;
+    }
+  }
+
+  td {
+    color: $black;
+  }
+  td.table-section-background {
+    background: $black;
+    color: white;
+  }
+}
+
+.table-section-row-light-blue {
+  &.table-section-row-border-top {
+    td {
+      border-color: $ltBlueTable;
+    }
+    td.table-section-background {
+      border-color: white;
+    }
+  }
+
+  td {
+    color: $ltBlueTable;
+  }
+  td.table-section-background {
+    background: $ltBlueTable;
+    color: white;
+  }
+}
+
+.table-section-row-light-light-blue {
+  &.table-section-row-border-top {
+    td {
+      border-color: $ltltBlueTable;
+    }
+    td.table-section-background {
+      border-color: white;
+    }
+  }
+
+  td {
+    color: $ltltBlueTable;
+  }
+  td.table-section-background {
+    background: $ltltBlueTable;
+    color: white;
+  }
+}
+
+.table-section-row-orange {
+  &.table-section-row-border-top {
+    td {
+      border-color: $orangeTable;
+    }
+    td.table-section-background {
+      border-color: white;
+    }
+  }
+
+  td {
+    color: $orangeTable;
+  }
+  td.table-section-background {
+    background: $orangeTable;
+    color: white;
+  }
+}
+
+// .table-section-row-light-orange {
+//   &.table-section-row-border-top{
+//     td {
+//       border-color: $lightOrangeTable;
+//     }
+//     td.table-section-background {
+//       border-color: white;
+//     }
+//   }
+
+//   td {
+//     color: $lightOrangeTable;
+//   }
+//   td.table-section-background {
+//     background: $lightOrangeTable;
+//     color: white;
+//   }
+// }
+
+.table-section-row-grey {
+  &.table-section-row-border-top {
+    td {
+      border-color: #666;
+    }
+    td.table-section-background {
+      border-color: white;
+    }
+  }
+
+  td {
+    color: #666;
+  }
+  td.table-section-background {
+    background: #666;
+    color: white;
+  }
+}
+
+.data-table-container {
+  margin: 10px 0 25px 0;
+  width: 100%;
+  // display: flex;
+  justify-content: center;
+  font-weight: bold;
+  & table {
+    &.labels,
+    .labels th {
+      background-color: $borderGray !important;
+    }
+    & tr {
+      border-bottom: 1px solid $borderGray !important;
+    }
+    width: 90%;
+    & tbody tr {
+      background: #d6d5d0;
+    }
+  }
+}
+
+.tag-card-block {
+  padding: 0 20px 20px;
+  overflow-y: auto;
+}
+
+.tag-tbody {
+  display: block;
+  height: auto;
+  max-height: 200px;
+  overflow-y: auto;
+  & tr {
+    display: inline-block !important;
+    width: 100%;
+    cursor: pointer;
+    & td {
+      min-height: 30px;
+      display: inline-flex !important;
+      justify-content: flex-start !important;
+      align-items: center !important;
+      border: none !important;
+      box-sizing: border-box !important;
+      padding: 0px !important;
+      padding-left: 10px !important;
+      &:hover {
+        background-color: var(--main-brand-color);
+        color: white;
+      }
+    }
+  }
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background: $backgroundGray;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid $slate;
+  }
+}
+
+.tag-row {
+  height: 55px;
+}
+
+.scenario-table-row,
+.data-form-table-row {
+  td {
+    border-top: 0 !important;
+  }
+  td.scenario-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100px;
+  }
+}
+
+table.very-condensed-table {
+  tbody tr td {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  &.scenario-list-table {
+    tbody {
+      min-height: 147px;
+      // max-height: 187px; // makes last scenario cut in half showing overflow better
+      overflow: auto;
+      padding-bottom: 25px; // lets tooltips show under last row
+    }
+
+    tfoot {
+      box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    // &:after {
+    //   content: "";
+    //   position: absolute; top: 0; bottom: 0; left: -15px; right: -15px;
+    //   inset 0 -12px 9px -8px #fff
+    // }
+  }
+  &.data-form-list-table {
+    tbody {
+      min-height: 112px; // makes last scenario cut in half showing overflow better
+      overflow: auto;
+      // padding-bottom: 25px; // lets tooltips show under last row
+    }
+    tfoot {
+      box-shadow: 0px -2px 3px -2px rgba(0, 0, 0, 0.3);
+    }
+  }
+  &.data-form-list-table-1 tbody {
+    min-height: 40px;
+  }
+}
+
+table.tif-edit-table {
+  th {
+    border: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .district-name {
+    padding-bottom: 16px !important;
+    h5.group-name {
+      color: var(--main-brand-color);
+      font-weight: bold;
+      margin-bottom: 0;
+      margin-top: 5px;
+    }
+  }
+  td {
+    vertical-align: top !important;
+  }
+}
+
+// Not currently used
+// .scenario-right-table {
+//   & thead tr th {
+//     &.navy-text {
+//       color: #065066;
+//     }
+//     &.lt-blue-text {
+//       color: #6ab4c7;
+//     }
+//     &.orange-table-text {
+//       color: #d27031;
+//     }
+//     &.text-gray {
+//       color: #666;
+//     }
+//   }
+//   & tbody tr.total-row td {
+//     font-weight: bold;
+//     font-size: 15px;
+//     border: 1px solid #C4C4C4;
+//     background: #C4C4C4;
+//   }
+//   & tbody tr td {
+//     background: none;
+//     &.navy-table {
+//       color: #065066;
+//     }
+//     &.orange-table {
+//       color: #d27031;
+//     }
+//     &.lt-blue-table {
+//       color: #6ab4c7;
+//     }
+//     &.gray-table {
+//       color: #666;
+//     }
+//   }
+// }
+
+.table-graph-toggle {
+  text-align: right;
+  padding: 10px 10px 4px 10px;
+
+  .inactive:hover {
+  }
+}
+
+.ps-abatements-table {
+  & thead tr th {
+    &.year {
+      color: #666;
+    }
+    &.liability {
+      color: #005167;
+    }
+    &.abatement {
+      color: #3c8aa1;
+    }
+    &.net {
+      color: #d2702f;
+    }
+  }
+  & tbody tr td {
+    &.navy-table {
+      color: #005167;
+    }
+    &.orange-table {
+      color: #d2702f;
+    }
+    &.lt-blue-table {
+      color: #3c8aa1;
+    }
+    &.gray-table {
+      color: #666;
+    }
+  }
+
+  & tbody tr.total-row td {
+    font-weight: bold;
+    font-size: 15px;
+    border: 1px solid #c4c4c4;
+    background: #c4c4c4;
+  }
+}
+
+.project-documents-table {
+  & tbody {
+    max-height: 200px;
+    tr td {
+      background: $light-shades;
+    }
+  }
+}
+
+#upload-progress-bar {
+  margin-top: -5px;
+}
+
+.tags-list-body tr td {
+  height: 40px;
+  cursor: pointer;
+}
+
+table.dynamic-row-content {
+  height: 75%;
+  thead {
+    border-bottom: 1px solid $panel-border-color;
+  }
+  tbody {
+    border-top: 1px solid $panel-border-color;
+    border-bottom: 1px solid $panel-border-color;
+    // overflow: auto;
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+      outline: 1px solid $slate;
+    }
+    .scenario-list-tbody {
+      height: 200px;
+      display: block;
+      overflow-y: auto;
+      background: white;
+    }
+    &.documents-tbody,
+    &.tags-list-body {
+      // height: 220px;
+      display: block;
+      overflow-y: auto;
+      border-top: 1px solid $panel-border-color;
+      border-bottom: none;
+      background: white;
+      & tr:last-child {
+        border-bottom: none;
+        margin-bottom: 2px;
+        &:hover {
+          box-shadow: 0px 5px 8px 4px rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+    & tr {
+      box-sizing: border-box;
+      border-bottom: 1px solid $panel-border-color;
+      width: 100%;
+      td {
+        background: none;
+        border: none;
+        padding: 12px;
+      }
+      &.active {
+        color: inherit;
+        .fa-eye {
+          color: $orange;
+        }
+      }
+      &:first-child {
+        border-top: none;
+      }
+      &:hover {
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
+        background: none;
+        .add-border {
+          border-left: 1px solid $panel-border-color;
+          border-right: 1px solid $panel-border-color;
+          border-top: none;
+          border-bottom: none;
+          margin: 0 -1px; // keeps content from being squished
+        }
+        &:first-child {
+          border-top: 1px solid $panel-border-color;
+          margin-top: -1px; // offsets border
+        }
+        td {
+          border-bottom: none !important;
+        }
+        & td.tags-td .row-tag-container {
+          overflow: visible;
+          max-height: none;
+          height: auto;
+        }
+      }
+    }
+  }
+  & tfoot {
+    border-top: 1px solid $panel-border-color;
+  }
+}
+
+// Override pages default from pages/scss/mdules/_tables.scss
+// Note: they use important for some of their stuff so we might have to also
+
+/* Generic Tables
+------------------------------------
+*/
+
+.table {
+  margin: 5px auto;
+  margin-bottom: 0;
+  thead {
+    tr {
+      th {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-family: "Montserrat";
+        font-size: 10.5px;
+        letter-spacing: 0.06em;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        vertical-align: bottom;
+        border-bottom: 1px solid fade-out($color-master-light, 0.3);
+        color: fade-out($color-master-dark, 0.15);
+        border-top: none;
+        &[class*="sorting_"] {
+          color: $color-master-dark;
+        }
+        &:first-child {
+          padding-left: 18px !important;
+        }
+        .btn {
+          margin-top: -20px;
+          margin-bottom: -20px;
+        }
+      }
+    }
+    tr.spacer {
+      background: $dashboard-background;
+      th {
+        height: 5px;
+        padding: 0 !important;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        background: #fff;
+        border-bottom: 1px solid fade-out($color-master-light, 0.3);
+        border-top: 1px solid fade-out($color-master-light, 0.3);
+        // border-top: 0px;
+        padding: 12px;
+        font-size: 13.5px;
+        vertical-align: middle;
+        .btn-tag {
+          background: fade-out($color-master-dark, 0.93);
+          display: inline-block;
+          margin: 5px;
+          border-radius: 4px;
+          padding: 5px;
+          color: #62605a !important;
+          &:hover {
+            background: fade-out($color-master-dark, 0.85);
+          }
+        }
+        &[class*="sorting_"] {
+          color: #000;
+        }
+        .checkbox label::after {
+          left: 0.5px;
+        }
+      }
+      &.selected td {
+        // background: $color-warning-lighter;
+        background: $dashboard-background;
+      }
+    }
+  }
+  &.table-hover {
+    tbody {
+      tr {
+        &:hover td {
+          // background: $color-complete-lighter !important;
+          background: #fff !important; // OVERRIDE
+        }
+        &.selected:hover td {
+          // background: $color-warning-lighter !important;
+          background: $dashboard-background !important;
+        }
+      }
+    }
+  }
+  &.table-striped {
+    tbody {
+      tr {
+        td {
+          background: $body-background !important;
+        }
+        &:nth-child(2n + 1) td {
+          background: #fff !important;
+        }
+      }
+    }
+  }
+  &.table-borderless {
+    tbody {
+      tr {
+        td {
+          border-top: 0;
+        }
+      }
+    }
+  }
+  // custom to IDS
+  &.table-less-padding {
+    thead {
+      tr {
+        th {
+          padding: 8px 10px;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          padding: 8px 10px;
+        }
+      }
+    }
+    thead tr th,
+    tbody tr td,
+    tbody tr td * {
+      vertical-align: middle;
+    }
+  }
+  &.table-condensed {
+    &.table-scroll {
+      table-layout: auto; // overridding default
+    }
+    thead {
+      tr {
+        th {
+          padding: 8px 10px;
+          // padding-left: 8px;
+          // padding-right: 8px;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          padding: 8px 10px;
+          // padding-top: 8px;
+          // padding-bottom: 8px;
+          // padding-left: 8px;
+          // padding-right: 8px;
+        }
+      }
+    }
+    thead tr th,
+    tbody tr td,
+    tbody tr td * {
+      white-space: nowrap;
+      vertical-align: middle;
+      overflow: inherit;
+      // text-overflow: ellipsis;
+    }
+    &.table-detailed {
+      & > tbody > tr {
+        &.shown {
+          & > td {
+            background: $color-warning-lighter;
+            &:first-child:before {
+              @include rotate(90deg);
+            }
+          }
+          & + tr {
+            & > td {
+              background: fade-out($body-background, 0.6);
+              padding: 0px 40px;
+              .table-inline {
+                margin-top: 13px;
+                margin-bottom: 13px;
+                background: transparent;
+                tr,
+                td {
+                  background: transparent;
+                  font-weight: 600;
+                }
+              }
+            }
+          }
+        }
+        &.row-details {
+          & > td {
+            &:first-child:before {
+              content: "";
+              display: none;
+            }
+          }
+        }
+        & > td {
+          &:hover {
+            cursor: pointer;
+          }
+          &:first-child:before {
+            content: "\f054";
+            display: inline-block;
+            margin-right: 8px;
+            font-size: 8px;
+            top: -1px;
+            position: relative;
+            font-family: '"Font Awesome 5 Pro"';
+            @include transition(all 0.12s linear);
+          }
+        }
+      }
+      .table-inline {
+        td {
+          border: none;
+          text-align: left;
+        }
+      }
+    }
+  }
+  &.table-borderless {
+    & > tbody {
+      & > tr {
+        & > td {
+          border-bottom: 0px;
+        }
+      }
+    }
+  }
+}
+
+table.data-table tbody tr td.td-input {
+  padding: 4px;
+  input {
+    min-height: 27px;
+    height: 27px !important;
+  }
+}
+
+.markdown-input table,
+.markdown-text table {
+  @extend .table, .data-table;
+  margin: 10px auto;
+  width: inherit;
+}

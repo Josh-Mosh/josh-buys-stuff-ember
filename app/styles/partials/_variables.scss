@@ -1,0 +1,152 @@
+//NEW DESIGN
+
+$sectionShadow: 0 1px 2px 0 rgba(0, 0, 0, 0.46);
+$side-nav-inactive: rgb(133, 133, 142) !default;
+
+$altLogoGrey: #5C6670;
+
+
+//COLORS
+//
+$black: #35393D !default;
+$white: #FFFFFF !default;
+$backgroundGray: #F5F5F5 !default;
+$borderGray: $panel-border-color !default;
+$secondaryGray: #EDEDED !default;
+$blackInactive: rgba(53, 57, 61, 0.5) !default;
+$textDisabled: rgba(53, 57, 61, 0.8) !default;
+$linkBlue: $logo-blue !default;
+$successGreen: #009730 !default;
+$yellowModified: $color-warning-lighter;
+// $yellowModified: #F9F1C9;
+
+
+// trying to consolidate and eliminate unused colors over time
+// COLORS
+// ------
+$orange: #e78339;
+// $orangeBright: #f5a623;
+// $green: #026700;
+// $ltNavy: #3b8ca3;
+// $navy: $logo-blue;
+// $turquoise: #2686a8;
+$ltBlue: #e6f3f5;
+$ltGray: #efefef;
+$mdGray: #dadada;
+$dkGray: #797979;
+// $orangeText: #f5a623;
+$ltBlueTable: #118DAE;
+$ltltBlueTable: #9cccda;
+$orangeTable: #f38c4d;
+$lightOrangeTable: #ffa937;
+$dkGraySidebar: #4a4a4a;
+// $mdGraySidebar: #9b9b9b;
+
+$nltBlue: #2F6C7D;
+$nltBlueHover: darken($nltBlue, 30%);
+$ndkGray: #7d848c;
+$ndkGrayHover: #333;
+$ndkBlue: #055168;
+$ndkBlueHover: darken($ndkBlue, 10%);
+$nltBorderGray: #d8d5d0;
+
+// FONT WEIGHTS
+// ------------
+
+$light: 300;
+$normal: 400;
+$semiBold: 500;
+$bold: 600;
+$heavy: 900;
+
+
+// FONTS
+// -----
+
+$helveticaNu: helvetica-neue, helvetica, arial, sans-serif;
+$sourceSans: "source sans pro", $helveticaNu;
+
+$segoe: 'Segoe UI', 'Open Sans', Helvetica, sans-serif;
+$segoe-semibold: 'Segoe UI Semibold', 'Open Sans', Helvetica, sans-serif;
+$segoe-bold: 'Segoe UI Bold', 'Open Sans', Helvetica, sans-serif;
+$segoe-light: 'Segoe UI Light', 'Open Sans', Helvetica, sans-serif;
+
+$fontAwesomeLight: "Font Awesome 5";
+
+// SPACING
+// -------
+$baseNum: 10px;
+$default-radius: 5px;
+
+/* New colors */
+$bgPrimaryDark: #d6d5d0; /* dark gray */
+$bgPrimaryLight: #e5e2dd; /* light gray */
+$bgPrimaryDarkHover: darken($bgPrimaryDark, 10%);
+$bgPrimaryLightHover: darken($bgPrimaryLight, 10%);
+
+// $black: #065168; /* dark blue */
+$black: #35393D; /* black */
+$blackActive: #d27031; /* orange */
+$blackComponent: white; /* used in buttons, accordions, etc */
+$txtPrimary: #065168; /* dark blue */
+$txtSecondary: #118DAE; /* light blue */
+$txtSecondaryDimmed: #7d848a; /* dark gray */
+
+$btnPrimary: #35393D; // black
+$btnSecondary: rgba(0, 0, 0, 0); //transparent
+$btnDefault: #35393D; // black
+$btnPlainColor: #666;
+$btnPrimaryHover: darken($btnPrimary, 10%);
+$btnSecondaryHover: opacify($btnSecondary, .1);
+$btnDefaultHover: darken($btnDefault, 10%);
+$btnPlainHover: #333;
+
+$iconColor: #303030;
+$iconColorHover: darken($iconColor, 10%);
+
+// Graph Elements
+// ------------
+
+//Net Benefits
+$barBenefits: $logo-blue;
+$barBenefitsHover: darken($barBenefits, 10%);
+$barCostText: $ltBlueTable;
+// $barCost: $ltBlueTable; // this is closer to mock up of newly designed scenario info page
+$barCost: $ltltBlueTable; // this is closer to new project page tile layout
+$barCostHover: darken($barCost, 5%);
+$barCostIncentive: $ltltBlueTable;
+$barCostIncentiveHover: darken($barCostIncentive, 10%);
+// $incentiveCostLinePath: #C2C923;
+$netLessIncentives: $lightOrangeTable;
+$netLessIncentivesHover: darken($netLessIncentives, 10%);
+
+//Incentives
+$barIncentive: $logo-blue;
+$barIncentiveHover: #014254;
+$incentiveLinePath: $logo-blue;
+
+$nonTaxIncentive: #5B5D5F;
+
+//General
+$graphLine: #d2702f;
+$graphLineHover: darken($graphLine, 10%);
+$graphAxisLine: #c0c0c0;
+$graphAxisText: $txtSecondaryDimmed;
+$graphBackground: $bgPrimaryDark;
+
+$graphNavDark: #aac5ce;
+$graphNavLight: #bdd1d8;
+
+// Login
+
+$txtPasswordLink: #7d8f9a;
+
+// Tables
+// ------------
+
+$tblTitle: rgba(49,134,155,1);
+$tblLabels: rgba(243,243,243,1);
+$tblBorders: rgba(242,242,242,1);
+$tblSubTotal: rgba(166,166,166,1);
+// $tblFinalTotal: rgba(33,89,103,1);
+$tblFinalTotal: #5C6670;

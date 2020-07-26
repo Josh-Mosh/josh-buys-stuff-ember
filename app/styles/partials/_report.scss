@@ -1,0 +1,605 @@
+.economic-impact-sidebar {
+  height: 100%;
+}
+
+.ei-component {
+  display: inline-block;
+  font-size: 14px;
+  text-align: left;
+  &:last-child .net-benefits-sidebar {
+    margin-bottom: 0 !important;
+  }
+
+  h5.ei-header {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--main-brand-color);
+    text-transform: uppercase;
+  }
+
+  h3.bold {
+    font-size: 140%;
+    margin: 0;
+    line-height: 30px;
+  }
+
+  svg {
+    color: var(--main-brand-color);
+    cursor: inherit;
+  }
+}
+
+.report .district-name {
+  color: white !important;
+  background: var(--main-brand-color);
+  font-family: 'Montserrat' !important;
+  font-size: 20px;
+  padding: 8px;
+  font-weight: $bold;
+}
+
+.summary .net-benefits-sidebar {
+  padding: 0 10px 10px;
+  border-radius: 1px;
+  font-family: 'Montserrat';
+  max-width: 300px;
+  margin: 0 auto 5px;
+
+  .residential { // residential box only has 2 totals and no big bold so have to make up the space w/ padding
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+// like the residential ei-component above, cap invest only has 2 totals, so we have to make up the space but also want to hide the usually invisible div
+.report {
+  .cap-invest {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    .invisible {display: none;}
+  }
+}
+
+// .summary-selector {
+//   margin-left: 5%;
+//   position: absolute;
+//   padding-left:0;
+
+//   .input-box{
+//     position: relative;
+//     top:-8px;
+//     width:100%;
+//   }
+// }
+.report-buttons {
+  margin: 10px 5% 5px;
+  width: 100%;
+  z-index: 800;
+  i {
+    margin-right: 10px;
+  }
+}
+
+.report-detailed {
+  h4 {
+    font-weight: bold;
+  }
+}
+
+p.col-11, ol.col-11, .report-table.col-11  {
+  padding: 0;
+  margin-right: auto;
+  margin-left: auto;
+  li {
+    margin-inline-start: 3em;
+  }
+}
+
+.report-table {
+  .title {
+    font-size: 12px;
+    font-weight: bold;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+
+.report {
+  background: #fff;
+  border: 1px solid $ltGray;
+  -moz-box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.23);
+  box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.23);
+  margin: 0 5% 15px;
+  position: relative;
+  width: 100%;
+
+  .data-table {
+    margin-top: 0px;
+    padding-top: 10px;
+  }
+
+  .sub {
+    color: $dkGray;
+    margin: 0px;
+    padding: 0 5px;
+  }
+
+  .alt-logo {
+    max-width: 150px;
+    width: 100%;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .section-header {
+    border-bottom: 1px solid $dkGray;
+    display: block;
+    margin: 15px 0px;
+  }
+
+  .report-description {
+    max-width: 530px;
+    margin: 0 auto 20px auto;
+  }
+
+  .report-inner {
+    padding: 20px 5%;
+
+    .small {
+      margin: 0 auto;
+      max-width: 500px;
+    }
+
+    .med {
+      margin: 0 auto;
+      max-width: 700px;
+    }
+
+    .large {
+      margin: 0 auto;
+      max-width: 900px;
+    }
+
+    p.sub {
+      color: $dkGray;
+      font-size: 14px;
+      padding: 0 5px;
+    }
+  }
+
+}
+
+.sub {
+  color: $dkGray;
+  font-size: 14px;
+  margin: 0px;
+  padding: 0 5px;
+}
+
+.summary .summary-body-middle,
+.summary .summary-body-bottom {
+  margin-top: 15px;
+}
+
+.report-footer {
+  background: white;
+  // bottom: 20px;
+  // right: 20px;
+  // position: absolute;
+  text-align: right;
+
+  &.detailed {
+    position: relative;
+    padding: 0 5%;
+  }
+}
+
+.footer-placeholder {
+  height: 120px;
+  background: white;
+}
+
+.report-tabs {
+
+  &.report-tabs a:first-child {
+    margin-left: 7%;
+  }
+
+  a {
+    background: #ddd;
+    border: 1px solid #efefef;
+    border-bottom: 0;
+    bottom: -1px;
+    display: inline-block;
+    padding: 10px;
+    margin-left: 4px;
+    position: relative;
+    text-decoration: none;
+    //hide box-shadow overit
+    z-index: 0;
+  }
+}
+
+.net-benefits-container h4 {
+  margin-top: 10px !important;
+}
+
+.net-benefits-box, .report-box {
+  background: #eef7f9;
+  border: 1px solid #D0DCDE;
+  clear: both;
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+  width: 100%;
+
+  &.nopadding {
+    padding: 0;
+  }
+
+  // table {
+  //   font-family: "source sans pro";
+  // }
+
+  th {
+    background-color: #eef7f9;
+  }
+
+  tr.odd {
+    background: #DFDFDF;
+  }
+
+  tr.even {
+    background: #fff;
+  }
+
+  td {
+    text-align: right;
+    padding: 5px;
+    border: 1px solid #9F9F9F;
+  }
+}
+
+table.report-values {
+
+  .value-group {
+
+    td {
+      padding: 5px 10px;
+      text-align: center;
+      vertical-align: bottom;
+      width: 25%;
+    }
+
+    .report-header {
+      font-size: 1.2em;
+    }
+
+    i {
+      color: #3B8CA3;
+    }
+  }
+}
+
+.summary-section-header {
+  font-size: 16px !important;
+  font-weight: $bold !important;
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.nb-distribution-header {
+  text-align: center;
+  border-bottom: 2px solid var(--tertiary-brand-color);
+  margin-bottom: 10px;
+  padding: 0;
+  line-height: 25px;
+  &.less-incentives {
+    border-bottom: 2px solid var(--tertiary-brand-color-light);
+  }
+}
+
+.distribution-graph-container {
+  position: absolute;
+  height: 100px;
+  width: 50%;
+  bottom: 0;
+  right: 0;
+}
+
+.report-header {
+  .project-title {
+    color: var(--main-brand-color);
+  }
+  h3.scenario-title {
+    &.detailed {
+      font-size: 20px !important;
+    }
+  }
+}
+
+.summary .report-header {
+  .project-title, .scenario-title {
+    @include line-clamp(2);
+  }
+}
+
+.footer-subtitle {
+  overflow: hidden;
+  @include line-clamp(2);
+  text-align: right;
+}
+
+// .report-header h4.district-name {
+//   color: white !important;
+//   background: $logo-blue;
+//   font-weight: bold;
+// }
+
+.report-navigate-container {
+  margin: 0 5% 5px 5%;
+}
+
+.incentives-summary-card {
+  background: $ltGray;
+  text-align: center;
+  table.incentives-graph-header {
+    display: inline-block;
+    td {
+      border: 1px solid black;
+      width: 100%;
+    }
+  }
+  .incentive-headers {
+    width: 100%;
+    // height: 200px;
+    padding: 10px 25px;
+    > div {
+      flex: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-color: darken($color-master-light, 10%) !important;
+      padding: .75rem;
+      h4 {
+        font-size: 18px;
+        font-weight: $bold;
+        margin: 0;
+      }
+      h6 {
+        margin: 0;
+      }
+    }
+
+    .community-header {
+      padding: 5px;
+    }
+    .community-hr {
+      margin: 0 auto;
+      border-color: darken($color-master-light, 10%);
+      width: 80%;
+      text-align: center;
+    }
+  }
+}
+
+.incentives-summary-analysis {
+  background: $ltGray;
+  text-align: center;
+  margin-bottom: 15px;
+
+  .legend-item {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-color: darken($color-master-light, 10%) !important;
+    padding: .75rem 0;
+    p {
+      text-align: center;
+      font-family: 'Montserrat';
+      margin-bottom: 0;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 15px;
+    }
+    span {
+      display: inline-block;
+      width: 120px;
+      height: 3px;
+      margin: 3px;
+      &.incentive {
+        background: var(--secondary-brand-color);
+      }
+      &.liability {
+        background: var(--main-brand-color);
+      }
+      &.net {
+        background: var(--tertiary-brand-color);
+      }
+    }
+  }
+
+  .legend {
+    .legend-bullet {
+      height: 5px;
+      width: 40px;
+      margin-bottom: 5px;
+      margin-right: 0;
+      &.liability {
+        background-color: var(--main-brand-color);
+      }
+      &.incentive {
+        background-color: var(--secondary-brand-color);
+      }
+      &.net {
+        background-color: var(--tertiary-brand-color);
+      }
+    }
+  }
+}
+
+.print-only {
+  display: none;
+}
+
+
+//Firefox pdf print fixes
+.firefox-report .report  {
+  .trailing-spaces-dots::before{
+    content: "";
+  }
+  .economic-impact-dark .media .left .fa::before {
+    content: "";
+  }
+}
+
+@media (max-width: 70em) {
+
+  .report.summary {
+    .economic-impact {
+      font-size: 12px;
+    }
+    .table-report .trailing-spaces-dots::before {
+      width: 200px;
+    }
+    .value-group {
+      .report-value {
+        font-size: 18px;
+      }
+      .report-label {
+        font-size: 14px;
+      }
+    }
+    .legend .legend-item {
+      font-size: 12px;
+    }
+  }
+
+}
+
+.fact-sheet {
+  width: 100%;
+
+  .section-heading {
+    font-family: 'Montserrat';
+    font-size: 16px;
+    border-bottom: 2px solid var(--main-brand-color);
+    font-weight: bold;
+    padding-top: 10px;
+    text-transform: uppercase;
+
+    &.secondary {
+      border-color: $mdGray;
+    }
+  }
+
+  .side-heading {
+    font-family: 'Montserrat';
+    font-size: 14px;
+  }
+
+  // .net-benefits-sidebar-wrapper {
+  //   background: gray !important;
+  //   height: 100%;
+  // }
+
+  .net-benefits-sidebar {
+    border-radius: 1px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat';
+    height: 100%;
+    justify-content: start;
+    margin: 0 auto 5px;
+    max-width: 100%;
+    padding: 0 10px 10px;
+
+    h2 {
+      margin: 0;
+    }
+
+    .ei-component {
+      width: 100%;
+    }
+
+    .net-benefits-label {
+      font-size: 12px;
+      line-height: 14px;
+      &:first-child {
+        margin-top: .5rem;
+      }
+    }
+  }
+
+  .fact-sheet-table {
+    text-align: left;
+    td {
+      padding-top: 5px;
+      font-family: $segoe;
+      &.property-name {
+        font-weight: 600;
+        font-size: 13px;
+        text-transform: uppercase;
+      }
+      &.property-value {
+        font-size: 13px;
+      }
+    }
+  }
+
+  .category-selection {
+    font-size: 19px;
+    font-weight: 900;
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+  }
+
+  .category-name {
+    font-size: 14px;
+    margin-bottom: 1rem;
+  }
+
+  hr {
+    border-color: $mdGray !important;
+    border-width: 2px;
+  }
+  .map-heading {
+    font-family: 'Montserrat';
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-top: .25rem;
+  }
+  .project-location-map {
+    height: 202px;
+    padding: 0 1px 1px 0;
+  }
+  .fact-sheet-table-small {
+    td {
+      font-size: 1em;
+
+      &.property-name {
+        text-transform: none;
+      }
+    }
+    @media (max-width: 800px) {
+      td {
+        font-size: 0.6em;
+      }
+    }
+    @media (max-width: 1024px) {
+      td {
+        font-size: 0.8em;
+      }
+    }
+  }
+}
+

@@ -1,0 +1,106 @@
+// BOX SHADOW
+// -----------
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+
+// ARROW BOX
+// -----------
+@mixin arrow-box($background, $border, $size) {
+
+  position: relative;
+  background: $background;
+  border: $border;
+
+  &:after, &:before {
+    bottom: 100%;
+    left: 3%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &:after {
+    border-color: rgba(230, 243, 245, 0);
+    border-bottom-color: #e6f3f5;
+    border-width: $size;
+    margin-left: $size + 4;
+  }
+
+  &:before {
+    border-color: rgba(194, 225, 245, 0);
+    border-bottom-color: #c2e1f5;
+    border-width: $size + 4;
+    margin-left: $size;
+  }
+
+}
+@mixin arrow-box-bot($color, $size) {
+  &:after, &:before {
+    border-bottom-color: transparent;
+    bottom: inherit;
+    top: 100%;
+  }
+  &:after {
+    border-top-color: $color;
+    border-width: $size + 4;
+  }
+  &:before {
+    border-bottom-color: $color;
+    border-width: 0;
+  }
+}
+@mixin arrow-box-right() {
+  &:after {
+    right: 5%;
+    left: inherit;
+  }
+}
+
+@mixin line-clamp($lineCount: 2) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $lineCount;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+}
+
+// multi-line ellipsis (aligns text justify which we don't like, so only use as last resort)
+// http://hackingui.com/front-end/a-pure-css-solution-for-multiline-text-truncation/
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white) {
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount;
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 1em;
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: $bgColor;
+  }
+}

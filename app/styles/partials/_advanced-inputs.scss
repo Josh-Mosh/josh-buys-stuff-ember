@@ -1,0 +1,317 @@
+// advanced and cascading inputs
+// .table-container {
+//   width: 100%;
+//   overflow: hidden;
+//   clear: both;
+//   text-align: center;
+// }
+
+.collapsable {
+  // @include transition(max-height 500ms linear);
+  display: inline-block;
+  // max-height: 75px;
+  // overflow: hidden;
+  vertical-align: top;
+
+  // &.basic {
+  //   padding: 0;
+  //   margin: 0;
+  // }
+
+  //any reason for max height here??
+  // &.advanced {
+  //   // max-height: 999px;
+  //   max-height: 100%;
+  // }
+
+  &.large-theader {
+    max-height: 110px;
+
+    &.advanced {
+      max-height: 100%;
+      margin-left: -1px;
+    }
+  }
+}
+
+.collapsable:first-child {
+  // font-family: 'Montserrat';
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.multiple-table {
+  display: table;
+  border: collapse;
+  width: 100%;
+  clear: both;
+
+  &.centered {
+    width: auto;
+    margin: auto;
+  }
+
+  &.multi-column {
+    width: 100%;
+    max-width: 160px;
+    padding: 0;
+
+    .table-cell {
+      width: 125px;
+    }
+  }
+
+  .theader {
+    justify-content: start;
+    position: relative;
+    font-family: 'Montserrat';
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    .title  {
+      bottom: 5px;
+    }
+
+    .year {
+      padding-left: 10px;
+      bottom: 5px;
+    }
+  }
+
+  // for inline checkbox headers
+  .bigheader {
+    height: 33px;
+    padding-top: 5px !important;
+    white-space: nowrap;
+    .year {
+      bottom: 5px;
+    }
+  }
+
+  // for block checkbox headers
+  .realbigheader {
+    height: 47px;
+    padding-top: 5px !important;
+    .year {
+      bottom: 0px;
+      margin-bottom: -2px;
+    }
+  }
+
+  // for 2 line block checkbox headers
+  .realrealbigheader {
+    height: 68px;
+    padding-top: 5px !important;
+    .year {
+      bottom: 0px;
+      margin-bottom: -2px;
+    }
+  }
+
+  .table-row {
+    display: table-row;
+    width: 100%;
+    height: 1.3125rem;
+    vertical-align: top;
+  }
+
+  .form-group label {
+    cursor: pointer;
+  }
+}
+
+// input borders
+.multiple-table {
+
+  // give first input rounded top borders
+  .table-row:nth-of-type(2) input {
+    border-top: 1px solid $form-control-border-color !important;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+  }
+
+  // give last input rounded bottom borders
+  .bottom-radius, .table-row:nth-last-of-type(1) input {
+    border-bottom-left-radius: 2px !important;
+    border-bottom-right-radius: 2px !important;
+  }
+
+}
+
+.horizontal-table {
+  .table-row {
+    display: flex;
+    height: auto;
+  }
+  .table-cell {
+    width: 146px;
+  }
+}
+
+.complex-cascading {
+  .form-control.percent {
+    width: 125px;
+  }
+}
+
+.capital-investment,
+.activity-spending {
+  .multi-column .table-cell,
+  .form-control.percent {
+    width: 100px;
+  }
+}
+
+.heightFix {
+  position: relative;
+  height: 30px;
+
+  div {
+    position: absolute;
+    bottom: 0;
+  }
+  .center-child-1 {
+    width: 100%;
+  }
+}
+
+.capital-investment .heightFix {
+  height: 70px;
+}
+
+.table-row .table-cell {
+  // padding: 1px 0;
+  padding: 0;
+
+  input {
+    text-align: right;
+    padding-right: 7px;
+    border-radius: 0;
+    border-top: 0;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  &.table-cell-full {
+    input {
+      width: 100%;
+    }
+  }
+
+  &.table-cell-left {
+    input {
+      text-align: left;
+      padding-left: 7px;
+    }
+  }
+}
+
+// year labels
+.table-row .text-cell {
+  padding: 9px 5px 10px;
+  line-height: 16px;
+  text-align: right;
+  min-width: 45px;
+}
+
+.table-cell.total {
+  line-height: 34px;
+  height: 35px;
+  font-weight: $bold;
+  padding: 0px 9px 2px 2px;
+  font-size: 14px;
+  text-align: right;
+}
+
+.table-cell.row-total {
+  padding: 0px 0px 1px;
+  min-width: 80px;
+}
+
+.total-extra-padding {
+  padding-top: 28px !important;
+  line-height: 18px !important;
+}
+
+.center-parent {
+  position: relative;
+  .center-child-1 {
+    position: absolute;
+    left: 50%;
+  }
+  .center-child-2 {
+    position: relative;
+    left: -50%;
+    text-align: center;
+  }
+}
+
+.abatements {
+  .multi-column {
+    .table-cell {
+      width: 80px;
+    }
+  }
+}
+
+// .cascading.input-component {
+//   max-width: 212px;
+
+//   // input {
+//   //   font-size: 16px;
+//   // }
+// }
+
+.cascading-input-left {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.cascading-input-right {
+  display: inline-block;
+  padding-left: 30px;
+  vertical-align: top;
+
+  .input-component {
+    // float: right;
+    // margin: auto;
+    width: 175px;
+  }
+}
+
+// .columnd {
+//   margin-top: 0px;
+//   .title {
+//     padding-bottom: 3px;
+//     // font-size: 13px;
+//     font-family: 'Montserrat';
+//     font-size: 10.5px;
+//     letter-spacing: 0.06em;
+//     text-transform: uppercase;
+//     font-weight: 500;
+//   }
+// }
+
+.table-cell .center-child-1 {
+  .checkbox-custom-1 {
+    margin-bottom: 0;
+    label {
+      padding-left: 25px !important;
+    }
+  }
+}
+
+table.advanced-input-table, table.cascading-input-table {
+  td {
+    border: 1px solid black;
+    padding: 4px;
+  }
+}
+
+.scenario-input-question label {
+  font-family: Montserrat;
+}

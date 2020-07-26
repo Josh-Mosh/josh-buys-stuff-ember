@@ -1,0 +1,831 @@
+
+.collapsable-chart {
+  // @include transition(max-height 1000ms linear);
+  max-height: 0px;
+  overflow: hidden;
+
+  &.advanced {
+    max-height: 250px;
+  }
+}
+
+svg {
+  overflow: visible;
+  .overlay,
+  .graph-bg {
+    pointer-events: all;
+    fill: none;
+  }
+
+  .overlay {
+    z-index: 999999;
+  }
+
+  g.tick,
+  .incentive-line,
+  .line {
+    pointer-events: none;
+  }
+}
+
+.distribution-graph-summary {
+  .bar {
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    background: $altLogoGrey;
+    font-weight: $bold;
+    height: 25px;
+    overflow-x: visible;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-family: 'Montserrat';
+    font-size: 15px;
+  }
+}
+
+.distribution-bar.net {
+  &.benefit {
+    fill: var(--tertiary-brand-color);
+    &:hover {
+      fill: var(--tertiary-brand-color-hover);
+    }
+  }
+  &.cost {
+    fill: var(--tertiary-brand-color-dark);
+    &:hover {
+      fill: var(--tertiary-brand-color-dark-hover);
+    }
+  }
+
+}
+
+.distribution-bar.net-less-incentives {
+  &.benefit {
+    fill: var(--tertiary-brand-color-light);
+    &:hover {
+      fill: var(--tertiary-brand-color-light-hover);
+    }
+  }
+  &.cost {
+    fill: var(--tertiary-brand-color-light-dark);
+    &:hover {
+      fill: var(--tertiary-brand-color-light-dark-hover);
+    }
+  }
+}
+
+
+svg .bar.benefit {
+  fill: var(--main-brand-color);
+  &:hover {
+    fill: var(--main-brand-color-hover);
+  }
+}
+
+svg .bar.cost  {
+  fill: var(--secondary-brand-color);
+  &:hover {
+    // fill: $barCostHover;
+    fill: var(--secondary-brand-color-hover);
+    // fill: darken($light-accent, 20%);
+  }
+}
+
+svg .bar.incentive {
+  fill: var(--secondary-brand-color-lighter);
+  &:hover {
+    fill: var(--secondary-brand-color-lighter-hover);
+  }
+}
+
+svg .diamond {
+  fill: var(--tertiary-brand-color-light);
+  &:hover {
+    fill: var(--tertiary-brand-color-light-hover);
+  }
+}
+
+svg .point {
+  fill: var(--tertiary-brand-color);
+  &:hover {
+    fill: var(--tertiary-brand-color-hover);
+  }
+}
+
+svg .line {
+  fill: none;
+  stroke-width: 2px;
+  stroke: var(--tertiary-brand-color);
+}
+
+svg .lineNoIncentives {
+  fill: none;
+  stroke-width: 2px;
+  stroke: var(--tertiary-brand-color-light);
+}
+
+svg .focus {
+  circle {
+    stroke: var(--tertiary-brand-color);
+  }
+  &.incentive-focus circle {
+    stroke: #5B5D5F;
+  }
+  text {
+    fill: #fff;
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+svg .axis {
+  fill: none;
+  stroke: #404040;
+}
+
+svg .axis text {
+  stroke: none;
+  font-size: 12px;
+}
+
+svg .axis.y text {
+  fill: $txtSecondaryDimmed;
+  font-weight: $bold;
+  text-align: right;
+}
+
+svg .axis.x text {
+  fill: $txtSecondaryDimmed;
+  font-weight: $bold;
+  font-size: 11px;
+}
+
+svg .axis path {
+  display: none;
+}
+
+svg .axis .tick line {
+  stroke: $graphAxisLine;
+  stroke-width: 1px;
+  shape-rendering: crispedges;
+}
+
+svg .axis .tick.emphasized line {
+  stroke: #585858;
+  stroke-width: 2px;
+}
+
+.incentives-graph {
+  // margin: 10px 0 20px 0;
+
+  .incentive-line {
+    stroke: $nonTaxIncentive;
+    stroke-width: 6px;
+  }
+
+  .incentive-bar {
+    fill: $nonTaxIncentive;
+    &:hover {
+      fill: darken($nonTaxIncentive, 10%);
+    }
+  }
+
+}
+
+.summary-report-incentives-graph {
+  margin-left: -15px;
+  text-align: center;
+  svg {
+    margin-bottom: 0;
+    g.x.axis g.tick {
+      visibility: hidden;
+    }
+    g.x.axis {
+      // g:first-of-type,
+      g.payback-period,
+      g:last-of-type {
+        visibility: visible;
+      }
+    }
+    .axis {
+      path {
+        display: block;
+        stroke: #C5C5C5;
+      }
+    }
+  }
+
+  .incentives-graph {
+    .incentive-line {
+      stroke: $nonTaxIncentive;
+    }
+    .incentive-bar {
+      fill: $nonTaxIncentive;
+      &:hover {
+        fill: darken($nonTaxIncentive, 10%);
+      }
+    }
+  }
+}
+
+.rebates-graph {
+  margin: 10px 0 20px 0;
+
+  .abatements-bar.liability {
+    fill: var(--main-brand-color);
+    &:hover {
+      fill: var(--main-brand-color-hover);
+    }
+  }
+
+  .abatements-bar.rebated, .abatements-bar.rebated.liability {
+    fill: var(--secondary-brand-color);
+    &:hover {
+      fill: var(--secondary-brand-color-hover);
+    }
+  }
+
+  .abatements-bar.incentive, {
+    fill: var(--secondary-brand-color);
+    &:hover {
+      fill: var(--secondary-brand-color-hover);
+    }
+  }
+
+}
+
+.abatements-graph {
+
+  margin: 10px 0;
+
+  .abatements-bar.liability {
+    fill: var(--main-brand-color);
+    &:hover {
+      fill: var(--main-brand-color-hover);
+    }
+  }
+
+  .abatements-bar.land {
+    // fill: darken($barCost, 20%);
+    fill: var(--secondary-brand-color-dark);
+    &:hover {
+      fill: var(--secondary-brand-color-dark-hover);
+    }
+  }
+
+  .abatements-bar.buildings {
+    // fill: darken($barCost, 10%);
+    fill: var(--secondary-brand-color);
+
+    &:hover {
+      // fill: $barCostHover;
+      fill: var(--secondary-brand-color-hover);
+    }
+  }
+
+  .abatements-bar.furniture {
+    // fill: $barCost;
+    fill: var(--secondary-brand-color-light);
+
+    &:hover {
+      // fill: lighten($barCostHover, 1%);
+      fill: var(--secondary-brand-color-light-hover);
+    }
+  }
+
+  .abatements-bar.inventory {
+    // fill: lighten($barCost, 10%);
+    fill: var(--secondary-brand-color-lighter);
+    &:hover {
+      fill: var(--secondary-brand-color-lighter-hover);
+    }
+  }
+}
+
+.horizontal-graph .rect text {
+  fill: black;
+  text-anchor: end;
+}
+
+
+/* Graph Legends */
+.legend {
+  list-style: none;
+  margin: 0 auto 15px auto;
+
+  .legend-item {
+    color: $black;
+    font-size: 14px;
+    margin-top: 1em;
+    text-align: center;
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .legend-bullet {
+    display: inline-block;
+    // margin-right: 10px;
+    vertical-align: top;
+    // float: left;
+  }
+
+  &.tif-benefits {
+    span.legend-bullet {
+      background: var(--main-brand-color);
+      height: 15px;
+      width: 15px;
+    }
+  }
+
+  &.incentive-v-benefits {
+    padding: 0px 10px;
+    // text-align: center;
+    // padding: 0 0 0 7%;
+
+    .incentive-by-year .legend-bullet {
+      background-color: $nonTaxIncentive;
+      height: 15px;
+      width: 15px;
+    }
+
+    &.summary-incentives {
+      .incentive-by-year .legend-bullet {
+        background-color: $nonTaxIncentive;
+      }
+    }
+
+    .cumulative-incentive .legend-bullet {
+      border-top: 4px dashed $nonTaxIncentive;
+      margin-top: 8px;
+      width: 35px;
+    }
+
+    .cumulative-net-benefits .legend-bullet {
+      border-top: 4px solid var(--tertiary-brand-color);
+      width: 35px;
+      margin-top: 8px;
+    }
+  }
+
+  &.abatements-graph-legend {
+    @extend %clearfix;
+
+    text-align: center;
+    padding: 0 0 0 12%;
+
+    .tax-liability .legend-bullet {
+      background-color: var(--main-brand-color);
+      height: 15px;
+      width: 15px;
+    }
+
+    .land-abated .legend-bullet {
+      background-color: var(--secondary-brand-color-dark);
+      height: 15px;
+      width: 15px;
+    }
+
+    .buildings-abated .legend-bullet {
+      background-color: var(--secondary-brand-color);
+      height: 15px;
+      width: 15px;
+    }
+
+    .furniture-abated .legend-bullet {
+      background-color: var(--secondary-brand-color-light);
+      height: 15px;
+      width: 15px;
+    }
+
+    .inventories-abated .legend-bullet {
+      background-color: var(--secondary-brand-color-lighter);
+      height: 15px;
+      width: 15px;
+    }
+
+    .net-abated .legend-bullet {
+      border-top: 4px solid var(--tertiary-brand-color);
+      width: 15px;
+      margin-top: 8px;
+    }
+  }
+
+  &.rebates-graph-legend {
+    @extend %clearfix;
+
+    text-align: center;
+    padding: 0 0 0 7%;
+
+    .sales-tax-liability .legend-bullet {
+      background-color: var(--main-brand-color);
+      height: 15px;
+      width: 15px;
+    }
+
+    .sales-tax-abated .legend-bullet {
+      background-color: var(--secondary-brand-color);
+      height: 15px;
+      width: 15px;
+    }
+
+    .net-rebated .legend-bullet {
+      border-top: 4px solid var(--tertiary-brand-color);
+      width: 15px;
+      margin-top: 8px;
+    }
+  }
+
+  &.net-benefits-graph-legend {
+    span {
+      height: 15px;
+      width: 15px;
+      font-family: 'Montserrat';
+      &.benefits {
+        background: var(--main-brand-color);
+      }
+      &.costs {
+        background: var(--secondary-brand-color);
+
+      }
+      &.incentives {
+        background: var(--secondary-brand-color-lighter);
+      }
+      &.net {
+        border-radius: 50%;
+        height: 10px;
+        width: 10px;
+        background: var(--tertiary-brand-color);
+      }
+      &.net-less-incentives {
+        background: var(--tertiary-brand-color-light);
+        height: 9px;
+        width: 9px;
+        transform: rotate(45deg);
+      }
+    }
+  //   text-align: center;
+  //   padding: 0 10% 0 15%;
+  //
+  //   .legend-item {
+  //     margin-top: 1em;
+  //     // margin-bottom: 20px;
+  //   }
+  //
+  //   .benefits .legend-bullet {
+  //     background-color: var(--main-brand-color);
+  //     height: 17px;
+  //     width: 15px;
+  //   }
+  //
+  //   .costs .legend-bullet {
+  //     background-color: var(--secondary-brand-color);
+  //     height: 17px;
+  //     width: 15px;
+  //   }
+  //
+  //   .net .legend-bullet {
+  //     border-top: 4px solid var(--tertiary-brand-color);
+  //     width: 24px;
+  //     margin-top: 8px;
+  //   }
+  //
+  //   .incentives .legend-bullet {
+  //     height: 17px;
+  //     width: 15px;
+  //     background: var(--secondary-brand-color-lighter);
+  //   }
+  //
+  //   .net-less-incentives .legend-bullet {
+  //     width: 24px;
+  //     margin-top: 8px;
+  //     border-top: 4px solid var(--tertiary-brand-color-light);
+  //   }
+  }
+
+}
+
+.legend-header h6 {
+  font-size: 14px;
+}
+
+.legend-values {
+  .legend-title {
+    font-weight: bold;
+    padding: .25rem 0;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  .total {
+    display: inline-block;
+    padding: .25rem 1rem;
+    margin: 0;
+    min-width: 100px;
+  }
+  .legend-header {
+    margin: 10px 0px;
+    text-align: center;
+    p {
+      display: inline-block;
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-bottom: 1px;
+    }
+    &.main {
+      .total {
+        border-top: 3px solid var(--main-brand-color);
+      }
+    }
+    &.secondary {
+      .total {
+        border-top: 3px solid var(--secondary-brand-color);
+      }
+    }
+    &.tertiary {
+      .total {
+        border-top: 3px solid var(--tertiary-brand-color);
+      }
+    }
+    &.incentives {
+      .total {
+        border-top: 3px solid var(--secondary-brand-color-lighter);
+      }
+    }
+    &.less-incentives {
+      .total {
+        border-top: 3px solid var(--tertiary-brand-color-light);
+      }
+    }
+  }
+}
+
+.incentive-graph-header, .tif-incentive-graph-header {
+  .value-group {
+    .value-wrapper {
+      height: 85px;
+      font-family: 'Montserrat';
+      color: $color-master;
+      border-right: 1px solid darken($color-master-light, 10%);
+
+      h4 {
+        font-weight: bold;
+        margin-bottom: 0;
+        font-size: 16px;
+      }
+      h6 {
+        margin-top: 0;
+        font-size: 15px;
+      }
+    }
+
+    @media only screen and (max-width: 576px) {
+      .value-wrapper {
+        border-right: none;
+        border-bottom: 1px solid darken($color-master-light, 10%);
+        max-width: 200px;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.net-benefits-module {
+  margin-bottom: 0;
+  overflow: hidden !important;
+  position: sticky;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -o-sticky;
+  position: -ms-sticky;
+  top: 78px;
+  z-index: 990;
+
+  .legend-values {
+    max-width: 600px;
+    margin: 2rem auto 0 auto;
+  }
+}
+
+//Scenario info net benefits
+.net-benefits-module, .public-support-module {
+  text-align: center;
+
+  h3.title {
+    // color: $logo-blue;
+    color: var(--main-brand-color);
+    font-size: 20px;
+    font-weight: $bold;
+    line-height: 22px;
+    text-transform: uppercase;
+  }
+
+  .ei-component {
+    h5.ei-header {
+      font-size: 16px;
+    }
+    h3.bold {
+      font-size: 140%;
+      margin: 0;
+      line-height: 30px;
+    }
+  }
+
+  h5.graph-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 8px;
+    margin-top: 0;
+    text-transform: uppercase;
+  }
+
+  .totals {
+    font-size: 16px;
+    font-weight: $bold;
+    .benefits, .costs, .net {
+      display: inline-block;
+    }
+  }
+
+  svg {
+    .axis .tick line {
+      stroke: $graphAxisLine;
+    }
+    .axis.y text, .axis.x text {
+      fill: $graphAxisText;
+    }
+  }
+
+  table {
+    text-align: left;
+  }
+}
+
+.summary {
+  .legend-values {
+    max-width: 550px;
+    margin: 0 auto;
+  }
+}
+
+.net-benefits-graph-top .tabs-table {
+  // background: $graphNavLight;
+  // width: auto;
+}
+
+// .public-support-module {
+//   h5.graph-title {
+//     font-size: 20px;
+//     font-weight: 600;
+//     margin-bottom: 5px;
+//   }
+// }
+
+// .graph-title-custom {
+//   color: white;
+//   max-width: 80%;
+//   margin: 0 auto;
+//   font-size: 20px;
+//   font-weight: 600;
+// }
+
+// .graph-title {
+//   padding: 20px 0 0 0;
+//   margin: 0;
+//   color: white;
+//   font-size: 20px;
+//   font-weight: 600;
+// }
+
+.graph-result {
+  margin: 0;
+  color: var(--tertiary-brand-color) !important;
+}
+
+.page {
+  &.top-margin {
+    margin-top: 25px;
+  }
+}
+
+.graph-bg {
+  @extend %clearfix;
+  background: $bgPrimaryDark;
+  padding: 0;
+  text-align: center;
+}
+
+.report-label {
+  padding-top: 0px;
+  display: block;
+  font-size: .9em;
+  // font-family: "helvetica-neue", helvetica;
+}
+
+.report-values {
+  @extend %clearfix;
+
+  .value-group {
+    color: white;
+    text-align: center;
+    position: relative;
+
+    &.columns {
+      float: left;
+    }
+
+    .report-value{
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1em;
+      padding-top: 5px;
+      color: $black;
+      margin: 3.2px 0 8px 0;
+
+      &.net-benefits {
+        font-size: 1.25em;
+      }
+    }
+
+    .report-label {
+      padding: 10px 0;
+      font-size: 16px;
+    }
+
+    // .value-group-item {
+    //   padding: 0 3px;
+    // }
+
+    label {
+      padding-top: 5px;
+    }
+
+    // &.benefits {
+    //   color: #5E7E42;
+    // }
+
+    // &.costs {
+    //   color: #aa5555;
+    // }
+
+    // &.navy {
+    //   background: $ltNavy;
+    //   max-width: 200px;
+    //   padding: 1px 3px 5px 3px;
+
+    //   .report-label {
+    //     padding: 0;
+    //   }
+
+    //   .report-value {
+    //     padding: 0;
+    //     margin-bottom: 4px;
+    //   }
+    // }
+
+    // &.value-group-benefits .report-value {
+    //   color: $barBenefits;
+    // }
+
+    // &.value-group-cost .report-value {
+    //   color: $barCost;
+    // }
+
+    // &.value-group-orange .report-value {
+    //   color: $graphLine;
+    // }
+
+    // &.value-group:nth-child(odd) {
+    //   background: $graphNavDark;
+    // }
+    // &.value-group:nth-child(even){
+    //   background: $graphNavLight;
+    // }
+
+  }
+
+
+  .value-group-small {
+    margin-bottom: 10px;
+    .report-value {
+      font-size: 1.2em
+    }
+    .report-label {
+      font-size: 13px;
+    }
+  }
+
+}
+
+.report {
+  .incentives-graph { zoom: initial }
+  .incentive-v-benefits { margin-top: 0; }
+  .legend.abatements-graph-legend { margin-top: 0; }
+  .abatements-graph { margin: 0; }
+  .graph-bg {
+    // fill: #fff;
+    background: #fff;
+  }
+}

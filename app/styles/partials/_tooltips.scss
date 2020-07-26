@@ -1,0 +1,62 @@
+.ember-popover {
+  background: transparent;
+  color: white;
+  font-weight: bold;
+  border: 0;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  z-index: 90000;
+  margin: 0 !important;
+  // max-width: 140px;
+  @each $poDirection in top, bottom, left, right {
+    &[x-placement^="#{$poDirection}"] .ember-popover-arrow {
+      border-#{$poDirection}-color: rgba($color-master, 0.92) !important;
+    }
+  }
+}
+
+.ember-popover-inner {
+  font-size: 11px;
+  border-radius: 0px;
+  background-color: rgba($color-master, 0.92) !important;
+  padding: 0 !important;
+  overflow: hidden;
+  ul {
+    padding: 0;
+  }
+}
+
+.tooltip-content-item {
+  text-align: center;
+  background-color: transparent;
+  line-height: 1.25;
+  cursor: default;
+  padding: 8px 12px;
+}
+
+.tooltip-hover {
+  color: #dcdcde;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(lighten($color-master, 30%), 0.92);
+}
+
+.tooltip-option {
+  cursor: pointer;
+  text-align: left;
+  &:hover {
+    background-color: rgba(lighten($color-master, 20%), 0.92);
+  }
+  &:last-child {
+    border-bottom: 0px;
+  }
+  // .indent-options & {
+  //   padding: 8px 12px;
+  // }
+}
+
+.tooltipstered {
+  vertical-align: middle;
+}

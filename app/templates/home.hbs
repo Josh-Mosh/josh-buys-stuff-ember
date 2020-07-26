@@ -1,2 +1,6 @@
 <h2>home.hbs</h2>
-{{link-to "Admin Login" "login"}}
+{{#if session.isAuthenticated}}
+  {{link-to "Manage Sets" "manage"}}
+{{else}}
+  {{link-to "Admin Login" "login"}}
+{{/if}}

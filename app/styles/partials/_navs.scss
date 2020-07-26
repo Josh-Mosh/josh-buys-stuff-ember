@@ -1,0 +1,656 @@
+// HEADER
+// ------
+
+.global-header {
+  background: #fff;
+  // min-width: 640px;
+  border-bottom: 1px solid $panel-border-color;
+  padding: 3px 0;
+  position: sticky;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -o-sticky;
+  position: -ms-sticky;
+  top: 0;
+  z-index: 1000;
+
+  a, div:not(.row) {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .no-flex-wrap {
+    flex-wrap: nowrap;
+  }
+
+  h5 {
+    margin: 0;
+    text-transform: uppercase;
+    color: $color-master;
+  }
+
+  h6 {
+    color: $color-master;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.search-column {
+  margin-top: 10px;
+}
+
+.breadcrumb-item {
+  font-size: 20px;
+}
+
+// from _list.scss
+.breadcrumb{
+    a, i, span, li {
+        color: #35393D;
+        font-weight: 500;
+        text-shadow: none;
+    }
+}
+.breadcrumb {
+    li {
+        padding-left: 0px;
+        display: inline-block;
+        a{
+            &.active {
+                font-weight: 500;
+                color: #35393D;
+                &:hover {
+                  color: #0090d9;
+                }
+            }
+        }
+    }
+}
+
+// ids overrides
+.breadcrumb {
+
+  .breadcrumb-item {
+    margin: 0;
+    svg {
+      color: #35393D;
+      margin: 0 12px;
+      font-size: 14px !important;
+    }
+    &.active {
+      margin: 0;
+      color: var(--main-brand-color);
+    }
+
+    a {
+      margin: 0;
+      &:hover {
+        color: darken($color-master, 30%);
+      }
+      &.active {
+        font-weight: 500;
+        &:hover {
+          color: darken($color-master, 30%);
+        }
+      }
+    }
+  }
+}
+
+// Overiding Ember-Burger-Menu Add-On
+.ember-burger-menu {
+  float: none !important;
+}
+
+.bm-menu {
+  background: $slate;
+  color: $side-nav-inactive;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  ul.bottom-menu {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  .bm-menu-item {
+    padding: 0;
+
+    div {
+      // padding: .75rem 14px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    a.active {
+      color: white !important;
+      & p, svg, .faux-icon {
+        color: white !important;
+      }
+      .icon-wrapper {
+        // margin-right: -4px;
+        border-radius: 20px;
+        background: var(--main-brand-color);
+      }
+      & > div {
+        // border-right: 4px solid var(--secondary-brand-color);
+      }
+    }
+
+    .nav-super,
+    .nav-sub,
+    .nav-collapsible,
+    .nav-sub-sub {
+      padding: .5rem 14px;
+      color: #c6c6d0;
+      p {
+        @include text-overflow();
+        font-size: 15px;
+        padding-left: 15px;
+        margin-right: 20px;
+      }
+      .icon-wrapper {
+        // background: $slate;
+        .faux-icon {
+          font-size: 14px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .nav-super {
+      p {
+        padding-left: 0;
+      }
+    }
+
+    .nav-header {
+      cursor: default;
+      padding: 1rem 14px 0;
+      p {
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: bold;
+      }
+    }
+
+    .nav-header-hidden {
+      height: 0;
+    }
+
+    .nav-collapsible {
+      cursor: pointer;
+      &.is-open {
+        background: lighten($slate, 3%);
+      }
+    }
+
+    .nav-sub-sub {
+      background: lighten($slate, 3%);
+      p {
+        padding-left: 30px;
+      }
+    }
+
+    .icon-wrapper {
+      padding: 8px;
+      height: 28px;
+      width: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+}
+
+.badge-wrapper {
+  // color: white;
+  display: inline-block; /* Inline elements with width and height. TL;DR they make the icon buttons stack from left-to-right instead of top-to-bottom */
+  position: relative; /* All 'absolute'ly positioned elements are relative to this one */
+  padding: 2px 5px; /* Add some padding so it looks nice */
+
+  /* Make the badge float in the top right corner of the button */
+  .badge {
+    background-color: #fa3e3e;
+    border-radius: 50%;
+    color: white;
+
+    font-size: 14px;
+    width: 18px;
+    height: 18px;
+
+    padding: 0;
+    margin: 0;
+    text-align: center;
+
+    vertical-align: middle;
+    display: inline-block;
+    line-height: normal;
+
+    position: absolute; /* Position the badge within the relatively positioned button */
+    top: -5px;
+    right: -5px;
+  }
+}
+
+.ember-burger-menu, .bm-content .body {
+  height: 100%;
+}
+
+.ember-burger-menu.bm--slide {
+  &.is-open .bm-menu {
+    margin-left: 224px !important;
+    transition: 0.25s !important;
+  }
+  & .bm-menu-container .bm-menu {
+    transform: translate3d(-80%, 0, 0) !important;
+    visibility: visible !important;
+  }
+}
+
+.bm-menu-item {
+  a,
+  .nav-super,
+  .nav-sub,
+  .nav-collapsible,
+  .nav-sub-sub,
+  svg {
+    font-size: 16px;
+    font-family: $segoe;
+    cursor: pointer;
+    &:hover,
+    .active {
+      color: white !important;
+      & svg {
+        color: white !important;
+      }
+      .faux-icon {
+        color: white !important;
+      }
+    }
+  }
+}
+
+
+$bm-transition-duration: 0.25s !default;
+
+// vertical tabs
+.vert-tab-wrapper {
+  // border-right: 1px solid $panel-border-color;
+  // margin-top: -1px !important;
+
+  &.public-support {
+    @media (min-width: 992px) {
+      min-width: 180px;
+      max-width: 14%;
+    }
+  }
+
+  .vert-tabs-partial {
+    top: 0;
+    height: 100vh;
+
+    .nav-tabs {
+      // height: 100vh;
+    }
+  }
+}
+
+.vert-tabs {
+  position: sticky;
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -o-sticky;
+  position: -ms-sticky;
+  background: $white;
+  border: 0 !important;  // override .card.card-default border
+  height: calc(100vh - 62px); // full page height minus header
+  margin: 0;
+  overflow: auto !important;
+  top: 63px; // to account for 62px header
+  z-index: 500;
+
+  // floating vert tabs not stickied to top of scenario
+  &.isolated {
+    top: 15px;
+    height: calc(100vh - 77px); // full page height minus header
+  }
+}
+
+// Override pages tabs
+
+/* Tabs : Simple
+------------------------------------
+*/
+.nav-tabs {
+}
+
+.nav-tabs-simple {
+  border-bottom: 0px;
+  &:after {
+    content:'';
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+    position: absolute;
+    bottom: -2px;
+    z-index: 120;
+    left: 0;
+  }
+  & > li {
+    margin-bottom: 0;
+    & > a{
+      &:after {
+        position: absolute;
+        @include transition(all 0.1s linear 0s);
+        -webkit-backface-visibility: hidden;
+        width: 100%;
+        display: block;
+        // background-color: $logo-blue;
+        background-color: var(--main-brand-color);
+        height: 0px;
+        content: '';
+        left: 0;
+        z-index: 125;
+        top: 100%;
+        &.nav-tabs-primary{
+          background-color: $color-primary;
+        }
+        &.nav-tabs-success{
+          background-color: $color-success;
+        }
+        &.nav-tabs-complete{
+          background-color: $color-complete;
+        }
+        &.nav-tabs-danger{
+          background-color: $color-danger;
+        }
+        &.nav-tabs-warning{
+          background-color: $color-warning;
+        }
+        &.nav-tabs-info{
+          background-color: $color-info;
+        }
+      }
+      &.active  {
+        font-weight: bold;
+        &:hover,
+        &:focus {
+          background-color: transparent;
+          border-color: transparent;
+        }
+      }
+      &.active,
+      &:hover {
+        &:after {
+          height: 3px;
+        }
+      }
+      &:not(.active) {
+        opacity: .8;
+        &:hover {
+          color: $color-master;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  // POSITIONG OPTIONS
+  &.nav-tabs-left,
+  &.nav-tabs-right {
+    &:after {
+      border-bottom: 0px;
+    }
+    & > li {
+      & > a:after {
+        width: 0px;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+      }
+      & > a{
+        &.active,
+        &:hover{
+          &:after {
+            width: 3px;
+          }
+        }
+      }
+    }
+    & ~ .tab-content {
+    }
+  }
+  &.nav-tabs-left {
+    & > li > a:after {
+      right: 0;
+      left: auto;
+    }
+  }
+  &.nav-tabs-right {
+    & > li > a:after {
+      left: 0;
+    }
+  }
+}
+
+.tabs-table {
+  // overflow-x: scroll;
+  white-space: nowrap;
+
+  .tab {
+    height: 100px;
+    // display: inline-block;
+    // margin-right: -4px; // fight space against inline-block
+    font-weight: bold;
+    padding: 15px 15px 0 15px;
+    // text-align: right;
+  }
+
+  .toggle-view {
+    height: 100%;
+    padding: 0;
+    margin-left: 40px;
+  }
+
+  a.tab {
+    text-decoration: none;
+    &:hover, &.active {
+      // background: $bgPrimaryDark;
+      text-decoration: none;
+    }
+  }
+}
+
+// Scenario page right side nav tabs
+.card-triangle-tabs .nav.nav-tabs-linetriangle {
+  // li.nav-item {
+  //   a {
+  //     font-weight: bold;
+  //     &:not(.active) {
+  //       opacity: .8;
+  //       &:hover {
+  //         color: $color-master-dark;
+  //         opacity: 1;
+  //       }
+  //     }
+  //     &.active {
+  //       color: $color-master-dark;
+  //       // border: 2px solid $logo-blue;
+  //       border: 2px solid var(--main-brand-color);
+  //       &:before {
+  //         border-top-color: $logo-blue;
+  //         border-top-color: var(--main-brand-color);
+  //         border-width: 13px;
+  //         margin-left: -13px;
+  //         top: 99%;
+  //       }
+  //       &:after {
+  //         border-top-color: $white;
+  //         top: 99%;
+  //       }
+  //     }
+  //   }
+  // }
+}
+
+.swiper-container {
+  overflow: visible;
+}
+
+.swipe-navigation {
+  background: $panel-border-color;
+  opacity: .8;
+  height: 100%;
+  padding: 3px;
+  position: absolute;
+  z-index: 121;
+
+  &.swipe-button-prev {
+    left: 0;
+  }
+  &.swipe-button-next {
+    right: 0;
+  }
+  svg {
+    height: 100%;
+    color: $color-master;
+    &:hover {
+      transition: all .2s ease-in-out;
+      transform: scale(1.1);
+      color: $color-master-darkest;
+    }
+  }
+  &.swiper-button-disabled {
+    // visibility: hidden;
+    svg {
+      color: $color-master-light;
+    }
+  }
+}
+
+.swiper-wrapper {
+  .swipable-tab {
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    font-size: 10.5px;
+    font-weight: 500;
+    padding: 13px 20px;
+    border: 2px solid transparent;
+    div { // the actual text
+      @include text-overflow();
+    }
+    &:hover {
+      font-weight: bold;
+      color: $color-master-darkest;
+    }
+    &.active {
+      background-color: var(--main-brand-color);
+      color: white;
+      border: 2px solid var(--main-brand-color);
+      font-size: 11.5px;
+      font-weight: bold;
+      color: $color-master-light;
+      &:hover {
+        color: white;
+      }
+      &:before {
+        border-top-color: var(--main-brand-color) !important;
+        border-width: 13px;
+        margin-left: -13px;
+        top: 99%;
+
+        border: 13px solid transparent;
+      }
+      &.no-arrow:before {
+        border: 0px;
+      }
+      &:after {
+        // border-top-color: #fff !important;
+        top: 99%;
+
+        border: 10px solid transparent;
+        border-width: 10px;
+        margin-left: -10px;
+      }
+      &:before, &:after {
+        content: "";
+        height: 0;
+        left: 50%;
+        pointer-events: none;
+        position: absolute;
+        width: 0;
+        z-index: 120;
+      }
+    }
+  }
+}
+
+// vertical tabs
+.nav-tabs-simple {
+  &.nav-tabs-left {
+    li.nav-item {
+      a {
+        font-size: 11.5px;
+        font-weight: bold;
+        border: 1px solid $panel-border-color;
+        border-top: none;
+        &:after {
+          width: 0;
+        }
+        &.active {
+          background: var(--main-brand-color);
+          border: 2px solid var(--main-brand-color);
+          color: white;
+          svg {
+            color: white;
+          }
+        }
+      }
+      &.nav-sub,
+      &.sub-nav-item {
+        a {
+          &.active {
+            background: var(--main-brand-color-lightest);
+            border: 1px solid $panel-border-color;
+            border-top: none;
+            color: inherit;
+            font-weight: bold;
+          }
+          &:hover {
+            font-weight: bold;
+            color: $color-master-darkest;
+          }
+          padding-top: 10px;
+          padding-bottom: 10px;
+          padding-left: 33px;
+          font-size: 11px;
+          text-transform: capitalize;
+          font-weight: $semiBold;
+        }
+        &:first-of-type {
+          border-top: 1px solid $panel-border-color;
+        }
+      }
+    }
+  }
+}
+
+.nav-tabs-horizontal-icons {
+  li a {
+    padding: 0 20px;
+  }
+}

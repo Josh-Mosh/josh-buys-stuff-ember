@@ -1,0 +1,60 @@
+// This whole file is probably out dated
+
+// h1,h2,h3,h4,h5,h6 {
+//   color: #004455;
+//   font-weight: 500;
+// }
+
+// Redesign Colors
+.bg-slate {
+  background: $slate;
+}
+
+.bg-blue-gray {
+  background: $blue-gray;
+}
+
+.bg-logo-blue {
+  background: $logo-blue;
+}
+
+.bg-light-accent {
+  background: var(--main-brand-color-light);
+  font-weight: bold;
+}
+
+.bg-light-shades {
+  background: $light-shades;
+}
+
+// .text-navy {
+//   color: $black;
+// }
+// .text-navy-light {
+//   color: $ltNavy;
+// }
+.text-white {
+  color: white;
+}
+.font-small {
+  font-size: 14px;
+}
+
+.text-primary {
+  color: $black;
+}
+
+.text-primary-active {
+  color: $blackActive;
+}
+
+.text-secondary-dimmed {
+  color: $txtSecondaryDimmed;
+}
+
+.text-normal {
+  font-size: 14px;
+}
+.text-huge {
+  font-size: 40px;
+}

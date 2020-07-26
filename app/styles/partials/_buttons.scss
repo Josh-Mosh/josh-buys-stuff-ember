@@ -1,0 +1,558 @@
+// //New
+// // Override Pages' SASS btn styling for CSS color Themes
+
+.btn-primary {
+  color: #fff;
+  background-color: var(--main-brand-color);
+  border-color: var(--main-brand-color);
+  &:focus {
+    color: #fff;
+    background-color: var(--main-brand-color);
+    border-color: var(--main-brand-color);
+  }
+  &.active,
+  &:active,
+  &.active:focus,
+  &:active:focus,
+  &:active:hover,
+  &:disabled,
+  &.disabled,
+  &.hover,
+  &:hover {
+    color: #fff;
+    background-color: var(--main-brand-color) !important;
+    border-color: var(--main-brand-color) !important;
+    outline: none !important;
+    outline-style: none;
+  }
+  &:hover:not(:disabled) {
+    filter: brightness(115%);
+  }
+}
+
+.btn-primary-always {
+  background-color: $logo-blue;
+  &:hover, &:focus {
+    background-color: darken($logo-blue, 8%) !important;
+  }
+}
+
+.btn-success {
+  color: #fff;
+  background-color: var(--main-brand-color-hover);
+  border-color: var(--main-brand-color-hover);
+  &:focus {
+    color: #fff;
+    background-color: var(--main-brand-color-hover);
+    border-color: var(--main-brand-color-hover);
+  }
+  &.active,
+  &:active,
+  &.active:focus,
+  &:active:focus,
+  &:active:hover,
+  &:disabled,
+  &.hover,
+  &:hover {
+    color: #fff;
+    background-color: var(--main-brand-color-hover) !important;
+    border-color: var(--main-brand-color-hover) !important;
+    outline: none !important;
+    outline-style: none;
+  }
+  &:hover:not(:disabled) {
+    filter: brightness(115%);
+  }
+}
+
+.btn-secondary {
+  &.active,
+  &:active,
+  &.active:focus,
+  &:active:focus,
+  &:active:hover,
+  &:disabled,
+  &.hover,
+  &:hover {
+    color: $color-master !important;
+    background-color: $backgroundGray !important;
+  }
+  &:hover:not(:disabled) {
+    filter: brightness(115%);
+  }
+}
+
+.tooltip-button {
+  position: absolute;
+  left: 50%;
+  z-index: 80000;
+
+  .tooltip-button-inner {
+    background: rgba($slate, .92);
+    color: white;
+    font-weight: bold;
+    left: -50%;
+    margin-top: 10px;
+    position: relative;
+    padding: 8px 12px;
+    white-space: nowrap;
+  }
+}
+
+.no-pointer-when-disabled:disabled {
+  cursor: auto;
+}
+//
+.btn {
+//   border: 1px solid $black;
+  font-weight: $semiBold;
+//   font-size: 14px;
+//   font-family: 'Montserrat';
+//   &:disabled{
+//     cursor: auto;
+//     opacity: .65;
+//   }
+//   a, i {
+//     color: white;
+//   }
+// }
+//
+// .btn-primary {
+//   background: $black;
+//   color: white;
+//   &:hover{
+//     background: black;
+//     border: 1px solid $black;
+//   }
+//   &:disabled {
+//     background: $black;
+//     color: white;
+//     border: 1px solid $black;
+//     &:hover{
+//       background: $black;
+//       border: 1px solid $black;
+//     }
+//   }
+}
+//
+// .btn-secondary {
+//   background: none;
+//   color: $black;
+//   border: 1px solid $black;
+//   &:hover{
+//     background: none;
+//     color: black;
+//     border: 1px solid black;
+//   }
+//   &:disabled {
+//     background: none;
+//     color: $black;
+//     &:hover{
+//       background: none;
+//     }
+//   }
+// }
+//
+// .add-button:hover span {
+//   transition: 0.3s;
+//   transform: rotate(90deg);
+// }
+//
+// .add-button span {
+//   width: 10px;
+//   display: inline-flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+//
+//
+//
+// // // BUTTONS
+// // // -------
+//
+// //  (from _reuse partial)
+// // .button, button {
+// //   border-radius: 4px;
+// //   cursor: pointer;
+// //   font-family: "Source Sans Pro";
+// //   font-size: 18px !important;
+// //   font-weight: $normal;
+// //   line-height: 18px;
+// //   padding: 8px 16px !important;
+// //   text-transform: normal;
+// //   // @include background-image(linear-gradient(#0f4169, #0d395b));
+// //   // @include box-shadow(0 2px 0px rgba(0,0,0,.2));
+// //   // @include transition(none);
+//
+// //   &.active {
+// //     color: #fff;
+// //   }
+//
+// //   // Prevent icons from shifting content on hover
+// //   &:after {
+// //     content: '';
+// //     vertical-align: middle;
+// //   }
+//
+// //   &:hover {
+// //     // @include background-image(linear-gradient(#0d5893, #0b4d80));
+// //   }
+//
+// //   &:active {
+// //     color: #72eafa;
+// //     background: #0d395b;
+// //     // @include box-shadow(inset 0 2px 2px rgba(0,0,0,.4));
+// //   }
+// // }
+//
+// // .button.alt, button.alt {
+// //   // @include background-image(linear-gradient(#0f6939, #0d5b32));
+//
+// //   &:hover {
+// //     // @include background-image(linear-gradient(#11a559, #0e8e4a));
+// //   }
+//
+// //   &:active {
+// //     color: #00ff7c;
+// //     background: #0d5b32;
+// //     // @include box-shadow(inset 0 2px 2px rgba(0,0,0,.4));
+// //   }
+// // }
+//
+// // .button.delete, button.delete {
+// //   // @include background-image(none);
+// //   // @include box-shadow(none);
+// //   background: none;
+// //   color: #6e1010;
+//
+// //   &:hover {
+// //     color: #ae0000;
+//
+// //     &:after {
+// //       content: '\f05c';
+// //       font-family: 'fontAwesome';
+// //       margin-left: 6px;
+// //     }
+// //   }
+// // }
+//
+// // .button.cancel, button.cancel {
+// //   // @include background-image(none);
+// //   // @include box-shadow(none);
+// //   background: none;
+// //   color: #666;
+//
+// //   &:hover {
+// //     color: #333;
+//
+// //     &:after {
+// //       content: '\f05c';
+// //       font-family: 'fontAwesome';
+// //       margin-left: 6px;
+// //     }
+// //   }
+// // }
+//
+// // .button.check, button.check {
+// //   // @include background-image(none);
+// //   // @include box-shadow(none);
+// //   background: none;
+// //   color: #0c5790;
+//
+// //   &:hover {
+// //     &:after {
+// //       color: #0c5790;
+// //       content: '\f05d';
+// //       font-family: 'fontAwesome';
+// //       margin-left: 6px;
+// //     }
+// //   }
+// // }
+//
+// // .button.subtle, button.subtle {
+// //   background: #efefef;
+// //   color: #444;
+// //   padding: 4px 8px;
+// //   font-size: 15px;
+// //   // @include background-image(none);
+//
+// //   &[disabled]:hover {
+// //     color: #444;
+// //     background: #efefef;
+// //   }
+// // }
+//
+// // (from this partial)
+// // .button {
+// //   background: $btnDefault;
+// //   font-family: "Source Sans Pro";
+// //   font-size: 18px;
+// //   font-weight: $semiBold;
+// //   line-height: 15px;
+// //   padding: 8px 16px;
+// //   text-decoration: none;
+// //   text-transform: normal;
+// //   border-radius: 2px;
+// //   border: 1px solid #35393D;
+// //   &, i {
+// //     color: $blackComponent;
+// //   }
+// //   &:focus, &:active {
+// //     background: $btnDefault;
+// //     color: $blackComponent;
+// //     outline: 0;
+// //   }
+// //   &:hover {
+// //     background: $btnDefaultHover;
+// //   }
+// //   &:after {
+// //     vertical-align: baseline;
+// //   }
+// // }
+//
+// // .button-action {
+// //   background: $btnPrimary;
+// //   &:focus, &:active {
+// //     background: $btnPrimary;
+// //   }
+// //   &:hover {
+// //     background: $btnPrimaryHover;
+// //   }
+// // }
+//
+// // .button-secondary {
+// //   background: $btnSecondary;
+// //   color: #35393D;
+// //   &:focus, &:active {
+// //     background: $btnSecondary;
+// //     color: #35393D;
+// //   }
+// //   &:hover {
+// //     background: $btnSecondaryHover;
+// //     color: #35393D;
+// //   }
+// // }
+//
+// // .button-plain {
+// //   background: none;
+// //   color: $btnPlainColor;
+// //   &:hover, &:focus, &:active {
+// //     background: none;
+// //     color: #333;
+// //   }
+// // }
+//
+// // .button.cancel {
+// //   &:hover {
+// //     &:after {
+// //       content: '\f05c';
+// //       font-family: 'fontAwesome';
+// //       margin-left: 6px;
+// //     }
+// //   }
+// // }
+//
+// // .button.disabled, .button[disabled] {
+// //   border: 1px solid $blackInactive;
+// //   &, &:hover, &:active, &:focus {
+// //     background-color: $blackInactive;
+// //     color: #ccc;
+// //     cursor: default;
+// //     opacity: 0.7;
+// //   }
+// // }
+// // .button-action.disabled, .button-action[disabled] {
+// //   &, &:hover, &:active, &:focus {
+// //     background-color: $btnPrimaryHover;
+// //   }
+// // }
+//
+// .inner-button {
+//   margin: auto;
+//   background: $black;
+//   color: $white;
+//   height: 28px;
+//   width: 60px;
+//   text-align: center;
+//   cursor: pointer;
+//   font-size: 14px;
+//   text-decoration: none;
+//   font-weight: $semiBold;
+//   line-height: 15px;
+//   padding: 5px 0;
+//   text-align: center;
+// }
+//
+//
+// // /* Old */
+//
+// // .button.edit {
+// //   border-radius: 4px;
+// //   background-image: -o-linear-gradient(-89deg, #E08F0C 0%, #C36C07 100%);
+// //   background-image: -moz-linear-gradient(-89deg, #E08F0C 0%, #C36C07 100%);
+// //   background-image: -ms-linear-gradient(-89deg, #E08F0C 0%, #C36C07 100%);
+// //   background-image: linear-gradient(-179deg, #E08F0C 0%, #C36C07 100%);
+// //   -moz-box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.17);
+// //   box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.17);
+// //   line-height: 18px;
+// //   text-decoration: none;
+// //   padding: 8px 20px;
+// //   color: #fff;
+// // }
+//
+// // .button.tile {
+// //   background-image: -o-linear-gradient(-89deg, #645866 0%, #645866 100%);
+// //   background-image: -moz-linear-gradient(-89deg, #645866 0%, #645866 100%);
+// //   background-image: -ms-linear-gradient(-89deg, #645866 0%, #645866 100%);
+// //   background-image: linear-gradient(-179deg, #645866 0%, #645866 100%);
+//
+// //   &:hover {
+// //     background-image: -o-linear-gradient(-89deg, lighten(#645866, 10%) 0%, lignten(#645866, 10%) 100%);
+// //     background-image: -moz-linear-gradient(-89deg, lighten(#645866, 10%) 0%, lignten(#645866, 10%) 100%);
+// //     background-image: -ms-linear-gradient(-89deg, lighten(#645866, 10%) 0%, lignten(#645866, 10%) 100%);
+// //     background-image: linear-gradient(-179deg, lighten(#645866, 10%) 0%, lighten(#645866, 10%) 100%);
+// //   }
+// // }
+//
+// // .button.orange {
+// //   background-image: -o-linear-gradient(-89deg, #d17b32 0%, #d17b32 100%);
+// //   background-image: -moz-linear-gradient(-89deg, #d17b32 0%, #d17b32 100%);
+// //   background-image: -ms-linear-gradient(-89deg, #d17b32 0%, #d17b32 100%);
+// //   background-image: linear-gradient(-179deg, #d17b32 0%, #d17b32 100%);
+//
+// //   &:hover {
+// //     background-image: -o-linear-gradient(-89deg, lighten(#d17b32, 10%) 0%, lignten(#d17b32, 10%) 100%);
+// //     background-image: -moz-linear-gradient(-89deg, lighten(#d17b32, 10%) 0%, lignten(#d17b32, 10%) 100%);
+// //     background-image: -ms-linear-gradient(-89deg, lighten(#d17b32, 10%) 0%, lignten(#d17b32, 10%) 100%);
+// //     background-image: linear-gradient(-179deg, lighten(#d17b32, 10%) 0%, lighten(#d17b32, 10%) 100%);
+// //   }
+// // }
+//
+// // .thin-button {
+// //   margin-right: -15px;
+// //   padding: 8px 10px !important;
+// // }
+//
+// // .button.action {
+// //   border-radius: 4px;
+// //   background-image: -o-linear-gradient(-89deg, #0C5CE0 0%, #070AC3 100%);
+// //   background-image: -moz-linear-gradient(-89deg, #0C5CE0 0%, #070AC3 100%);
+// //   background-image: -ms-linear-gradient(-89deg, #0C5CE0 0%, #070AC3 100%);
+// //   background-image: linear-gradient(-179deg, #0C5CE0 0%, #070AC3 100%);
+// //   -moz-box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.17);
+// //   box-shadow: 0px 2px 0px 0px rgba(0,0,0,0.17);
+// //   font-size: 18px;
+// //   // color: #FFFFFF;
+// //   line-height: 18px;
+// //   text-decoration: none;
+// //   padding: 8px 20px;
+// // }
+//
+// // .demo-buttons {
+//
+// //   text-align: right;
+// //   margin-bottom: 10px;
+//
+// //   .button {
+// //     margin: 0px 0px 0px 6px;
+//
+// //     &.active {
+// //       color: $turquoise;
+// //       background: #ddd;
+// //       border-color: #ccc;
+// //       @include box-shadow(0, 1px, 1px, rgba(0, 0, 0, 0.075), inset);
+// //     }
+// //   }
+// // }
+//
+// // .button-icon-only {
+// //   padding: 10px 10px 10px 5px !important;
+// //   margin: 8px 5px 0 0;
+// //   font-size: 25px !important;
+// //   &, &:hover, &:active, &:focus {
+// //     background: none;
+// //     box-shadow: none;
+// //   }
+// //   &:focus {
+// //     outline: 0;
+// //   }
+// //   &.small {
+// //     margin: 0;
+// //     padding: 0 !important;
+// //     font-size: 22px !important;
+// //   }
+// // }
+//
+// // .button-wide {
+// //   width: 190px;
+// //   .fal {
+// //     display: inline;
+// //   }
+// // }
+//
+// // // BUTTONS
+// // // -------
+//
+// // .button.alt, button.alt {
+//
+// //   &:active {
+// //     color: #00ff7c;
+// //     background: #0d5b32;
+// //     @include box-shadow(0, 2px, 2px, rgba(0,0,0,.4), inset);
+// //   }
+// // }
+//
+// // .button.delete, button.delete {
+// //   box-shadow: none;
+// //   background: none;
+// //   color: #6e1010;
+//
+// //   &:hover {
+// //     color: #ae0000;
+//
+// //     &:after {
+// //       content: '\f05c';
+// //       font-family: 'fontAwesome';
+// //       margin-left: 6px;
+// //     }
+// //   }
+// // }
+//
+// // .button.check, button.check {
+// //   background: none;
+// //   color: #0c5790;
+//
+// //   &:hover {
+// //     &:after {
+// //       color: #0c5790;
+// //       content: '\f05d';
+// //       font-family: 'fontAwesome';
+// //       margin-left: 6px;
+// //     }
+// //   }
+// // }
+//
+// // .link-plain {
+// //   &, &:hover {
+// //     text-decoration: none;
+// //   }
+// // }
+//
+// // a.text-primary-active {
+// //   &, &:hover {
+// //     color: $blackActive;
+// //   }
+// // }
+//
+// // .button-block {
+// //   display: block;
+// //   width: 100%;
+// // }
+// // .button-large {
+// //   font-size: 28px;
+// //   padding: 14px;
+// // }
+//
+// // .button-container {
+// //   position: relative;
+// // }

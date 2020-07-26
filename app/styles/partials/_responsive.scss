@@ -1,0 +1,72 @@
+//large-small res
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+  .hide-large-small {
+    display: none;
+  }
+  .show-large-small {
+    display: inherit;
+  }
+  .font-small-for-large-small {
+    font-size: 14px !important;
+  }
+  .font-large-for-large-small {
+    font-size: 18px !important;
+  }
+}
+
+//not large-small res
+@media only screen and (max-width: 64.062em), screen and (min-width: 90.01em) {
+  .hide-large-small {
+    display: inherit;
+  }
+  .show-large-small {
+    display: none;
+  }
+}
+
+// large bootstrp
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px; // default
+  }
+}
+
+// medium bootstrp overrides
+@media (min-width: 768px) {
+  .container {
+    max-width: 1140px; // don't add a bunch of padding on smaller screens
+  }
+}
+
+// only class on screen smaller than
+@media only screen and (max-width: 768px) {
+  .w-sm-100 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// small bootstrap
+@media (min-width: 576px) {
+  .container {
+    max-width: 1140px; // don't add a bunch of padding on smaller screens
+  }
+}
+
+// extra small bootstrap
+@media (min-width: 0) {
+  .container {
+    max-width: 1140px; // don't add a bunch of padding on smaller screens
+  }
+
+  .text-xs-center {
+    text-align: center;
+  }
+}
+
+//small screen
+// @media only screen and (max-width: 41em) {
+//   .scenario-tile .tile-body {
+//     height: 350px;
+//   }
+// }

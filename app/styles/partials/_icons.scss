@@ -1,0 +1,243 @@
+// Font Awesome 5 Common Properties: All required to make icons render reliably */
+.icon::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.iconi.dk {
+  color: $iconColor;
+  text-decoration: none;
+  &:hover {
+    color: $iconColorHover;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+.icon.clickable {
+  color: $linkBlue;
+  font-size: 12px;
+  text-decoration: none;
+  &:hover {
+    color: $iconColorHover;
+    text-decoration: none;
+  }
+}
+
+// .icon-text {
+//   display: inline-block;
+// }
+
+.icon-next.btn {
+  // color: $logo-blue;
+  // &:hover {color: darken($logo-blue, 10%)}
+  color: var(--main-brand-color);
+  &:hover {
+    filter: brightness(90%);
+  }
+}
+
+// a.icon-next {
+//   color: $color-master !important;
+//   &:hover {
+//     color: $logo-blue !important;
+//   }
+// }
+
+// used after masked input component inside relative positioned parent
+.input-icon {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+
+  &:hover {
+    color: darken(#666, 10%);
+  }
+}
+
+/* minus,plus,caret right icons [from icono] */
+[class*=icono-] {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  font-style: normal;
+  text-align: left;
+  text-indent: -9999px;
+  direction: ltr;
+}
+
+[class*=icono-minus], [class*=icono-plus] {
+  width: 16px;
+  height: 16px;
+  margin: 2px;
+}
+
+[class*=icono-]:after, [class*=icono-]:before {
+  content: '';
+  pointer-events: none;
+}
+[class*=icono-minus]:before, [class*=icono-plus]:before {
+  width: 18px;
+  height: 1px;
+}
+
+[class*=icono-plus]:after {
+  height: 18px;
+  width: 1px;
+}
+
+
+[class*=icono-minus]:after, [class*=icono-minus]:before, [class*=icono-plus]:after, [class*=icono-plus]:before {
+  box-shadow: inset 0 0 0 32px;
+}
+
+[class*=icono-minus]:before, [class*=icono-plus]:before,[class*=icono-plus]:after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+
+// .icono-caretRight {
+//   width: 12px;
+//   height: 20px;
+//   margin: 7px 3px;
+//   &:before {
+//     top: 2px;
+//     -webkit-transform: rotate(45deg);
+//     -ms-transform: rotate(45deg);
+//     transform: rotate(45deg);
+
+//     width: 12px;
+//     height: 2px;
+//     position: absolute;
+//     bottom: 0;
+//     margin: auto 0;
+//     right: 2px;
+//     box-shadow: inset 0 0 0 32px;
+//     -webkit-transform-origin: right;
+//     -ms-transform-origin: right;
+//     transform-origin: right;
+//   }
+//   &:after {
+//     top: 0;
+//     -webkit-transform: rotate(-45deg);
+//     -ms-transform: rotate(-45deg);
+//     transform: rotate(-45deg);
+
+//     width: 12px;
+//     height: 2px;
+//     position: absolute;
+//     bottom: 0;
+//     margin: auto 0;
+//     right: 2px;
+//     box-shadow: inset 0 0 0 32px;
+//     -webkit-transform-origin: right;
+//     -ms-transform-origin: right;
+//     transform-origin: right;
+//   }
+// }
+
+
+.icon-circle:hover{
+  background-size: 100% 100%;
+}
+.icon-circle {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50% !important;
+  cursor: pointer;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 0% 0%;
+  transition: background .1s;
+  flex-direction: column;
+
+  &.static {
+    cursor: default;
+  }
+  span.icon-text {
+    text-transform: capitalize;
+    margin-top: 5px;
+  }
+}
+
+.fa-custom {
+  color: $black;
+  position: relative;
+  &.sm {
+    .icon-circle {
+      height: 30px;
+      width: 30px;
+    }
+    .fa-toolTip {
+      margin-top: 30px;
+    }
+  }
+  &.lg {
+    .icon-circle {
+      height: 40px;
+      width: 40px;
+    }
+    .fa-toolTip {
+      margin-top: 40px;
+    }
+  }
+  &.xl {
+    .icon-circle {
+      height: 50px;
+      width: 50px;
+    }
+    .fa-toolTip {
+      margin-top: 50px;
+    }
+  }
+  // active class for icons as links
+  &.active {
+    padding: 2px 0px;
+    &:after {
+      position: absolute;
+      transition: all 0.1s linear 0s;
+      -webkit-backface-visibility: hidden;
+      width: 100%;
+      display: block;
+      background-color: var(--main-brand-color);
+      height: 3px;
+      content: '';
+      left: 0;
+      z-index: 125;
+      top: 100%;
+    }
+  }
+}
+
+.fa-toolTip {
+  background: rgba($slate, .92);
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  font-family: $segoe;
+  padding: 4px 8px;
+  position: absolute;
+  text-align: center;
+  z-index: 90000;
+  text-transform: capitalize !important;
+}
+
+.help-icon {
+  margin: 0 0 0 10px;
+  margin: 0;
+
+  &.subtle {
+    margin-left: 10px;
+    color: grey;
+  }
+}

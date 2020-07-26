@@ -1,0 +1,190 @@
+.nomargin {
+  margin: 0 !important;
+  clear: left;
+}
+
+.marLeft-1 {
+  margin-left: $baseNum;
+}
+
+.marLeft-2 {
+  margin-left: $baseNum * 2;
+}
+
+.marLeft-3 {
+  margin-left: $baseNum * 3;
+}
+
+.marLeft-4 {
+  margin-left: $baseNum * 4;
+}
+
+.marLeft-5 {
+  margin-left: $baseNum * 5;
+}
+
+.marRight-0 {
+  margin-right: 0;
+}
+
+.marRight-1 {
+  margin-right: $baseNum;
+}
+
+.marRight-2 {
+  margin-right: $baseNum * 2;
+}
+
+.marRight-3 {
+  margin-right: $baseNum * 3;
+}
+
+.marRight-4 {
+  margin-right: $baseNum * 4;
+}
+
+.marRight-5 {
+  margin-right: $baseNum * 5;
+}
+
+.marBot-0 {
+  margin-bottom: 0;
+}
+
+.marBot-1 {
+  margin-bottom: $baseNum;
+}
+
+.marBot-15 {
+  margin-bottom: $baseNum * 1.5;
+}
+
+.marBot-2 {
+  margin-bottom: $baseNum * 2;
+}
+
+.marBot-3 {
+  margin-bottom: $baseNum * 3;
+}
+
+.marBot-4 {
+  margin-bottom: $baseNum * 4;
+}
+
+.marBot-5 {
+  margin-bottom: $baseNum * 5;
+}
+
+.marTop-0 {
+  margin-top: 0;
+}
+
+.marTop-1 {
+  margin-top: $baseNum;
+}
+
+.marTop-2 {
+  margin-top: $baseNum * 2;
+}
+
+.marTop-25 {
+  margin-top: $baseNum * 2.5;
+}
+
+.marTop-3 {
+  margin-top: $baseNum * 3;
+}
+
+.marTop-4 {
+  margin-top: $baseNum * 4;
+}
+
+.marTop-5 {
+  margin-top: $baseNum * 5;
+}
+
+.padBot-0 {
+  padding-bottom: 0;
+}
+
+.padBot-1 {
+  padding-bottom: $baseNum;
+}
+
+.padBot-2 {
+  padding-bottom: $baseNum * 2;
+}
+
+.padBot-3 {
+  padding-bottom: $baseNum * 3;
+}
+
+.padTop-0 {
+  padding-top: 0;
+}
+
+.padTop-1 {
+  padding-top: $baseNum;
+}
+
+.padTop-15 {
+  padding-top: $baseNum * 1.5;
+}
+
+.padTop-2 {
+  padding-top: $baseNum * 2;
+}
+
+.padTop-3 {
+  padding-top: $baseNum * 3;
+}
+
+.padRight-0 {
+  padding-right: 0;
+}
+
+.padRight-2 {
+  padding-right: $baseNum * 2;
+}
+
+.padRight-3 {
+  padding-right: $baseNum * 3;
+}
+
+.padRight-4 {
+  padding-right: $baseNum * 4;
+}
+
+.padLeft-0 {
+  padding-left: 0;
+}
+
+.padLeft-1 {
+  padding-left: $baseNum;
+}
+
+.padLeft-2 {
+  padding-left: $baseNum * 2;
+}
+
+.padLeft-25 {
+  padding-left: $baseNum * 2.5;
+}
+
+.padLeft-3 {
+  padding-left: $baseNum * 3;
+}
+
+.padLeft-4 {
+  padding-left: $baseNum * 4;
+}
+
+.noPadding {
+  padding: 0;
+}
+
+.noTopBotPadding {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+

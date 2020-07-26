@@ -1,0 +1,154 @@
+.card-modal {
+  background-color: white;
+  left: 0;
+  position: absolute;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-y: visible;
+  top: 5%;
+  z-index: 1100;
+  min-width: 343px;
+  width: 40%;
+  padding: 15px;
+
+  &.tiny {
+    width: 30%;
+  }
+  &.small {
+    width: 40%;
+  }
+  &.modal-medium {
+    width: 50%;
+  }
+  &.modal-medium-large {
+    width: 55%;
+  }
+  &.modal-large { // just .large conflicts with existing class
+    width: 60%;
+  }
+  .card-block p {
+    text-align: left;
+  }
+
+  .card {
+    border-width: 0px;
+  }
+  &.welcome-card {
+    z-index: 0;
+  }
+}
+
+// only add left bumper when side nav present
+@media only screen and (max-width: 768px) {
+  .side-nav .card-modal {
+    left: 56px;
+  }
+}
+
+.modal-title h5 {
+  font-family: $segoe;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+// .modal-header {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+//
+// .modal-body {
+//   @extend %clearfix;
+//   padding: 20px;
+//   &, p {
+//     font-size: 18px;
+//   }
+// }
+//
+// .modal-footer {
+//   @extend %clearfix;
+//   text-align: center;
+//   padding: 10px 0;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//
+//   .btn-primary a {
+//     color: white;
+//   }
+// }
+// .modal-footer.textRight {
+//   text-align: right;
+// }
+//
+// .benefit-modal {
+//   margin-top: 85px;
+//   max-height: 85vh;
+// }
+
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 1500px;
+  height: 100%;
+  left: 0;
+  overflow: auto;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1010;
+}
+
+.modal-overlay .fal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.modal-overlay.modal-overlay-fixed {
+  position: fixed;
+}
+
+.modal-overlay.modal-overlay-dark {
+  background-color: #353535;
+}
+
+.zindex-zero {
+  z-index: 0 !important;
+}
+
+
+@media (min-width: 1400px) {
+  .ei-modal {
+    width: 55%;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: translateY(900px);
+    opacity:0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity:1;
+  }
+}
+
+@keyframes scaleDown {
+  0% {
+    transform: translateY(0px);
+    opacity:1;
+  }
+  100% {
+    transform: translateY(900px);
+    opacity:0;
+  }
+}
+
+.modal-slide-up {
+  animation: scaleUp 250ms ease-out;
+}
+.modal-slide-down {
+  animation: scaleDown 250ms ease-in;
+}
