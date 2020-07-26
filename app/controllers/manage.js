@@ -25,13 +25,13 @@ export default Controller.extend({
     const creating = {
       model: this.get('newSet'),
       title: 'Create Set',
-      action: 'createSet',
+      submitAction: 'createSet',
       confirmText: 'Create'
     };
     const editing = {
       model: this.get('setToEdit') || {},
       title: 'Edit Set',
-      action: 'updateSet',
+      submitAction: 'updateSet',
       confirmText: 'Save'
     }
 

@@ -10,6 +10,34 @@
   </div>
 
   <div class="card-block">
+    <div class="form-row">
+      <div class="form-group col-4">
+        <label for="setId">Set Id</label>
+        {{input type="text" class="form-control" id="setId" placeholder="Set Id" value=model.setId}}
+      </div>
+      <div class="form-group col-8">
+        <label for="name">Name</label>
+        {{input type="text" class="form-control" id="name" placeholder="Name" value=model.name}}
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      {{textarea class="form-control" placeholder="Set Description" id="description" rows="6" value=model.description}}
+    </div>
+    <div class="form-row">
+      <div class="form-group col-4">
+        <label for="pieces">Piece Count</label>
+        {{input type="number" class="form-control" id="pieces" placeholder="Piece Count" value=model.pieces}}
+      </div>
+      <div class="form-group col-4">
+        <label for="age">Ages</label>
+        {{input type="text" class="form-control" id="age" placeholder="Recommended Ages" value=model.age}}
+      </div>
+      <div class="form-group col-4">
+        <label for="price">Price</label>
+        {{input type="text" class="form-control" id="price" placeholder="Price" value=model.price}}
+      </div>
+    </div>
   </div>
 
   <div class="card-footer d-flex justify-content-end">

@@ -10,7 +10,6 @@
     <tr>
       <th>Set Id</th>
       <th>Name</th>
-      {{!-- <th>Description</th> --}}
       <th>Pieces</th>
       <th>Age</th>
       <th>Price</th>
@@ -33,7 +32,9 @@
 {{edit-set-modal
   isHidden=isCreateSetModalHidden
   properties=selectedSetProperties
+  submitAction=(action selectedSetProperties.submitAction)
   animateClass="modal-animate"
+  size="modal-large"
 }}
 
 {{#modal-confirm
