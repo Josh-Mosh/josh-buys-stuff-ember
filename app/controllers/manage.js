@@ -15,9 +15,11 @@ export default Controller.extend({
   },
 
   isCreateSetModalHidden: true,
+  isDeleteSetModalHidden: true,
 
   editing: false,
   setToEdit: null,
+  setToDelete: null,
 
   selectedSetProperties: computed('creating', 'editing', 'setToEdit', function() {
     const creating = {
@@ -29,11 +31,39 @@ export default Controller.extend({
     const editing = {
       model: this.get('setToEdit') || {},
       title: 'Edit Set',
-      action: 'save',
+      action: 'updateSet',
       confirmText: 'Save'
     }
 
     return this.get('editing') ? editing : creating;
   }),
 
+  actions: {
+    openEditSetModal(set) {
+      this.set('setToEdit', set);
+      this.set('editing', true);
+      this.set('creating', false);
+      this.set('isCreateSetModalHidden');
+    },
+
+    openDeleteSetModal(set) {
+      this.set('setToDelete', set);
+      this.set('isDeleteSetModalHidden', false);
+    },
+
+    createSet(set) {
+      console.log('createSet', 'set:', set)
+
+    },
+
+    updateSet(set) {
+      console.log('updateSet', 'set:', set)
+
+    },
+
+    deleteSet(set) {
+      console.log('deleteSet', 'set:', set)
+
+    }
+  }
 });

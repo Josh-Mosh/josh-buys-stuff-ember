@@ -14,17 +14,17 @@
       <th>Pieces</th>
       <th>Age</th>
       <th>Price</th>
+      <th>Created</th>
+      <th class="text-right">Actions</th>
     </tr>
   </thead>
   <tbody>
     {{#each model as |set|}}
-      <tr>
-        <td>{{set.setId}}</td>
-        <td>{{set.name}}</td>
-        <td>{{set.pieces}}</td>
-        <td>{{set.age}}</td>
-        <td>{{set.price}}</td>
-      </tr>
+      {{set-row
+        set=set
+        onEdit=(action "openEditSetModal")
+        onDelete=(action "openDeleteSetModal")
+      }}
     {{/each}}
   </tbody>
 </table>
@@ -35,3 +35,12 @@
   properties=selectedSetProperties
   animateClass="modal-animate"
 }}
+
+{{#modal-confirm
+  isHidden=isDeleteSetModalHidden
+  title=(concat "Delete " setToDelete.name)
+  confirmText="Delete"
+  animateClass="modal-animate"
+}}
+  <p class="m-0">Are you sure you want to delete this set?</p>
+{{/modal-confirm}}

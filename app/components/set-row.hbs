@@ -1,0 +1,11 @@
+<td>{{set.setId}}</td>
+<td>{{set.name}}</td>
+<td>{{set.pieces}}</td>
+<td>{{set.age}}</td>
+<td>{{set.price}}</td>
+<td>{{format-date set.createdAt}}</td>
+<td class="text-right">
+  <a role="button" {{on "click" (fn this.onEdit set)}}>Edit</a>
+  <a role="button" class="ml-2" {{on "click" (fn this.onDelete set)}}>Delete</a>
+</td>
+

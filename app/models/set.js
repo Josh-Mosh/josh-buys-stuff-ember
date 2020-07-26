@@ -7,4 +7,5 @@ export default class SetModel extends Model {
   @attr('number') pieces;
   @attr('string') age;
   @attr('string') price;
+  @attr createdAt;
 }
