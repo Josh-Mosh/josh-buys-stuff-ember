@@ -4,5 +4,5 @@ import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mi
 
 export default Route.extend(ApplicationRouteMixin, {
   session: service(),
-  routeAfterAuthentication: 'admin/manage',
+  routeAfterAuthentication: 'admin/sets',
 });
