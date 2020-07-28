@@ -10,37 +10,54 @@
   </div>
 
   <div class="card-block">
+    <div class="set-modal-image col-3">
+      <img src={{model.imgUrl}}>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      {{input type="text" class="form-control" id="name" placeholder="Name" value=model.name}}
+    </div>
+
     <div class="form-row">
-      <div class="form-group col-4">
+      <div class="form-group col-3">
         <label for="setId">Set Id</label>
         {{input type="text" class="form-control" id="setId" placeholder="Set Id" value=model.setId}}
       </div>
-      <div class="form-group col-8">
-        <label for="name">Name</label>
-        {{input type="text" class="form-control" id="name" placeholder="Name" value=model.name}}
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="description">Description</label>
-      {{textarea class="form-control" placeholder="Set Description" id="description" rows="6" value=model.description}}
-    </div>
-    <div class="form-row">
-      <div class="form-group col-4">
+      <div class="form-group col-3">
         <label for="pieces">Piece Count</label>
         {{input type="number" class="form-control" id="pieces" placeholder="Piece Count" value=model.pieces}}
       </div>
-      <div class="form-group col-4">
+      <div class="form-group col-3">
         <label for="age">Ages</label>
         {{input type="text" class="form-control" id="age" placeholder="Recommended Ages" value=model.age}}
       </div>
-      <div class="form-group col-4">
+      <div class="form-group col-3">
         <label for="price">Price</label>
         {{input type="text" class="form-control" id="price" placeholder="Price" value=model.price}}
       </div>
     </div>
+
     <div class="form-group">
       <label for="imgUrl">Image Url</label>
-      {{input type="text" class="form-control" id="imgUrl" placeholder="Image Url from link" value=model.imgUrl}}
+      {{input type="text" class="form-control" id="imgUrl" placeholder="Image Url" value=model.imgUrl}}
+    </div>
+
+    <div class="form-group">
+      <label for="affiliateLink">Affiliate Link</label>
+      <div class="row align-items-center justify-content-between">
+        <div class="col-10">
+          {{input type="text" class="form-control" id="affiliateLink" placeholder="Affiliate Url" value=model.affiliateLink}}
+        </div>
+        <div class="col-2 text-right">
+          <a href={{model.affiliateLink}} target="new" class="link-actually-blue no-decoration">Test Link</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      {{textarea class="form-control" placeholder="Set Description" id="description" rows="6" value=model.description}}
     </div>
   </div>
 

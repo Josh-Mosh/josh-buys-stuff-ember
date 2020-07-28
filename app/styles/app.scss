@@ -29,8 +29,7 @@
 @import "partials/_spacing";
 @import "partials/_print";
 @import "partials/_tooltips";
-// @import "ember-power-select";
-// @import "ember-burger-menu";
+@import "partials/_jbs";
 
 // body, @page weren't here before rebase, check necessity
 body {
