@@ -1,7 +1,10 @@
 import Controller from '@ember/controller';
 import { computed } from '@ember/object'
+import { inject as service } from '@ember/service';
 
 export default Controller.extend({
+  session: service(),
+
   init() {
     this._super(...arguments);
     this.set('newSet', {
@@ -57,8 +60,8 @@ export default Controller.extend({
     },
 
     updateSet(set) {
-      console.log('updateSet', 'set:', set)
-
+      console.log('updateSet', 'set:', set);
+      set.save();
     },
 
     deleteSet(set) {

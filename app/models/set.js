@@ -1,7 +1,7 @@
 import Model, { attr } from '@ember-data/model';
 
 export default class SetModel extends Model {
-  @attr('string') setID;
+  @attr('string') setId;
   @attr('string') name;
   @attr('string') description;
   @attr('number') pieces;
