@@ -5,5 +5,11 @@ export default Route.extend(AuthenticatedRouteMixin, {
   model() {
     console.log('model');
     return this.get('store').findAll('set');
+  },
+
+  actions: {
+    invalidateSession() {
+      this.get('session').invalidate();
+    }
   }
 });

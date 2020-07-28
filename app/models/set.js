@@ -9,5 +9,8 @@ export default class SetModel extends Model {
   @attr('string') price;
   @attr('string') imgUrl;
   @attr('string') affiliateLink;
+  @attr('boolean', { defaultValue: false }) favorite;
+  @attr('string') videoId;
+  @attr('date') videoUploaded;
   @attr createdAt;
 }
