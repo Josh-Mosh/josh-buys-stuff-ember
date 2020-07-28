@@ -8,7 +8,7 @@
 <h3>Set Count: {{model.length}}</h3>
 
 <div class="d-flex align-items-center justify-content-end mb-2">
-  <button class="btn btn-primary" {{action (mut isCreateSetModalHidden false)}}>Add Set</button>
+  <button class="btn btn-primary" {{action (mut isEditSetModalHidden false)}}>Add Set</button>
 </div>
 
 <table class="table">
@@ -36,7 +36,7 @@
 
 
 {{edit-set-modal
-  isHidden=isCreateSetModalHidden
+  isHidden=isEditSetModalHidden
   properties=selectedSetProperties
   submitAction=(action selectedSetProperties.submitAction)
   animateClass="modal-animate"

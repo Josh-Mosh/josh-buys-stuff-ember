@@ -17,7 +17,7 @@ export default Controller.extend({
     });
   },
 
-  isCreateSetModalHidden: true,
+  isEditSetModalHidden: true,
   isDeleteSetModalHidden: true,
 
   editing: false,
@@ -46,7 +46,7 @@ export default Controller.extend({
       this.set('setToEdit', set);
       this.set('editing', true);
       this.set('creating', false);
-      this.set('isCreateSetModalHidden');
+      this.set('isEditSetModalHidden');
     },
 
     openDeleteSetModal(set) {
@@ -61,7 +61,9 @@ export default Controller.extend({
 
     updateSet(set) {
       console.log('updateSet', 'set:', set);
-      set.save();
+      set.save().then(() => {
+        this.set('isEditSetModalHidden', true);
+      });
     },
 
     deleteSet(set) {
