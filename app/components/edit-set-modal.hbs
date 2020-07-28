@@ -10,84 +10,98 @@
   </div>
 
   <div class="card-block">
+    <form autocomplete="off">
+      <div class="form-group">
+        <label for="name">Name</label>
+        {{input type="text" class="form-control" id="name" placeholder="Name" value=model.name}}
+      </div>
 
-    <div class="form-group">
-      <label for="name">Name</label>
-      {{input type="text" class="form-control" id="name" placeholder="Name" value=model.name}}
-    </div>
-
-    <div class="form-row">
-      <div class="form-group col-3">
-        <label for="setId">Set Id</label>
-        {{input type="text" class="form-control" id="setId" placeholder="Set Id" value=model.setId}}
-      </div>
-      <div class="form-group col-3">
-        <label for="pieces">Piece Count</label>
-        {{input type="number" class="form-control" id="pieces" placeholder="Piece Count" value=model.pieces}}
-      </div>
-      <div class="form-group col-3">
-        <label for="age">Ages</label>
-        {{input type="text" class="form-control" id="age" placeholder="Recommended Ages" value=model.age}}
-      </div>
-      <div class="form-group col-3">
-        <label for="price">Price</label>
-        {{masked-input
-          rawValue=model.price
-          class="form-control"
-          maskType="dollars"
-          name="price"
-          placeholder="Price"
-          id="price"
-        }}
-      </div>
-    </div>
-
-    <div class="form-row align-items-end">
-      <div class="col-6">
-        <div class="set-modal-image text-center">
-          <img src={{model.imgUrl}}>
+      <div class="form-row">
+        <div class="form-group col-3">
+          <label for="setId">Set Id</label>
+          {{input type="text" class="form-control" id="setId" placeholder="Set Id" value=model.setId}}
         </div>
-        <div class="form-group">
-          <label for="imgUrl">Image Url</label>
-          {{input type="text" class="form-control" id="imgUrl" placeholder="Image Url" value=model.imgUrl}}
+        <div class="form-group col-3">
+          <label for="pieces">Piece Count</label>
+          {{input type="number" class="form-control" id="pieces" placeholder="Piece Count" value=model.pieces}}
+        </div>
+        <div class="form-group col-3">
+          <label for="age">Ages</label>
+          {{input type="text" class="form-control" id="age" placeholder="Recommended Ages" value=model.age}}
+        </div>
+        <div class="form-group col-3">
+          <label for="price">Price</label>
+          {{masked-input
+            rawValue=model.price
+            class="form-control"
+            maskType="dollars"
+            name="price"
+            placeholder="Price"
+            id="price"
+          }}
         </div>
       </div>
-      <div class="col-6">
-        <div class="set-modal-video-embed text-center">
-          <iframe height="175" width="311" src={{videoSrc}} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <div class="form-row align-items-end">
+        <div class="col-6">
+          <div class="set-modal-image text-center">
+            <img src={{model.imgUrl}}>
+          </div>
+          <div class="form-group">
+            <label for="imgUrl">Image Url</label>
+            {{input type="text" class="form-control" id="imgUrl" placeholder="Image Url" value=model.imgUrl}}
+          </div>
         </div>
-        <div class="form-group">
-          <label for="videoId">Video Id (YouTube)</label>
-          {{input type="text" class="form-control" id="videoId" placeholder="Video Id" value=model.videoId}}
+        <div class="col-6">
+          <div class="set-modal-video-embed text-center">
+            <iframe height="175" width="311" src={{videoSrc}} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-6">
+              <label for="videoId">Video Id (YouTube)</label>
+              {{input type="text" class="form-control" id="videoId" placeholder="Video Id" value=model.videoId}}
+            </div>
+            <div class="form-group col-6">
+              <label for="videoUploaded">Upload Date</label>
+              {{!-- <EmberFlatpickr @date={{readonly (or model.videoUploaded '')}} @onChange={{action "onDateSelect"}}/> --}}
+              {{ember-flatpickr
+                allowInput=true
+                class="w-100"
+                date=(readonly (or model.videoUploaded ''))
+                dateFormat="n/j/Y"
+                onChange=(action "onDateSelect")
+              }}
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="form-group">
-      <label for="affiliateLink">Affiliate Link</label>
-      <div class="row align-items-center justify-content-between">
-        <div class="col-10">
-          {{input type="text" class="form-control" id="affiliateLink" placeholder="Affiliate Url" value=model.affiliateLink}}
-        </div>
-        <div class="col-2 text-right">
-          <a href={{model.affiliateLink}} target="new" class="link-actually-blue no-decoration">Test Link</a>
+      <div class="form-group">
+        <label for="affiliateLink">Affiliate Link</label>
+        <div class="row align-items-center justify-content-between">
+          <div class="col-10">
+            {{input type="text" class="form-control" id="affiliateLink" placeholder="Affiliate Url" value=model.affiliateLink}}
+          </div>
+          <div class="col-2 text-right">
+            <a href={{model.affiliateLink}} target="new" class="link-actually-blue no-decoration">Test Link</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="form-group">
-      <label for="description">Description</label>
-      {{textarea class="form-control" placeholder="Set Description" id="description" rows="6" value=model.description}}
-    </div>
-
-    <div class="form-group">
-      <div class="form-check d-flex align-items-center">
-        {{input class="form-check-input" type="checkbox" id="favorite" checked=model.favorite}}
-        <label class="form-check-label" for="favorite">
-          Favorite this set
-        </label>
+      <div class="form-group">
+        <label for="description">Description</label>
+        {{textarea class="form-control" placeholder="Set Description" id="description" rows="6" value=model.description}}
       </div>
-    </div>
+
+      <div class="form-group">
+        <div class="form-check d-flex align-items-center">
+          {{input class="form-check-input" type="checkbox" id="favorite" checked=model.favorite}}
+          <label class="form-check-label" for="favorite">
+            Favorite this set
+          </label>
+        </div>
+      </div>
+    </form>
   </div>
 
   <div class="card-footer d-flex justify-content-end">

@@ -12,6 +12,12 @@ export default ModalConfirm.extend({
   actions: {
     submit() {
       this.submitAction(this.get('model'));
+    },
+
+    onDateSelect(selectedDates, dateStr, /*instance*/) {
+      let date = dateStr || '';
+      if (!date) return;
+      this.set('model.videoUploaded', new Date(date));
     }
   }
 });

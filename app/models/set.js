@@ -13,4 +13,16 @@ export default class SetModel extends Model {
   @attr('string') videoId;
   @attr('date') videoUploaded;
   @attr createdAt;
+
+  get hasImage() {
+    return !!this.imgUrl;
+  }
+
+  get hasVideo() {
+    return !!this.videoId;
+  }
+
+  get isFavorite() {
+    return this.favorite;
+  }
 }

@@ -66,12 +66,14 @@ export default Controller.extend({
 
     createSet(set) {
       console.log('createSet', 'set:', set)
+      if (!set) return;
       this.get('store').createRecord('set', set).save().then(() => {
         this.set('isEditSetModalHidden', true);
       });
     },
 
     updateSet(set) {
+      if (!set) return;
       console.log('updateSet', 'set:', set);
       set.save().then(() => {
         this.set('isEditSetModalHidden', true);
@@ -81,9 +83,7 @@ export default Controller.extend({
     deleteSet() {
       console.log('deleteSet', 'set:', this.get('setToDelete'));
       const setToDelete = this.get('setToDelete');
-      if (!setToDelete) {
-        return;
-      }
+      if (!setToDelete) return;
       setToDelete.deleteRecord();
       setToDelete.save().then(() => {
         this.set('isDeleteSetModalHidden', true);
