@@ -4,6 +4,7 @@ import { inject as service } from '@ember/service';
 
 export default Controller.extend({
   session: service(),
+  store: service(),
 
   init() {
     this._super(...arguments);
@@ -42,11 +43,20 @@ export default Controller.extend({
   }),
 
   actions: {
+    openCreateSetModal() {
+      this.setProperties({
+        setToEdit: this.get('newSet'),
+        creating: true,
+        editing: false,
+        isEditSetModalHidden: false
+      })
+    },
+
     openEditSetModal(set) {
       this.set('setToEdit', set);
       this.set('editing', true);
       this.set('creating', false);
-      this.set('isEditSetModalHidden');
+      this.set('isEditSetModalHidden', false);
     },
 
     openDeleteSetModal(set) {
@@ -56,7 +66,9 @@ export default Controller.extend({
 
     createSet(set) {
       console.log('createSet', 'set:', set)
-
+      this.get('store').createRecord('set', set).save().then(() => {
+        this.set('isEditSetModalHidden', true);
+      });
     },
 
     updateSet(set) {
@@ -66,9 +78,16 @@ export default Controller.extend({
       });
     },
 
-    deleteSet(set) {
-      console.log('deleteSet', 'set:', set)
-
+    deleteSet() {
+      console.log('deleteSet', 'set:', this.get('setToDelete'));
+      const setToDelete = this.get('setToDelete');
+      if (!setToDelete) {
+        return;
+      }
+      setToDelete.deleteRecord();
+      setToDelete.save().then(() => {
+        this.set('isDeleteSetModalHidden', true);
+      });
     }
   }
 });
