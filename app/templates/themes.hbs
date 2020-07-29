@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-between align-items-center">
+  <h1>ADMIN SETS TEMPLATE</h1>
+  {{#if session.isAuthenticated}}
+    <button class="btn" {{action "invalidateSession"}}>Logout</button>
+  {{/if}}
+</div>
+
+<h3>Theme Count: {{model.length}}</h3>
+
+<div class="d-flex align-items-center justify-content-end mb-2">
+  <button class="btn btn-primary" {{action "openCreateThemeModal"}}>Add Theme</button>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Image URL</th>
+      <th>Background Img URL</th>
+      <th>Color Scheme</th>
+      <th class="text-right">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each model as |theme|}}
+      {{theme-row
+        theme=theme
+        onEdit=(action "openEditThemeModal")
+        onDelete=(action "openDeleteThemeModal")
+      }}
+    {{/each}}
+  </tbody>
+</table>
+
+
+{{edit-theme-modal
+  isHidden=isEditThemeModalHidden
+  properties=selectedThemeProperties
+  submitAction=(action selectedThemeProperties.submitAction)
+  animateClass="modal-animate"
+  size="modal-large"
+}}
+
+{{#modal-confirm
+  isHidden=isDeleteThemeModalHidden
+  title=(concat "Delete " themeToDelete.name)
+  confirmText="Delete"
+  action="deleteTheme"
+  animateClass="modal-animate"
+}}
+  <p class="m-0">Are you sure you want to delete this theme?</p>
+{{/modal-confirm}}

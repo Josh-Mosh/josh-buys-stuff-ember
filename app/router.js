@@ -12,6 +12,7 @@ Router.map(function() {
   this.route('login');
 
   this.route('authenticated', { path: 'admin' }, function() {
-    this.route('manage', { resetNamespace: true });
+    this.route('sets', { resetNamespace: true });
+    this.route('themes', { resetNamespace: true });
   });
 });

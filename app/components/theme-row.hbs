@@ -1,0 +1,8 @@
+<td>{{theme.name}}</td>
+{{!-- <td>{{#if theme.logoUrl}}<img class="in-row-image" src={{theme.logoUrl}}>{{/if}}</td> --}}
+<td>{{boolean-checkmark checked=theme.hasLogoUrl}}</td>
+<td>{{boolean-checkmark checked=theme.hasBgImageUrl}}</td>
+<td>{{theme.fontTheme}}</td>
+<td class="text-right">
+  <a role="button" class="ml-2" {{action (action this.onDelete theme) bubbles=false}}>Delete</a>
+</td>

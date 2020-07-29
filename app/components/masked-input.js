@@ -3,7 +3,6 @@ import { computed, observer } from '@ember/object';
 import { run } from '@ember/runloop';
 import { isEmpty } from '@ember/utils';
 import numeral from 'numeral';
-import $ from 'jquery';
 
 export default TextField.extend({
 

@@ -1,0 +1,53 @@
+<div class="card card-borderless card-modal {{animation}} {{size}}" data-test-confirm-modal id={{id}}>
+
+  <div class="card-header pt-0 pr-0">
+    <div class="modal-title left">
+      <h5>{{properties.title}}</h5>
+    </div>
+    <div class="modal-exit right">
+      <a {{action "cancel"}}><i class="fa fa-times"></i></a>
+    </div>
+  </div>
+
+  <div class="card-block">
+    <form autocomplete="off">
+      <div class="form-group">
+        <label for="name">Name</label>
+        {{input type="text" class="form-control" id="name" placeholder="Name" value=model.name}}
+      </div>
+      <div class="form-group">
+        <label for="logoUrl">Logo URL</label>
+        {{input type="text" class="form-control" id="logoUrl" placeholder="Logo URL" value=model.logoUrl}}
+      </div>
+      <div class="form-group">
+        <label for="bgImageUrl">Theme Background URL</label>
+        {{input type="text" class="form-control" id="bgImageUrl" placeholder="Background Image URL" value=model.bgImageUrl}}
+      </div>
+      <div class="form-group">
+        <label for="colorScheme">Color Scheme</label>
+        {{#power-select
+          options=colorOptions
+          renderInPlace=true
+          selected=model.fontTheme
+          placeholder="Color Scheme"
+          onChange=(action (mut model.fontTheme))
+          as |option|
+        }}
+          {{option}}
+        {{/power-select}}
+      </div>
+    </form>
+  </div>
+
+  <div class="card-footer d-flex justify-content-end">
+    {{#unless cancelHidden}}
+      <button class="btn btn-secondary mr-2" {{action "cancel"}} data-test-cancel>{{or cancelText "Cancel"}}</button>
+    {{/unless}}
+    {{#unless confirmHidden}}
+      <button class="btn btn-primary" {{action "submit"}} disabled={{disableButton}} data-test-submit>
+        <i class="{{if progress "fal fa-spinner"}}"></i>&nbsp;{{properties.confirmText}}&nbsp;
+      </button>
+    {{/unless}}
+  </div>
+
+</div>

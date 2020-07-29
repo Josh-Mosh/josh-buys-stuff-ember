@@ -29,6 +29,7 @@
 @import "partials/_spacing";
 @import "partials/_print";
 @import "partials/_tooltips";
+@import "ember-power-select";
 @import "partials/_jbs";
 
 // body, @page weren't here before rebase, check necessity
@@ -51,3 +52,4 @@ body {
   --tertiary-brand-color: #d2702f; // orange
   --tertiary-brand-color-hover: #b95716; //orange darkened by 10%
 }
+
