@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-end mt-2">
+  {{#if session.isAuthenticated}}
+    <button class="btn" {{action "invalidateSession"}}>Logout</button>
+  {{/if}}
+</div>
+
+<div class="row mb-4 ml-0 mr-1 justify-content-center">
+  <div class="p-0">
+    <ul class="nav nav-tabs nav-tabs-simple text-center">
+      <li class="active">{{link-to "Sets" "sets"}}</li>
+      <li>{{link-to "Themes" "themes"}}</li>
+    </ul>
+  </div>
+</div>
+
+{{outlet}}
