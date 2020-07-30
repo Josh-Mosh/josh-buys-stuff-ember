@@ -15,4 +15,6 @@ Router.map(function() {
     this.route('sets', { resetNamespace: true });
     this.route('themes', { resetNamespace: true });
   });
+
+  this.route('disclosure');
 });
