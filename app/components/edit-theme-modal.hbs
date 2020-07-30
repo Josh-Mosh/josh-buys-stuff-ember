@@ -10,6 +10,14 @@
   </div>
 
   <div class="card-block">
+    {{#if (or model.logoUrl model.bgImageUrl)}}
+      <div class="theme-header-preview">
+        <div class="logo-wrapper text-center" style="background-image: url({{model.bgImageUrl}}); background-color: {{model.bgColor}};">
+          <img src={{model.logoUrl}}>
+        </div>
+      </div>
+    {{/if}}
+
     <form autocomplete="off">
       <div class="form-group">
         <label for="name">Name</label>
@@ -22,6 +30,10 @@
       <div class="form-group">
         <label for="bgImageUrl">Theme Background URL</label>
         {{input type="text" class="form-control" id="bgImageUrl" placeholder="Background Image URL" value=model.bgImageUrl}}
+      </div>
+      <div class="form-group">
+        <label for="bgColor">Theme Background Color</label>
+        {{input type="text" class="form-control" id="bgColor" placeholder="Background Image Color" value=model.bgColor}}
       </div>
       <div class="form-group">
         <label for="colorScheme">Color Scheme</label>

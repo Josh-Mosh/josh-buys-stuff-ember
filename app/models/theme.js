@@ -4,6 +4,7 @@ export default class ThemeModel extends Model {
   @attr('string') name;
   @attr('string') logoUrl;
   @attr('string') bgImageUrl;
+  @attr('string') bgColor;
   @attr('string') fontTheme;
 
   get hasBgImageUrl() {
@@ -12,5 +13,9 @@ export default class ThemeModel extends Model {
 
   get hasLogoUrl() {
     return !!this.logoUrl;
+  }
+
+  get hasBgColor() {
+    return !!this.bgColor;
   }
 }

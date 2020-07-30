@@ -64,6 +64,7 @@ export default Controller.extend({
       console.log('createTheme', 'theme:', theme);
       if (!theme) return;
       this.get('store').createRecord('theme', theme).save().then(() => {
+        this.set('newTheme', {});
         this.set('isEditThemeModalHidden', true);
       });
     },
@@ -76,8 +77,8 @@ export default Controller.extend({
       });
     },
 
-    deleteSet() {
-      console.log('deleteSet', 'theme:', this.get('themeToDelete'));
+    deleteTheme() {
+      console.log('deleteTheme', 'theme:', this.get('themeToDelete'));
       const themeToDelete = this.get('themeToDelete');
       if (!themeToDelete) return;
       themeToDelete.deleteRecord();

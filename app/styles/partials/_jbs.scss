@@ -8,6 +8,21 @@ img.in-row-image {
   height: 100px;
 }
 
+.theme-header-preview {
+  .logo-wrapper {
+    background-color: rgb(0, 0, 0);
+    background-position: center center;
+    padding: 15px 0;
+    justify-content: center;
+    margin: 0 0 15px 0;
+    max-height: 12.5rem;
+    -webkit-box-pack: center;
+    img {
+      height: 60px;
+    }
+  }
+}
+
 .form-check-input {
   margin-top: 0;
 }

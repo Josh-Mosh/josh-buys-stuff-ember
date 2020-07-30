@@ -5,7 +5,7 @@ export default ModalConfirm.extend({
 
   init() {
     this._super(...arguments);
-    this.set('colorOptions', ['light', 'dark']);
+    this.set('colorOptions', ['Light', 'Dark']);
   },
 
   model: computed.alias('properties.model'),
