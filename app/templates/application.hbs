@@ -1,4 +1,16 @@
-<div class="container">
-  <h1>application.hbs</h1>
-  {{outlet}}
+<div class="main-flex-body">
+  <header class="jbs-header">
+    <div class="container">
+      <h1 class="header-title">Josh Buys Stuff</h1>
+      <h5 class="header-subtitle"> Stuff Josh from Josh Builds Stuff Buys</h5>
+    </div>
+  </header>
+
+  <main class="container">
+    {{outlet}}
+  </main>
+
+  <footer class="jbs-footer text-center">
+    Created by Josh | {{link-to "Affiliate Disclosure" "disclosure" class="link-blue no-decoration"}}
+  </footer>
 </div>

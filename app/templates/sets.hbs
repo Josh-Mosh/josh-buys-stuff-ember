@@ -1,41 +1,40 @@
-<div class="d-flex justify-content-between align-items-center">
-  <h1>ADMIN SETS TEMPLATE</h1>
-  {{#if session.isAuthenticated}}
-    <button class="btn" {{action "invalidateSession"}}>Logout</button>
-  {{/if}}
-</div>
-
-<h3>Set Count: {{model.length}}</h3>
-
-<div class="d-flex align-items-center justify-content-end mb-2">
+<div class="d-flex align-items-center justify-content-between">
+  <h3>Sets</h3>
   <button class="btn btn-primary" {{action "openCreateSetModal"}}>Add Set</button>
 </div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Set Id</th>
-      <th>Pieces</th>
-      <th>Ages</th>
-      <th>Price</th>
-      <th>Image</th>
-      <th>Video</th>
-      <th>Favorite</th>
-      <th class="text-right">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each model as |set|}}
-      {{set-row
-        set=set
-        onEdit=(action "openEditSetModal")
-        onDelete=(action "openDeleteSetModal")
-      }}
-    {{/each}}
-  </tbody>
-</table>
+<div class="card">
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Set Id</th>
+          <th>Pieces</th>
+          <th>Ages</th>
+          <th>Price</th>
+          <th>Image</th>
+          <th>Video</th>
+          <th>Favorite</th>
+          <th class="text-right">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each model as |set|}}
+          {{set-row
+            set=set
+            onEdit=(action "openEditSetModal")
+            onDelete=(action "openDeleteSetModal")
+          }}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
 
+<div>
+  <p class="text-right">Set Count: {{model.length}}</p>
+</div>
 
 {{edit-set-modal
   isHidden=isEditSetModalHidden

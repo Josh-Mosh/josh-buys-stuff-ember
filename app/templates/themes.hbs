@@ -1,38 +1,37 @@
-<div class="d-flex justify-content-between align-items-center">
-  <h1>ADMIN SETS TEMPLATE</h1>
-  {{#if session.isAuthenticated}}
-    <button class="btn" {{action "invalidateSession"}}>Logout</button>
-  {{/if}}
-</div>
-
-<h3>Theme Count: {{model.length}}</h3>
-
-<div class="d-flex align-items-center justify-content-end mb-2">
+<div class="d-flex align-items-center justify-content-between">
+  <h3>Themes</h3>
   <button class="btn btn-primary" {{action "openCreateThemeModal"}}>Add Theme</button>
 </div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Logo URL</th>
-      <th>Background Image</th>
-      <th>Background Color</th>
-      <th>Color Scheme</th>
-      <th class="text-right">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each model as |theme|}}
-      {{theme-row
-        theme=theme
-        onEdit=(action "openEditThemeModal")
-        onDelete=(action "openDeleteThemeModal")
-      }}
-    {{/each}}
-  </tbody>
-</table>
+<div class="card">
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Logo URL</th>
+          <th>Background Image</th>
+          <th>Background Color</th>
+          <th>Color Scheme</th>
+          <th class="text-right">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each model as |theme|}}
+          {{theme-row
+            theme=theme
+            onEdit=(action "openEditThemeModal")
+            onDelete=(action "openDeleteThemeModal")
+          }}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
 
+<div>
+  <p class="text-right">Theme Count: {{model.length}}</p>
+</div>
 
 {{edit-theme-modal
   isHidden=isEditThemeModalHidden
