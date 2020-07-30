@@ -44,18 +44,22 @@
 
       <div class="form-row align-items-end">
         <div class="col-6">
-          <div class="set-modal-image text-center">
-            <img src={{model.imgUrl}}>
-          </div>
+          {{#if model.imgUrl}}
+            <div class="set-modal-image text-center">
+              <img src={{model.imgUrl}}>
+            </div>
+          {{/if}}
           <div class="form-group">
             <label for="imgUrl">Image Url</label>
             {{input type="text" class="form-control" id="imgUrl" placeholder="Image Url" value=model.imgUrl}}
           </div>
         </div>
         <div class="col-6">
-          <div class="set-modal-video-embed text-center">
-            <iframe height="175" width="311" src={{videoSrc}} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
+          {{#if model.videoId}}
+            <div class="set-modal-video-embed text-center">
+              <iframe height="175" width="311" src={{videoSrc}} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          {{/if}}
           <div class="form-row">
             <div class="form-group col-6">
               <label for="videoId">Video Id (YouTube)</label>

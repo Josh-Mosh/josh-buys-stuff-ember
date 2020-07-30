@@ -1,0 +1,34 @@
+<div class="card clickable">
+  <div class="card-img-top">
+    <div class="card-img-wrapper">
+      <img class="card-img" src={{set.imgUrl}}>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <p class="set-card-header">{{set.name}}</p>
+    <p class="set-card-subheader">LEGO City - {{set.setId}}</p>
+    {{#if set.description}}
+      {{clamped-description description=set.description}}
+    {{/if}}
+  </div>
+
+  <div class="card-footer">
+    <div class="d-flex justify-content-around align-items-center">
+      <div class="card-footer-element">
+        <p class="element-prop">{{format-money set.price}}</p>
+        <p class="element-label">Price</p>
+      </div>
+      <div class="element-delimiter"></div>
+      <div class="card-footer-element">
+        <p class="element-prop">{{set.pieces}}</p>
+        <p class="element-label">Pieces</p>
+      </div>
+      <div class="element-delimiter"></div>
+      <div class="card-footer-element">
+        <p class="element-prop">{{set.age}}</p>
+        <p class="element-label">Ages</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -45,6 +45,7 @@ header, main, footer {
   padding: 5px 0;
 }
 
+/* admin pages */
 .set-modal-image {
   img {
     height: 175px;
@@ -73,3 +74,82 @@ img.in-row-image {
 .form-check-input {
   margin-top: 0;
 }
+
+/* home page */
+.set-card {
+  margin-bottom: 30px;
+
+  .card {
+    height: 100%;
+  }
+
+  .card-img-top {
+    text-align: center;
+    padding: 15px;
+    .card-img-wrapper {
+      height: 180px;
+      img.card-img {
+        height: 100%;
+        width: auto;
+        transition: transform .5s;
+      }
+    }
+  }
+
+  .card-body {
+    padding-bottom: 0;
+    padding-top: 0;
+    .set-card-header {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+    .set-card-subheader {
+      font-weight: bold;
+      font-family: "Montserrat";
+      color: $dkGray;
+      font-size: 12px;
+    }
+    .set-card-description {
+      color: #666;
+      &.line-clamp {
+        // @include line-clamp(4);
+      }
+    }
+  }
+
+  .card-footer {
+    .card-footer-element {
+      p {
+        text-align: center;
+      }
+      p.element-prop {
+        color: $black;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0;
+      }
+
+      p.element-label {
+        color: $dkGray;
+        font-family: 'Montserrat';
+        margin-bottom: 0;
+      }
+    }
+    div.element-delimiter {
+      height: 44px;
+      width: 1px;
+      border-right: 1px solid $mdGray;
+      background-color: $mdGray;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+

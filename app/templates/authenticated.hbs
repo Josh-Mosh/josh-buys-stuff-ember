@@ -1,4 +1,5 @@
-<div class="d-flex justify-content-end mt-2">
+<div class="d-flex justify-content-between align-items-center mt-2">
+  {{link-to "< Home" "home" class="link-actually-blue no-decoration fs-18"}}
   {{#if session.isAuthenticated}}
     <button class="btn" {{action "invalidateSession"}}>Logout</button>
   {{/if}}

@@ -1,6 +1,13 @@
 <h2>home.hbs</h2>
+
 {{#if session.isAuthenticated}}
   {{link-to "Manage Sets" "sets"}}
 {{else}}
   {{link-to "Admin Login" "login"}}
 {{/if}}
+
+<div class="row">
+  {{#each sets as |set|}}
+    {{set-card set=set}}
+  {{/each}}
+</div>

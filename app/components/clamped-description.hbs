@@ -1,0 +1,10 @@
+<p class="set-card-description line-clamp">
+  {{clampedDescription}}
+  <a class="link-actually-blue no-decoration" {{action "toggleCollapsed"}}>
+    {{#if collapsed}}
+      show more
+    {{else}}
+      show less
+    {{/if}}
+  </a>
+</p>

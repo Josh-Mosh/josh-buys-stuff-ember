@@ -9,6 +9,10 @@ export default Route.extend(AuthenticatedRouteMixin, {
     controller.set('session', this.get('session'));
   },
 
+  redirect(/*model, transition*/) {
+    this.transitionTo('sets');
+  },
+
   actions: {
     invalidateSession() {
       this.get('session').invalidate();
