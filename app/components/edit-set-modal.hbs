@@ -11,9 +11,26 @@
 
   <div class="card-block">
     <form autocomplete="off">
-      <div class="form-group">
-        <label for="name">Name</label>
-        {{input type="text" class="form-control" id="name" placeholder="Name" value=model.name}}
+      <div class="form-row">
+        <div class="form-group col-8">
+          <label for="name">Name</label>
+          {{input type="text" class="form-control" id="name" placeholder="Name" value=model.name}}
+        </div>
+        <div class="form-group col-4">
+          <label for="theme">Theme</label>
+          {{#power-select
+            options=themes
+            renderInPlace=true
+            selected=model.theme
+            searchEnabled=true
+            searchField="name"
+            placeholder="Theme"
+            onChange=(action (mut model.theme))
+            as |option|
+          }}
+            {{option.name}}
+          {{/power-select}}
+        </div>
       </div>
 
       <div class="form-row">

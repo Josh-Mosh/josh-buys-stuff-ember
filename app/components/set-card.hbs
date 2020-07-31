@@ -6,7 +6,7 @@
 
 <div class="card-body">
   <p class="set-card-header">{{set.name}}</p>
-  <p class="set-card-subheader">LEGO City - {{set.setId}}</p>
+  <p class="set-card-subheader">{{set.theme.name}} - {{set.setId}}</p>
   {{#if set.description}}
     {{clamped-description description=set.description}}
   {{/if}}

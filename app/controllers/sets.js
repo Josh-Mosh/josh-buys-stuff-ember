@@ -25,6 +25,8 @@ export default Controller.extend({
   setToEdit: null,
   setToDelete: null,
 
+  sets: computed.reads('model'),
+
   selectedSetProperties: computed('creating', 'editing', 'setToEdit', function() {
     const creating = {
       model: this.get('newSet'),
