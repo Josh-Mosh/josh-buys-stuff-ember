@@ -9,7 +9,7 @@ export default Component.extend({
     let description = this.get('description') || '';
 
     if (this.get('collapsed')) {
-      return description.substr(0, 180).trim().concat("...");
+      return description.substr(0, 170).trim().concat("...");
     }
 
     return description;

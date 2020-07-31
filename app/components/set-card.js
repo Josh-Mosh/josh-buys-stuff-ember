@@ -3,14 +3,14 @@ import { observer } from '@ember/object';
 import HoverMixin from '../mixins/hover';
 
 export default Component.extend(HoverMixin, {
-  classNames: ['set-card', 'col-lg-4', 'col-md-6'],
+  classNames: ['set-card', 'card', 'clickable', 'no-overflow'],
 
   mouseOver: observer('hover', function() {
     const hover = this.get('hover');
     if (hover) {
-      this.$('img').animate({ height: '190px' });
+      this.$('img').animate({ height: '100%', width: '100%' });
     } else {
-      this.$('img').animate({ height: '180px' });
+      this.$('img').animate({ height: '95%', width: '95%' });
     }
   }),
 
@@ -19,6 +19,6 @@ export default Component.extend(HoverMixin, {
     // prevents menu bouncing when mousing over and off quickly
     setTimeout(function() {
       this.$('img').clearQueue();
-    }, 500);
+    }, 750);
   },
 });

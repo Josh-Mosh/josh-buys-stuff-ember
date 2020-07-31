@@ -26,6 +26,10 @@ header, main, footer {
 /* Headers / Footers */
 .jbs-header {
   background-color: $logo-blue;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 4px solid $black;
+
   .header-title {
     color: #fff;
     margin: 4px 0 0;
@@ -76,12 +80,23 @@ img.in-row-image {
 }
 
 /* home page */
-.set-card {
-  margin-bottom: 30px;
 
-  .card {
-    height: 100%;
+/* about section */
+.home-about-wrapper {
+  img.about-logo {
+    height: 150px;
+    border-radius: 75px;
+    width: auto;
   }
+}
+
+/* sets section */
+.set-card-wrapper {
+  margin-bottom: 15px;
+}
+
+.set-card {
+  height: 100%;
 
   .card-img-top {
     text-align: center;
@@ -89,9 +104,12 @@ img.in-row-image {
     .card-img-wrapper {
       height: 180px;
       img.card-img {
-        height: 100%;
-        width: auto;
-        transition: transform .5s;
+        width: 95%;
+        height: 95%;
+        object-fit: contain;
+        transition: transform .75s;
+        vertical-align: middle;
+        display: inline-block;
       }
     }
   }
@@ -103,12 +121,14 @@ img.in-row-image {
       font-size: 18px;
       font-weight: 600;
       margin-bottom: 0;
+      text-align: left;
     }
     .set-card-subheader {
-      font-weight: bold;
-      font-family: "Montserrat";
       color: $dkGray;
+      font-family: "Montserrat";
       font-size: 12px;
+      font-weight: bold;
+      text-align: left;
     }
     .set-card-description {
       color: #666;
