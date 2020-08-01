@@ -104,6 +104,17 @@ img.in-row-image {
   }
 }
 
+.home-socials {
+  img {
+    margin-top: 15px;
+    transition: 0.2s;
+    width: 100%;
+    &:hover {
+      box-shadow: 1px 2px 4px $dkGray;
+    }
+  }
+}
+
 /* sets section */
 .set-card-wrapper {
   margin-bottom: 15px;
