@@ -15,10 +15,15 @@ export default Component.extend(HoverMixin, {
   }),
 
   mouseMove() {
-    // wait for animation to finish(400ms) then clear queue
-    // prevents menu bouncing when mousing over and off quickly
+    // wait for animation to finish(750ms) then clear queue
+    // prevents images bouncing when mousing over and off quickly
     setTimeout(function() {
       this.$('img').clearQueue();
     }, 750);
   },
+
+  click() {
+    this.transitionToSet(this.get('set'));
+  }
+
 });

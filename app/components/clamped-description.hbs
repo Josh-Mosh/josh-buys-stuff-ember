@@ -1,6 +1,6 @@
 <p class="set-card-description line-clamp">
   {{clampedDescription}}
-  <a class="link-actually-blue no-decoration" {{action "toggleCollapsed"}}>
+  <a class="link-actually-blue no-decoration" {{action "toggleCollapsed" bubbles=false}}>
     {{#if collapsed}}
       show more
     {{else}}

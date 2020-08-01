@@ -1,23 +1,15 @@
-{{#if session.isAuthenticated}}
-  {{link-to "Manage Sets" "sets"}}
-{{else}}
-  {{link-to "Admin Login" "login"}}
-{{/if}}
-
-<div class="row w-100">
+<div class="row w-100 justify-content-around">
   <div class="col-lg-3">
-    <div class="home-about-wrapper text-center">
-      <img class="about-logo" alt="Josh Buys Stuff" src="assets/images/brand-round-blue.png">
+    <div class="home-about-wrapper text-center mt-4">
+      {{!-- <img class="about-logo" alt="Josh Buys Stuff" src="assets/images/brand-round-blue.png"> --}}
+      <img class="about-logo" alt="Josh Buys Stuff" src="assets/images/brand-round.png">
+      <p class="element-label mt-3">What is this?</p>
+      <p>Hi, I'm Josh, this is Josh Buys Stuff and today we're talking about stuff Josh buys. Content creators will often post affiliate links. Personally, I think a link by itself is a bit of a disservice to the consumer, so I wanted to build a more detailed platform to share my opinions on stuff I buy.</p>
+      <p>Here you'll find my unbiased opinions on stuff I have actually bought alongside some details of that stuff that will hopefully help you determine if it's worth buying.</p>
     </div>
   </div>
 
   <div class="col-lg-9">
-    <div class="row">
-      {{#each sets as |set|}}
-        <div class="col-lg-4 col-md-6 set-card-wrapper pl-lg-0">
-          {{set-card set=set}}
-        </div>
-      {{/each}}
-    </div>
+    {{outlet}}
   </div>
 </div>

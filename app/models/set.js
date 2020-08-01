@@ -16,6 +16,10 @@ export default class SetModel extends Model {
   @attr('date') videoUploaded;
   @attr createdAt;
 
+  get embeddedSrc() {
+    return this.videoId ? `https://www.youtube.com/embed/${this.videoId}` : '';
+  }
+
   get hasImage() {
     return !!this.imgUrl;
   }

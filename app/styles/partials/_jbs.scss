@@ -1,3 +1,7 @@
+/* JBS Variables*/
+$logo-yellow: #F3B900;
+$jbs-black: #070808;
+
 /* Layout */
 html, body {
   width: 100%;
@@ -25,18 +29,28 @@ header, main, footer {
 
 /* Headers / Footers */
 .jbs-header {
-  background-color: $logo-blue;
+  // background-color: $logo-blue;
+  background-color: $logo-yellow;
+  // background-color: #000;
   overflow: hidden;
   position: relative;
   border-bottom: 4px solid $black;
 
+  img.name-as-img {
+    padding-top: 5px;
+    height: 50px;
+    width: auto;
+  }
   .header-title {
+    // color: #000;
     color: #fff;
+    // color: $logo-yellow;
     margin: 4px 0 0;
     line-height: 42px;
   }
   .header-subtitle {
-    color: #dedede;
+    // color: #dedede;
+    color: #000;
     margin: 0 0 4px;
     font-size: 16px;
     font-weight: 600;
@@ -117,54 +131,135 @@ img.in-row-image {
   .card-body {
     padding-bottom: 0;
     padding-top: 0;
-    .set-card-header {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 0;
-      text-align: left;
-    }
-    .set-card-subheader {
-      color: $dkGray;
-      font-family: "Montserrat";
-      font-size: 12px;
-      font-weight: bold;
-      text-align: left;
-    }
-    .set-card-description {
-      color: #666;
-      &.line-clamp {
-        // @include line-clamp(4);
-      }
-    }
+  }
+}
+
+.set-card-header {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.set-card-subheader {
+  color: $dkGray;
+  font-family: "Montserrat";
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.set-card-description {
+  color: #666;
+  &.line-clamp {
+    // @include line-clamp(4);
+  }
+}
+
+.element-label {
+  color: $black;
+  font-family: 'Montserrat';
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.card-element {
+  p {
+    text-align: center;
+  }
+  p.element-prop {
+    color: $black;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 0;
   }
 
-  .card-footer {
-    .card-footer-element {
-      p {
-        text-align: center;
-      }
-      p.element-prop {
-        color: $black;
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 0;
-      }
+  p.element-label {
+    color: $dkGray;
+    font-family: 'Montserrat';
+    margin-bottom: 0;
+    font-weight: 500;
+    font-size: 14px;
+  }
+}
 
-      p.element-label {
-        color: $dkGray;
-        font-family: 'Montserrat';
-        margin-bottom: 0;
-      }
+
+
+div.element-delimiter {
+  height: 44px;
+  width: 1px;
+  border-right: 1px solid $mdGray;
+  background-color: $mdGray;
+}
+div.delimiter-bottom {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid $mdGray;
+}
+
+.big-set-card {
+  .set-video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
-    div.element-delimiter {
-      height: 44px;
-      width: 1px;
-      border-right: 1px solid $mdGray;
-      background-color: $mdGray;
+  }
+  img.set-theme-logo {
+    height: 40px;
+  }
+  .set-card-header {
+    font-size: 30px;
+  }
+  .set-card-subheader {
+    font-size: 16px;
+  }
+
+  .card-element,
+  .card-element p {
+    text-align: left;
+  }
+
+  .card-element {
+    p.element-prop {
+      font-size: 24px;
+    }
+    p.element-label {
+      font-size: 16px;
+      font-weight: bold;
     }
   }
 }
 
+/* Buttons */
+
+.btn-jbs {
+  @extend .btn-primary;
+  background-color: $jbs-black;
+  border-color: $jbs-black;
+  &:hover, &:focus {
+    background-color: lighten($jbs-black, 12%) !important;
+    border-color: lighten($jbs-black, 12%) !important;
+  }
+}
+
+.btn-jbs-light {
+  background-color: #fff !important;
+  border-color: #fff !important;
+  color: $jbs-black;
+  font-weight: bold;
+  border-radius: 15px;
+  border: 2px solid $jbs-black !important;
+  &:hover, &:focus {
+    background-color: darken(#fff, 12%) !important;
+    // border-color: darken(#fff, 12%) !important;
+  }
+}
 
 
 
