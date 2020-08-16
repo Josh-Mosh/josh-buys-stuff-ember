@@ -44,6 +44,10 @@ export default Controller.extend({
     return this.get('editing') ? editing : creating;
   }),
 
+  // setUnavailable: computed('set.archived', 'set.hasAffiliateLink', function() {
+  //   return !this.get('')
+  // }),
+
   actions: {
     openCreateSetModal() {
       this.setProperties({

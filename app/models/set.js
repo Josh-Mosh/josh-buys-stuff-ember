@@ -31,4 +31,8 @@ export default class SetModel extends Model {
   get isFavorite() {
     return this.favorite;
   }
+
+  get hasAffiliateLink() {
+    return !!this.affiliateLink;
+  }
 }

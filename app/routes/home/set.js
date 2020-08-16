@@ -4,7 +4,7 @@ import Route from '@ember/routing/route';
 export default Route.extend({
 
   model(params) {
-    return this.get('store').query('set', { setId: params.setId })
+    return this.get('store').query('set', { setId: params.set_id })
     .then((sets) => {
       console.log('then', 'sets:', sets)
       return sets.length ? sets.firstObject : {};
