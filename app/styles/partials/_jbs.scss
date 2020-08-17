@@ -1,6 +1,7 @@
 /* JBS Variables*/
 $logo-yellow: #F3B900;
 $jbs-black: #070808;
+$lego-orange: rgb(253, 128, 36);
 
 /* Layout */
 html, body {
@@ -108,6 +109,7 @@ img.in-row-image {
   img {
     margin-top: 15px;
     transition: 0.2s;
+    max-width: 250px;
     width: 100%;
     &:hover {
       box-shadow: 1px 2px 4px $dkGray;
@@ -176,6 +178,7 @@ img.in-row-image {
 }
 
 .card-element {
+  padding: 10px 0;
   p {
     text-align: center;
   }
@@ -258,18 +261,34 @@ div.delimiter-bottom {
     border-color: lighten($jbs-black, 12%) !important;
   }
 }
+.btn {
+  font-size: 16px;
+  font-weight: bold;
+}
 
 .btn-jbs-light {
   background-color: #fff !important;
-  border-color: #fff !important;
   color: $jbs-black;
-  font-weight: bold;
-  border-radius: 15px;
-  border: 2px solid $jbs-black !important;
+  border: 1px solid $jbs-black !important;
   &:hover, &:focus {
     background-color: darken(#fff, 12%) !important;
     // border-color: darken(#fff, 12%) !important;
   }
+}
+
+.btn-orange {
+  @extend .btn-primary;
+  background-color: $lego-orange;
+  border-color: $lego-orange;
+  color: #fff;
+  &:hover, &:focus {
+    background-color: darken($lego-orange, 12%) !important;
+    border-color: darken($lego-orange, 12%) !important;
+  }
+}
+
+.wide-button {
+  min-width: 250px;
 }
 
 
