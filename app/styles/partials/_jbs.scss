@@ -94,6 +94,19 @@ img.in-row-image {
   margin-top: 0;
 }
 
+.card {
+  .card-header {
+    .card-title {
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .card-title-secondary {
+      color: $dkGray;
+      font-size: 13px;
+    }
+  }
+}
+
 /* home page */
 
 /* about section */
