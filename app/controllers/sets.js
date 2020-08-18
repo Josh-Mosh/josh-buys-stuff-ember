@@ -73,9 +73,14 @@ export default Controller.extend({
     createSet(set) {
       console.log('createSet', 'set:', set)
       if (!set) return;
-      this.get('store').createRecord('set', set).save().then(() => {
-        this.set('isEditSetModalHidden', true);
-      });
+      this.get('store').createRecord('set', set).save().then(
+        () => {
+          this.set('isEditSetModalHidden', true);
+          this.set('newSet', {});
+        }, (err) => {
+          console.log('err ', err);
+        }
+      );
     },
 
     updateSet(set) {
