@@ -9,8 +9,10 @@ export default Route.extend(AuthenticatedRouteMixin, {
     controller.set('session', this.get('session'));
   },
 
-  redirect(/*model, transition*/) {
-    this.transitionTo('sets');
+  redirect(model, transition) {
+    if (transition.intent.url === '/admin' || transition.intent.url === '/admin/') {
+      this.transitionTo('sets');
+    }
   },
 
   actions: {

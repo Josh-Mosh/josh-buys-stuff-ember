@@ -1,19 +1,16 @@
-<div class="d-flex justify-content-between align-items-center mt-2">
-  {{link-to "< Home" "home" class="link-actually-blue no-decoration fs-18"}}
-  {{#if session.isAuthenticated}}
-    <button class="btn" {{action "invalidateSession"}}>Logout</button>
-  {{/if}}
-</div>
-
-<div class="row mb-4 ml-0 mr-1 justify-content-center">
-  <div class="p-0">
-    <ul class="nav nav-tabs nav-tabs-simple text-center">
-      <li class="active">{{link-to "Sets" "sets"}}</li>
-      <li>{{link-to "Themes" "themes"}}</li>
-    </ul>
-  </div>
-</div>
-
 <div class="container">
+  <div class="row align-items-center justify-content-between mt-2">
+    <div class="col">
+      {{link-to "< Home" "home" class="link-actually-blue no-decoration fs-18"}}
+    </div>
+    {{#if session.isAuthenticated}}
+      <div class="col-auto">
+        {{link-to "Account" "account" class="btn btn-secondary mr-2"}}
+        <button class="btn" {{action "invalidateSession"}}>Logout</button>
+      </div>
+    {{/if}}
+  </div>
+
   {{outlet}}
+
 </div>

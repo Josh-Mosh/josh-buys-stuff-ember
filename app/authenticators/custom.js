@@ -21,9 +21,7 @@ export default Base.extend({
   },
 
   authenticate: function(creds) {
-
     let ajax = this.get('ajax');
-    // let credentials = $.param({ email: creds.identification, password: creds.password });
 
     return new RSVP.Promise((resolve, reject) => {
       ajax.post('auth', {
@@ -32,13 +30,11 @@ export default Base.extend({
           password: creds.password
         }),
         contentType: 'application/json',
-        // headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-        // data: credentials
       })
       .then(response => {
         run(() => {
           console.log('resolve', 'response.token:', response);
-          resolve({ token: response.token });
+          resolve({ token: response.token, user_id: response.user.id });
         });
       })
       .catch(error => {

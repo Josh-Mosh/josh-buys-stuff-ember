@@ -16,6 +16,7 @@ Router.map(function() {
   this.route('authenticated', { path: 'admin' }, function() {
     this.route('sets', { resetNamespace: true });
     this.route('themes', { resetNamespace: true });
+    this.route('account', { resetNamespace: true });
   });
 
   this.route('about');
