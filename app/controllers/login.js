@@ -5,17 +5,11 @@ export default Controller.extend({
 
   session: service(),
 
-  identification: 'j@example.com',
-  password: '123456',
+  identification: '',
+  password: '',
   errorMessage: '',
 
-  something: "bar",
-
   actions: {
-    doSomething(event) {
-      console.log(event)
-    },
-
     authenticate() {
       let { identification, password } = this.getProperties('identification', 'password');
 
@@ -29,9 +23,9 @@ export default Controller.extend({
         this.set('errorMessage', error.error || error);
       }
 
-      if (this.get('session.isAuthenticated')) {
-        // What to do with all this success?
-      }
+      // if (this.get('session.isAuthenticated')) {
+      //   // What to do with all this success?
+      // }
     }
   }
 });
