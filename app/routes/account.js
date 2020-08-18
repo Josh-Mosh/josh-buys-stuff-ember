@@ -7,9 +7,7 @@ export default Route.extend(AuthenticatedRouteMixin, {
   currentUser: service(),
 
   model() {
-    console.log(this.get('currentUser'));
-    // console.log(this.get('session'));
-    const token = this.get('session.data.authenticated.token');
-    return this.get('currentUser').load();
+    const userId = this.get('session.data.authenticated.user_id');
+    return this.get('store').findRecord('user', userId);
   }
 });
