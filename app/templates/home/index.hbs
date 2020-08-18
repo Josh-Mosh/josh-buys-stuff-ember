@@ -1,5 +1,5 @@
 <div class="row mt-4">
-  {{#each sets as |set|}}
+  {{#each filteredSets as |set|}}
     <div class="col-lg-4 col-md-6 set-card-wrapper">
       {{set-card set=set transitionToSet=(action "transitionToSet")}}
     </div>

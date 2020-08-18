@@ -12,6 +12,7 @@ export default class SetModel extends Model {
   @attr('string') imgUrl;
   @attr('string') affiliateLink;
   @attr('boolean', { defaultValue: false }) favorite;
+  @attr('boolean', { defaultValue: false }) hidden;
   @attr('string') videoId;
   @attr('date') videoUploaded;
   @attr createdAt;
@@ -30,6 +31,10 @@ export default class SetModel extends Model {
 
   get isFavorite() {
     return this.favorite;
+  }
+
+  get isHidden() {
+    return this.hidden;
   }
 
   get hasAffiliateLink() {

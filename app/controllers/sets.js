@@ -83,6 +83,8 @@ export default Controller.extend({
       console.log('updateSet', 'set:', set);
       set.save().then(() => {
         this.set('isEditSetModalHidden', true);
+      }, (err) => {
+        console.log('err ', err);
       });
     },
 
