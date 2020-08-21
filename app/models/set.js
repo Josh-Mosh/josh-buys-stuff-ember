@@ -17,6 +17,10 @@ export default class SetModel extends Model {
   @attr('date') videoUploaded;
   @attr createdAt;
 
+  get numericalPrice() {
+    return parseFloat(this.price || 0);
+  }
+
   get embeddedSrc() {
     return this.videoId ? `https://www.youtube.com/embed/${this.videoId}` : '';
   }

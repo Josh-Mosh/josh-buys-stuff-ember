@@ -9,6 +9,7 @@ export default Route.extend({
   },
 
   setupController(controller, models) {
+    this._super(controller, models.sets);
     controller.setProperties({
       sets: models.sets,
       themes: models.themes

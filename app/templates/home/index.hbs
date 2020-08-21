@@ -1,4 +1,24 @@
-<div class="row mt-4">
+<div class="row justify-content-end mt-4">
+  <div class="col-4">
+    <div class="form-group">
+      <label for="theme">Sort By</label>
+      {{#power-select
+        options=sortColumns
+        renderInPlace=true
+        selected=selectedSortBy
+        searchEnabled=true
+        searchField="sortField"
+        placeholder="Name, Set Id, Price, Recently Reviewed"
+        onChange=(action "setSortField")
+        as |option|
+      }}
+        {{option.title}}
+      {{/power-select}}
+    </div>
+  </div>
+</div>
+
+<div class="row">
   {{#each filteredSets as |set|}}
     <div class="col-lg-4 col-md-6 set-card-wrapper">
       {{set-card set=set transitionToSet=(action "transitionToSet")}}
