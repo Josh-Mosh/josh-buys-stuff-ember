@@ -10,17 +10,17 @@ export default Controller.extend(SortingMixin, {
     this._super(...arguments);
     this.set('sortColumns', [
       {
+        title: "Josh's Favorites",
+        sortField: 'favorite',
+        direction: 'desc'
+      },
+      {
         title: 'Name',
         sortField: 'name',
       },
       {
         title: 'Set Id',
         sortField: 'setId',
-      },
-      {
-        title: 'Favorites',
-        sortField: 'favorite',
-        direction: 'desc'
       },
       {
         title: 'Price - High',
@@ -32,12 +32,22 @@ export default Controller.extend(SortingMixin, {
         sortField: 'numericalPrice'
       },
       {
+        title: 'Piece Count',
+        sortField: 'pieces',
+        direction: 'desc'
+      },
+      {
         title: 'Recently Reviewed',
         sortField: 'videoUploaded'
       },
       {
         title: 'Theme',
         sortField: 'theme.name',
+        noSort: true
+      },
+      {
+        title: 'Ages',
+        sortField: 'age',
         noSort: true
       }
     ]);
