@@ -1,12 +1,21 @@
-<div class="row justify-content-end mt-4">
+<div class="row justify-content-between m-t-15">
+
   <div class="col-4">
     <div class="form-group">
-      <label for="theme">Sort By</label>
+      <label>Search</label>
+      <div class="search-icon"><i class="fa fa-search"></i></div>
+      {{input class="search-bar general-search" value=searchText placeholder="Name, Set Id, Theme"}}
+    </div>
+  </div>
+
+  <div class="col-4">
+    <div class="form-group">
+      <label>Sort By</label>
       {{#power-select
-        options=sortColumns
+        options=availableSortFields
         renderInPlace=true
         selected=selectedSortBy
-        searchEnabled=true
+        searchEnabled=false
         searchField="sortField"
         placeholder="Name, Set Id, Price, Recently Reviewed"
         onChange=(action "setSortField")

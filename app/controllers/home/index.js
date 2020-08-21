@@ -19,24 +19,39 @@ export default Controller.extend(SortingMixin, {
       },
       {
         title: 'Favorites',
-        sortField: 'favorite'
+        sortField: 'favorite',
+        direction: 'desc'
       },
       {
-        title: 'Price',
+        title: 'Price - High',
+        sortField: 'numericalPrice',
+        direction: 'desc'
+      },
+      {
+        title: 'Price - Low',
         sortField: 'numericalPrice'
       },
       {
         title: 'Recently Reviewed',
         sortField: 'videoUploaded'
+      },
+      {
+        title: 'Theme',
+        sortField: 'theme.name',
+        noSort: true
       }
     ]);
   },
 
-  sortField: 'numericalPrice',
+  sortField: 'favorite',
   sortDir: 'desc',
 
   filteredSets: computed('pagedContent.@each.hidden', 'pagedContent', function() {
     return this.get('pagedContent').filterBy('hidden', false);
+  }),
+
+  availableSortFields: computed('sortColumns.@each.noSort', function() {
+    return this.get('sortColumns').rejectBy('noSort');
   }),
 
   selectedSortBy: computed('sortColumns.@each.sortField', 'sortField', function() {
@@ -49,6 +64,7 @@ export default Controller.extend(SortingMixin, {
     },
 
     setSortField(sortColumn) {
+      this.set('sortDir', sortColumn.direction || 'asc');
       this.set('sortField', sortColumn.sortField);
     }
   }

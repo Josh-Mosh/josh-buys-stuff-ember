@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-between align-items-center mt-2 mb-2">
-  {{link-to "< All Sets" "home" class="btn btn-jbs-light fs-16"}}
+  {{link-to "< All Sets" "home" class="btn btn-jbs-dark fs-16"}}
 </div>
 
 <div class="card big-set-card">
@@ -46,11 +46,14 @@
       </div>
     {{/if}}
   </div>
-  <div class="card-footer">
-    <div class="row justify-content-center pb-2">
-      <div class="col-auto">
-        <button class="btn btn-orange purchase-button wide-button" disabled={{setUnavailable}}>Buy This Set from shop.LEGO.com</button>
+
+  {{#if set.affiliateLink}}
+    <div class="card-footer">
+      <div class="row justify-content-center pb-2">
+        <div class="col-auto">
+          <a href={{set.affiliateLink}} target="_blank" rel="noopener" class="btn btn-orange purchase-button wide-button" disabled={{setUnavailable}}>Buy This Set from shop.LEGO.com</a>
+        </div>
       </div>
     </div>
-  </div>
+  {{/if}}
 </div>

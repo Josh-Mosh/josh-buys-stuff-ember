@@ -295,22 +295,32 @@ div.delimiter-bottom {
 
 .btn-jbs-light {
   background-color: #fff !important;
-  color: $jbs-black;
-  border: 1px solid $jbs-black !important;
-  &:hover, &:focus {
-    background-color: darken(#fff, 12%) !important;
-    // border-color: darken(#fff, 12%) !important;
+  color: $jbs-black !important;
+  border: none;
+  &:hover,
+  &:focus {
+    background-color: darken(#fff, 5%) !important;
+    border: none;
+  }
+}
+
+.btn-jbs-dark {
+  background-color: $jbs-black !important;
+  color: #fff !important;
+  &:hover,
+  &:focus {
+    background-color: lighten($jbs-black, 15%) !important;
   }
 }
 
 .btn-orange {
   @extend .btn-primary;
-  background-color: $lego-orange;
-  border-color: $lego-orange;
+  background-color: darken($lego-orange, 10%);
+  border-color: darken($lego-orange, 10%);
   color: #fff;
   &:hover, &:focus {
-    background-color: darken($lego-orange, 12%) !important;
-    border-color: darken($lego-orange, 12%) !important;
+    background-color: $lego-orange !important;
+    border-color: $lego-orange !important;
   }
 }
 

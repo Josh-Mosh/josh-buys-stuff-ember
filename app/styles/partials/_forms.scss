@@ -162,6 +162,10 @@ input[type="text"] {
   &.projects-search, &.general-search {
     position: relative;
     padding-left: 30px;
+    background-color: #fff;
+    width: 100%;
+    border-color: $card-border-color;
+    border-radius: 2px;
   }
   &.editing-text {
     font-family: 'Montserrat';
@@ -190,6 +194,7 @@ input[type="text"] {
   position: absolute;
   margin-top: 12px;
   margin-left: 10px;
+  z-index: 100;
 }
 
 // inline-text-editing (gmail style)
@@ -618,7 +623,7 @@ input[type=radio]:checked + label:before{
 }
 
 .ember-basic-dropdown-trigger {
-  border-color: $form-control-border-color !important;
+  border-color: $card-border-color !important;
 }
 
 .ember-basic-dropdown-trigger--left {
