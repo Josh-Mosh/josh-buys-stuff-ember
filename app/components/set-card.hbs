@@ -1,4 +1,7 @@
 <div class="card-img-top">
+  {{#if set.favorite}}
+    <i class="fas fa-star fa-lg favorite-star" title="favorite"></i>
+  {{/if}}
   <div class="card-img-wrapper">
     <img class="card-img" src={{set.imgUrl}}>
   </div>
