@@ -29,7 +29,7 @@
 
 <div class="row">
   {{#each filteredSets as |set|}}
-    <div class="col-lg-4 col-md-6 set-card-wrapper">
+    <div class="col-lg-4 col-md-6 set-card-wrapper mb-3">
       {{set-card set=set transitionToSet=(action "transitionToSet")}}
     </div>
   {{/each}}
