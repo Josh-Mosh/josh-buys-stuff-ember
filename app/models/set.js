@@ -10,6 +10,7 @@ export default class SetModel extends Model {
   @attr('string') age;
   @attr('string') price;
   @attr('string') imgUrl;
+  @attr('string') fullLink;
   @attr('string') affiliateLink;
   @attr('boolean', { defaultValue: false }) favorite;
   @attr('boolean', { defaultValue: false }) hidden;
