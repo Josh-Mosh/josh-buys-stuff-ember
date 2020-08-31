@@ -70,7 +70,7 @@ export default Controller.extend(SortingMixin, {
 
   actions: {
     transitionToSet(set) {
-      this.transitionToRoute('home.set', set.get('setId'));
+      this.transitionToRoute('set', set.get('setId'));
     },
 
     setSortField(sortColumn) {

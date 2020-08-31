@@ -1,0 +1,22 @@
+<div class="main-flex-body">
+  <header class="jbs-header row w-100 pl-3 pr-3 justify-content-between align-items-center">
+    <div class="col-auto m-auto m-md-0">
+      <a href="/">
+        <img src="/assets/images/name-as-img.png" class="name-as-img" alt="Josh Buys Stuff Title">
+      </a>
+      {{!-- <h1 class="header-title">Josh Buys Stuff</h1> --}}
+      <h5 class="header-subtitle"> Stuff Josh from <a href="https://youtube.com/joshbuildsstuff" target="new" class="underline">Josh Builds Stuff</a> Buys</h5>
+    </div>
+    <div class="col-12 col-md-auto text-center">
+      {{link-to "About" "about" class="btn btn-jbs-light mt-1 mb-2"}}
+    </div>
+  </header>
+
+  <main class="container-fluid">
+    {{outlet}}
+  </main>
+
+  <footer class="jbs-footer text-center">
+    Created by Josh | {{link-to "Affiliate Disclosure" "disclosure" class="link-blue no-decoration"}}
+  </footer>
+</div>
