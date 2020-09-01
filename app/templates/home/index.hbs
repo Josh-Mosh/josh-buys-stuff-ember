@@ -34,3 +34,9 @@
     </div>
   {{/each}}
 </div>
+
+{{#unless isLastPage}}
+  <div class="row justify-content-center m-b-15">
+    <button class="btn" {{action "loadNext"}}>Load More</button>
+  </div>
+{{/unless}}

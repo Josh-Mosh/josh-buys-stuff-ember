@@ -60,6 +60,8 @@ export default Controller.extend(SortingMixin, {
     return this.get('pagedContent').filterBy('hidden', false);
   }),
 
+  favoriteSets: computed.filterBy('pagedContent', 'favorite'),
+
   availableSortFields: computed('sortColumns.@each.noSort', function() {
     return this.get('sortColumns').rejectBy('noSort');
   }),

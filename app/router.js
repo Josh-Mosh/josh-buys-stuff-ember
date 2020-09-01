@@ -12,9 +12,9 @@ Router.map(function() {
       this.route('set', { resetNamespace: true, path: '/sets/:set_id' });
     });
 
-    this.route('login');
+    this.route('login', { resetNamespace: true });
 
-    this.route('authenticated', { path: 'admin' }, function() {
+    this.route('authenticated', { resetNamespace: true, path: 'admin' }, function() {
       this.route('sets', { resetNamespace: true });
       this.route('themes', { resetNamespace: true });
       this.route('account', { resetNamespace: true });

@@ -39,6 +39,7 @@
     "ember-cli-numeral": "^1.0.0",
     "ember-cli-pagination": "^3.1.5",
     "ember-cli-sass": "^10.0.1",
+    "ember-cli-slick": "^3.0.3",
     "ember-cli-sri": "^2.1.1",
     "ember-cli-template-lint": "^1.0.0-beta.3",
     "ember-cli-uglify": "^3.0.0",
@@ -62,7 +63,8 @@
     "loader.js": "^4.7.0",
     "popper.js": "^1.16.1",
     "qunit-dom": "^1.0.0",
-    "sass": "^1.26.10"
+    "sass": "^1.26.10",
+    "slick-carousel": "^1.8.1"
   },
   "engines": {
     "node": "10.15.3"
