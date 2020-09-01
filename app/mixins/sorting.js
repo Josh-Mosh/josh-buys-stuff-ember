@@ -27,6 +27,12 @@ export default Mixin.create({
     return [result];
   }),
 
+  sortedValues: computed('sortColumns.@each.{sortField,direction}', function() {
+    return this.get('sortColumns').map(column => {
+      return !column.sortField ? '' : column.direction ? column.sortField + ':' + column.direction : column.sortField + ':asc';
+    });
+  }),
+
   sortedList: computed.sort('model', 'sortedValue'),
   pagedContent: pagedArray('filteredList', { infinite: "unpaged", perPage: 50 }),
   searchText: computed.reads('search'),

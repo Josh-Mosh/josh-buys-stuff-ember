@@ -15,6 +15,11 @@ export default Controller.extend(SortingMixin, {
         direction: 'desc'
       },
       {
+        title: 'Recently Reviewed',
+        sortField: 'videoUploaded',
+        direction: 'desc'
+      },
+      {
         title: 'Name',
         sortField: 'name',
       },
@@ -37,10 +42,6 @@ export default Controller.extend(SortingMixin, {
         direction: 'desc'
       },
       {
-        title: 'Recently Reviewed',
-        sortField: 'videoUploaded'
-      },
-      {
         title: 'Theme',
         sortField: 'theme.name',
         noSort: true
@@ -57,7 +58,9 @@ export default Controller.extend(SortingMixin, {
   sortDir: 'desc',
 
   filteredSets: computed('pagedContent.@each.hidden', 'pagedContent', function() {
-    return this.get('pagedContent').filterBy('hidden', false);
+    return this.get('pagedContent').filter((set) => {
+      return set.get('hidden') === false;
+    });
   }),
 
   favoriteSets: computed.filterBy('pagedContent', 'favorite'),
