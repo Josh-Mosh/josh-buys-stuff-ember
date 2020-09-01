@@ -1,0 +1,16 @@
+<tr class="uppercase clients-header">
+  {{#each sortColumns as |header|}}
+    <th width={{header.width}} style="text-align: {{or header.textAlign "left"}}">
+      {{#if header.sortField}}
+        {{#sort-arrow sortFieldName=header.sortField sortField=sortField sortDir=sortDir alwaysShowActive=alwaysShowActive action="sortBy"}}
+          <span class="pr-1" data-test-selector={{header.testSelector}}>
+            {{header.title}}
+          </span>
+        {{/sort-arrow}}
+      {{else}}
+        {{header.title}}
+      {{/if}}
+    </th>
+  {{/each}}
+  <th colspan={{extraColumns}} class="{{unless extraColumns "custom-hidden"}}"></th>
+</tr>

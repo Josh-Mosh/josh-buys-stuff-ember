@@ -1,0 +1,12 @@
+<a {{action "toggle"}} class="{{if (or isActive alwaysShowActive) "text-black d-flex" "text-inactive"}}">
+
+  {{yield}}
+
+  {{#if isActive}}
+    {{#if isAsc}}
+      <i class="fas fa-sort-up"></i>
+    {{else}}
+      <i class="fas fa-sort-down"></i>
+    {{/if}}
+  {{/if}}
+</a>

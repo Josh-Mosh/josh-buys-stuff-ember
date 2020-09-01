@@ -1,8 +1,9 @@
 import Controller from '@ember/controller';
 import { computed } from '@ember/object'
 import { inject as service } from '@ember/service';
+import SortingMixin from '../mixins/sorting';
 
-export default Controller.extend({
+export default Controller.extend(SortingMixin, {
   session: service(),
   store: service(),
 
@@ -16,7 +17,58 @@ export default Controller.extend({
       age: '',
       price: ''
     });
+
+    this.set('sortColumns', [
+      {
+        title: 'Name',
+        sortField: 'name',
+      },
+      {
+        title: 'Set Id',
+        sortField: 'setId',
+      },
+      {
+        title: 'Pieces',
+        sortField: 'pieces',
+        direction: 'desc'
+      },
+      {
+        title: 'Ages',
+        sortField: 'age',
+      },
+      {
+        title: 'Price',
+        sortField: 'numericalPrice'
+      },
+      {
+        title: 'Theme',
+        sortField: 'theme.name',
+      },
+      {
+        title: "Reviewed",
+        sortField: 'videoUploaded'
+      },
+      {
+        title: 'Image',
+        sortField: 'hasImage',
+      },
+      {
+        title: 'Video',
+        sortField: 'hasVideo',
+      },
+      {
+        title: "Favorite",
+        sortField: 'isFavorite',
+      },
+      {
+        title: 'Hidden',
+        sortField: 'isHidden',
+      },
+    ]);
   },
+
+  sortField: 'favorite',
+  sortDir: 'desc',
 
   isEditSetModalHidden: true,
   isDeleteSetModalHidden: true,
@@ -24,8 +76,6 @@ export default Controller.extend({
   editing: false,
   setToEdit: null,
   setToDelete: null,
-
-  sets: computed.reads('model'),
 
   selectedSetProperties: computed('creating', 'editing', 'setToEdit', function() {
     const creating = {

@@ -15,23 +15,14 @@
 <div class="card">
   <div class="card-body">
     <table class="table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Set Id</th>
-          <th>Pieces</th>
-          <th>Ages</th>
-          <th>Price</th>
-          <th>Theme</th>
-          <th>Image</th>
-          <th>Video</th>
-          <th>Favorite</th>
-          <th>Hidden</th>
-          <th class="text-right">Actions</th>
-        </tr>
-      </thead>
+      {{sortable-table-header
+        sortColumns=sortColumns
+        sortedList=sortedList
+        sortField=sortField
+        sortDir=sortDir
+      }}
       <tbody>
-        {{#each sets as |set|}}
+        {{#each filteredList as |set|}}
           {{set-row
             set=set
             onEdit=(action "openEditSetModal")
