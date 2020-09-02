@@ -34,6 +34,8 @@ export default Mixin.create({
   }),
 
   sortedList: computed.sort('model', 'sortedValue'),
+  sortedListMultiple: computed.sort('model', 'sortedValues'),
+
   pagedContent: pagedArray('filteredList', { infinite: "unpaged", perPage: 50 }),
   searchText: computed.reads('search'),
 
@@ -92,8 +94,9 @@ export default Mixin.create({
    * @property filteredList
    * @return {array}
    */
-  filteredList: computed('sortedList', 'debouncedSearchText', function() {
-    const sorted = this.get('sortedList');
+  // filteredList: computed('sortedList', 'debouncedSearchText', function() {
+  filteredList: computed('sortedListMultiple', 'debouncedSearchText', function() {
+    const sorted = this.get('sortedListMultiple');
     const search = this.get('searchText');
     const sortFields = this.get('sortFields');
     if (!search) {
