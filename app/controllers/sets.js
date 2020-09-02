@@ -46,7 +46,8 @@ export default Controller.extend(SortingMixin, {
       },
       {
         title: "Reviewed",
-        sortField: 'videoUploaded'
+        sortField: 'videoUploaded',
+        direction: 'desc',
       },
       {
         title: 'Image',
@@ -67,7 +68,7 @@ export default Controller.extend(SortingMixin, {
     ]);
   },
 
-  sortField: 'favorite',
+  sortField: 'videoUploaded',
   sortDir: 'desc',
 
   isEditSetModalHidden: true,

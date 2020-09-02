@@ -11,7 +11,7 @@ export default Route.extend({
   setupController(controller, models) {
     this._super(controller, models.sets);
     controller.setProperties({
-      sets: models.sets,
+      sets: models.sets.sortBy('videoUploaded'),
       themes: models.themes
     });
   }

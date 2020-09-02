@@ -13,6 +13,20 @@ export default Mixin.create({
 
   sortField: null,
   sortDir: null,
+  sortByMultiple: false,
+
+
+  orderedColumns: computed('sortField', 'sortDir', function() {
+    let sortColumns = this.get('sortColumns');
+    const sortField = this.get('sortField');
+    let column = sortColumns.findBy('sortField', sortField);
+    set(column, 'direction', this.get('sortDir') || 'asc');
+
+    sortColumns = sortColumns.filter(column => column.sortField !== sortField);
+    sortColumns.unshift(column);
+    return sortColumns;
+  }),
+
 
   /**
    * Return an array for the sort criteria
@@ -27,8 +41,8 @@ export default Mixin.create({
     return [result];
   }),
 
-  sortedValues: computed('sortColumns.@each.{sortField,direction}', function() {
-    return this.get('sortColumns').map(column => {
+  sortedValues: computed('orderedColumns.@each.{sortField,direction}', function() {
+    return this.get('orderedColumns').map(column => {
       return !column.sortField ? '' : column.direction ? column.sortField + ':' + column.direction : column.sortField + ':asc';
     });
   }),
@@ -94,11 +108,12 @@ export default Mixin.create({
    * @property filteredList
    * @return {array}
    */
-  // filteredList: computed('sortedList', 'debouncedSearchText', function() {
-  filteredList: computed('sortedListMultiple', 'debouncedSearchText', function() {
-    const sorted = this.get('sortedListMultiple');
+  filteredList: computed('sortedList', 'sortedListMultiple', 'debouncedSearchText', 'sortByMultiple', function() {
+    const sortedSingle = this.get('sortedList');
+    const sortedMultiple = this.get('sortedListMultiple');
     const search = this.get('searchText');
     const sortFields = this.get('sortFields');
+    let sorted = this.get('sortByMultiple') ? sortedMultiple : sortedSingle;
     if (!search) {
       return sorted;
     } else {

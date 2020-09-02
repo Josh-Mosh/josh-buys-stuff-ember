@@ -34,7 +34,8 @@ export default Controller.extend(SortingMixin, {
       },
       {
         title: 'Price - Low',
-        sortField: 'numericalPrice'
+        sortField: 'numericalPriceLow',
+        direction: 'asc'
       },
       {
         title: 'Piece Count',
@@ -56,6 +57,7 @@ export default Controller.extend(SortingMixin, {
 
   sortField: 'favorite',
   sortDir: 'desc',
+  sortByMultiple: true,
 
   filteredSets: computed('pagedContent.@each.hidden', 'pagedContent', function() {
     return this.get('pagedContent').filter((set) => {

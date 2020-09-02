@@ -22,6 +22,10 @@ export default class SetModel extends Model {
     return parseFloat(this.price || 0);
   }
 
+  get numericalPriceLow() {
+    return parseFloat(this.price || 0);
+  }
+
   get embeddedSrc() {
     return this.videoId ? `https://www.youtube.com/embed/${this.videoId}` : '';
   }
