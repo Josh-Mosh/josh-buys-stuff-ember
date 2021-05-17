@@ -25,4 +25,5 @@ Router.map(function() {
   });
 
   this.route('click', { path: ':set_id' });
+  this.route('shop', { path: '/legoshopofficial' });
 });

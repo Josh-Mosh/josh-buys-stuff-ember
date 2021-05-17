@@ -22,7 +22,8 @@ module.exports = function(environment) {
       // when it is created
       api_host: process.env['JBS_API_ADDRESS'] || 'http://localhost:9000',
       api_namespace: 'api',
-      master_key: process.env.MASTER_KEY
+      master_key: process.env.MASTER_KEY,
+      affiliate_lego: process.env.AFFILIATE_LEGO || 'https://click.linksynergy.com/fs-bin/click?id=JoQaukufCO4&offerid=115554.10001551&subid=0&type=4'
     }
   };
 
