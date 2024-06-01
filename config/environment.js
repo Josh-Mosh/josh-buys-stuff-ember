@@ -23,7 +23,7 @@ module.exports = function(environment) {
       api_host: process.env['JBS_API_ADDRESS'] || 'http://localhost:9000',
       api_namespace: 'api',
       master_key: process.env.MASTER_KEY,
-      affiliate_lego: process.env.AFFILIATE_LEGO || 'https://click.linksynergy.com/fs-bin/click?id=JoQaukufCO4&offerid=115554.10001551&subid=0&type=4'
+      affiliate_lego: process.env.AFFILIATE_LEGO || 'https://click.linksynergy.com/deeplink?id=JoQaukufCO4&mid=13923&murl=https%3A%2F%2Fwww.lego.com%2Fen-us'
     }
   };
 
